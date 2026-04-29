@@ -15,6 +15,9 @@
 .env.*.local
 .env
 
+# AI demo builder credentials (never commit)
+docs/ai/config/credentials.local.yaml
+
 # Log files
 *.log*
 

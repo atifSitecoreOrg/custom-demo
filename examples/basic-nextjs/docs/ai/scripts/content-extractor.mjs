@@ -29,8 +29,10 @@
  */
 
 import { chromium } from 'playwright';
-import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync, mkdirSync, existsSync } from 'fs';
+import { join, extname } from 'path';
+import https from 'https';
+import http from 'http';
 
 // ── Argument parsing ──────────────────────────────────────────
 const args = process.argv.slice(2);
@@ -53,6 +55,7 @@ Options:
   --timeout       Page load timeout in ms (default: 30000)
   --wait          Extra wait after load in ms (default: 3000)
   --lang          Target language hint (default: en)
+  --download-images  Download all section images to <output>/images/
   --help          Show this help
   `);
   process.exit(0);
@@ -63,6 +66,7 @@ const outputDir = getArg('output');
 const timeout = parseInt(getArg('timeout', '30000'), 10);
 const extraWait = parseInt(getArg('wait', '3000'), 10);
 const targetLang = getArg('lang', 'en');
+const downloadImages = args.includes('--download-images');
 
 if (!siteUrl) { console.error('Error: --url is required'); process.exit(1); }
 if (!outputDir) { console.error('Error: --output is required'); process.exit(1); }
@@ -84,7 +88,9 @@ try {
   });
   const page = await context.newPage();
 
-  await page.goto(siteUrl, { waitUntil: 'networkidle', timeout });
+  // Use domcontentloaded + manual wait instead of networkidle — many sites
+  // never reach networkidle due to analytics, ads, or long-polling connections.
+  await page.goto(siteUrl, { waitUntil: 'domcontentloaded', timeout });
   await page.waitForTimeout(extraWait);
 
   // ── Dismiss popups and cookie banners ─────────────────────
@@ -425,6 +431,99 @@ try {
   console.log(`[extractor] Detected language: ${detectedLang}`);
   if (output.translationNeeded) {
     console.log(`[extractor] ⚠ Translation needed: ${detectedLang} → ${targetLang}`);
+  }
+
+  // ── Download images (optional) ─────────────────────────────
+  if (downloadImages) {
+    const imagesDir = join(outputDir, 'images');
+    mkdirSync(imagesDir, { recursive: true });
+
+    // Collect all unique image URLs from all sections + listItems
+    const allImages = [];
+    for (const section of extractedContent) {
+      for (const img of (section.images || [])) {
+        if (img.src && !allImages.find(x => x.src === img.src)) {
+          allImages.push({ ...img, sectionPosition: section.position });
+        }
+      }
+      for (const item of (section.listItems || [])) {
+        if (item.image?.src && !allImages.find(x => x.src === item.image.src)) {
+          allImages.push({ ...item.image, type: 'list-item', sectionPosition: section.position });
+        }
+      }
+    }
+
+    console.log(`[extractor] Downloading ${allImages.length} images...`);
+
+    const downloadFile = (url, dest) => new Promise((resolve, reject) => {
+      const protocol = url.startsWith('https') ? https : http;
+      const req = protocol.get(url, {
+        timeout: 15000,
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+      }, (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          downloadFile(res.headers.location, dest).then(resolve).catch(reject);
+          return;
+        }
+        if (res.statusCode !== 200) {
+          reject(new Error(`HTTP ${res.statusCode}`));
+          return;
+        }
+        const chunks = [];
+        res.on('data', chunk => chunks.push(chunk));
+        res.on('end', () => { writeFileSync(dest, Buffer.concat(chunks)); resolve(); });
+        res.on('error', reject);
+      });
+      req.on('error', reject);
+      req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
+    });
+
+    const manifest = [];
+    let dlOk = 0, dlFail = 0;
+
+    for (let i = 0; i < allImages.length; i++) {
+      const img = allImages[i];
+      try {
+        const urlObj = new URL(img.src);
+        const ext = extname(urlObj.pathname).replace('.', '') || 'jpg';
+        const safeName = `section${img.sectionPosition}-img${i + 1}.${ext}`;
+        const localPath = join(imagesDir, safeName);
+
+        // Skip data: URIs, SVG inlines, tiny tracking pixels
+        if (img.src.startsWith('data:') || img.src.endsWith('.svg')) {
+          continue;
+        }
+
+        await downloadFile(img.src, localPath);
+        manifest.push({
+          src: img.src,
+          alt: img.alt || '',
+          localFile: safeName,
+          extension: ext,
+          sectionPosition: img.sectionPosition,
+          status: 'downloaded',
+        });
+        dlOk++;
+      } catch (err) {
+        manifest.push({
+          src: img.src,
+          alt: img.alt || '',
+          localFile: null,
+          sectionPosition: img.sectionPosition,
+          status: 'failed',
+          error: err.message,
+        });
+        dlFail++;
+      }
+    }
+
+    writeFileSync(
+      join(imagesDir, 'image-manifest.json'),
+      JSON.stringify(manifest, null, 2)
+    );
+
+    console.log(`[extractor] ✓ ${dlOk} images downloaded, ${dlFail} failed → ${imagesDir}/`);
+    console.log(`[extractor] ✓ image-manifest.json written`);
   }
 
   await context.close();

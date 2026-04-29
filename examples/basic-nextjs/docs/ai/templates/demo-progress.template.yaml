@@ -43,8 +43,9 @@ phases:
 
   phase4_theme:
     status: "pending"       # pending | complete
-    cssFileWritten: false
-    fontsAdded: false
+    themeDelivery: ""       # globals-inlined (preferred) | globals-brand-import (fallback)
+    cssWritten: false       # true after :root block written
+    fontsAdded: false       # true after Google Fonts <link> added to layout.tsx
 
   phase5_custom:
     status: "pending"       # pending | complete | skipped
@@ -80,6 +81,9 @@ sections:
   #     fieldsPopulated: false  # true after update_fields_on_content_item
   #     childrenCreated: 0      # for list components
   #     childrenExpected: 0
+  #     imagesUploaded: 0       # images uploaded via upload_asset
+  #     imagesExpected: 0       # total image fields for this section
+  #     imagesFailed: 0         # images that failed upload (added to manual list)
   #     error: ""               # if failed, why
   #   phase5_5:
   #     status: "pending"       # pending | created | skipped

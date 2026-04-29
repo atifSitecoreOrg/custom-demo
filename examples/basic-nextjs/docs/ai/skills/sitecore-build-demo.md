@@ -44,6 +44,7 @@ A screenshot is the **primary input** for demo creation. Without a visual refere
 1. **Client name** (required) — for file naming and content
 2. **Screenshot** (required) — full-page desktop screenshot of the homepage to replicate
 3. **Client URL** (optional) — used for content extraction in Phase 2.5 and theme scraping
+4. **Content Hub credentials** (if not already saved) — for image uploads in Phase 3
 
 **How to obtain the screenshot:**
 
@@ -55,6 +56,44 @@ A screenshot is the **primary input** for demo creation. Without a visual refere
 | Neither | Ask for at least a screenshot. Do not proceed without visual reference. |
 
 **HARD RULE: Never proceed to Phase 1 without a screenshot.** Web fetch and web search are insufficient — they miss layout, spacing, card styles, section backgrounds, and visual hierarchy that drive variant selection.
+
+**Content Hub credentials (always validate):**
+
+Read `docs/ai/config/credentials.local.yaml`.
+
+**If credentials exist** (`contentHub.host` is populated):
+1. Show the user: *"Found stored Content Hub credentials for `<host>`. Validating..."*
+2. Validate by calling `POST <host>/api/authenticate` with stored user/password
+3. If **200 OK** → credentials are valid, show: *"Content Hub credentials verified for `<host>`."*
+4. If **401 / failed** → credentials are expired or wrong:
+   - Show: *"Stored credentials for `<host>` are invalid (password expired or changed)."*
+   - Ask the user for updated credentials (same flow as "no credentials" below)
+   - Update `credentials.local.yaml` with new values
+
+**If no credentials** (file doesn't exist or `contentHub.host` is empty):
+1. Ask the user:
+   - **Content Hub hostname** — e.g., `https://your-instance.sitecorecontenthub.cloud`
+   - **Username and password**
+   - **Client ID and secret** (only if they want OAuth instead of simple auth)
+2. Validate immediately by calling `POST <host>/api/authenticate`
+3. If **200 OK** → save to `docs/ai/config/credentials.local.yaml` (gitignored):
+   ```yaml
+   contentHub:
+     host: "https://your-instance.sitecorecontenthub.cloud"
+     authMethod: "simple"
+     user: "admin"
+     password: "secret"
+   ```
+4. Tell the user: *"Credentials saved and verified. They'll be reused for future demo builds. Delete `credentials.local.yaml` to reset."*
+5. If **401 / failed** → ask the user to check and retry
+
+**If the user declines to provide credentials**, that's fine — set `contentHub.host: ""` and images will fall back to the manual `images-to-upload.md` checklist in Phase 3 Step 5.
+
+**Validation script shortcut** (agent can run this instead of manual HTTP call):
+```bash
+node docs/ai/scripts/upload-to-content-hub.mjs --images-dir docs/ai/demos/test --dry-run
+```
+If it prints `[auth] OK`, credentials are valid. If it prints `ERROR`, they need updating.
 
 **Create the progress file** at `docs/ai/demos/<client-kebab>/demo-progress.yaml` using the template at `docs/ai/templates/demo-progress.template.yaml`. Set `client.name`, `client.sourceUrl`, `client.startedAt`, and `phases.phase0_inputs.status: "complete"`.
 
@@ -154,10 +193,15 @@ After the build plan is approved, extract precise content from the client site a
 
 **Step 1 — Run the content extractor script:**
 ```bash
-node docs/ai/scripts/content-extractor.mjs --url <CLIENT_URL> --output docs/ai/demos/<client-kebab>
+node docs/ai/scripts/content-extractor.mjs --url <CLIENT_URL> --output docs/ai/demos/<client-kebab> --download-images
 ```
 
-This produces `docs/ai/demos/<client-kebab>/extracted-content.json` with:
+This produces:
+- `docs/ai/demos/<client-kebab>/extracted-content.json` — structured content per section
+- `docs/ai/demos/<client-kebab>/images/` — all section images downloaded locally
+- `docs/ai/demos/<client-kebab>/images/image-manifest.json` — maps each image to its source URL, local file, and section
+
+The `extracted-content.json` contains:
 - DOM-extracted text per section (headings, paragraphs, links, images)
 - Repeated item detection (cards, list items)
 - Source language detection
@@ -235,35 +279,39 @@ create_content_item(
 ```
 Then create each child item under the new parent (see Step 4).
 
-#### Step 2 — Populate text fields
+#### Step 2 — Populate all fields (text + links + images in one call)
 
-For each new client datasource item:
+For each new client datasource item, build a single field update that includes **all field types**:
+
 ```
 update_fields_on_content_item(newItemId, {
+  // Text fields — from content-map
   "Title": contentMap.sections[N].fields.Title,
   "Description": contentMap.sections[N].fields.Description,
-  ... all Single-Line Text and Rich Text fields from the content map
+
+  // Link fields — convert { text, href, target } to Sitecore XML
+  "PrimaryLink": '<link text="Learn more" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://client.com/page" />',
+
+  // Image fields — from image-manifest.json imageFieldXml (if images were uploaded)
+  "HeroImage": '<Image src="https://host/api/public/content/abc?v=def" dam-id="xyz" alt="Hero" dam-content-type="Image" thumbnailsrc="https://host/api/gateway/123/thumbnail" />'
 })
 ```
 
-Run multiple simple component updates in parallel — they're independent.
+**Matching images to fields:** The content-map's `imageFields` array lists `{ field, src }` per section. The `image-manifest.json` maps each `src` URL to its `imageFieldXml`. To wire them:
+1. For each section's `imageFields` entry, find the manifest entry with matching `src`
+2. Use the manifest's `imageFieldXml` as the field value
+3. Include it in the same `update_fields_on_content_item` call as text and link fields
 
-#### Step 3 — Populate link fields (auto-convert to Sitecore XML)
+**If images were not uploaded** (no Content Hub credentials), skip Image fields — they'll be set manually later or via the fallback in Step 5.
 
-For each General Link field in the content map, convert the `{ text, href, target }` to Sitecore link XML format:
-
-```xml
-<link text="Learn more" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://client.com/page" />
-```
-
-Conversion rules:
+**Link field conversion rules:**
 - `href` starts with `http` → `linktype="external"`, set `url` attribute
 - `href` is `#` or empty → `linktype="external"`, `url="#"`
 - `href` is relative → prepend client domain, `linktype="external"`
 - `target` is `_blank` or absent → set `target` accordingly
 - **All attributes must be present** even if empty — `text`, `anchor`, `linktype`, `class`, `title`, `target`, `querystring`, then `id` or `url`
 
-Include link fields in the same `update_fields_on_content_item` call as text fields when possible.
+Run multiple simple component updates in parallel — they're independent.
 
 #### Step 4 — Handle children (list components only)
 
@@ -277,9 +325,15 @@ For each child in contentMap.sections[N].children:
     parentId=<new client parent itemId from Step 1>
   )
   update_fields_on_content_item(newChildId, {
-    child text fields + link fields (XML-converted)
+    // Text + link + image fields — all in one call
+    "CardTitle": child.fields.CardTitle,
+    "CardDescription": child.fields.CardDescription,
+    "CardLink": '<link text="..." ... />',
+    "CardImage": '<Image src="..." dam-id="..." ... />'  // from image-manifest.json
   })
 ```
+
+Include child image fields (e.g., `CardImage`) in the same update call — match `child.imageFields[].src` to `image-manifest.json` entries.
 
 The number of children matches exactly what the content map specifies (extracted from the client site). No comparison with example item children needed — these are fresh items.
 
@@ -294,22 +348,75 @@ Children within the same parent can be created in parallel (they share a parent 
 >
 > This verification step adds ~5 seconds per list component but prevents empty card grids and stat rows.
 
-#### Step 5 — Note image fields for manual upload
+#### Step 5 — Upload images to Content Hub
 
-For each Image field in the content map's `imageFields` arrays, record in the image manifest:
+**Execution order:** Run this step AFTER creating datasource items (Step 1) but the upload script itself should have been run BEFORE Step 2 starts, so `imageFieldXml` values are available when populating fields. The recommended flow is:
 
-```markdown
-## Images to Upload
-
-| Component | Field | Source URL | Alt Text | Media Library Path |
-|-----------|-------|-----------|----------|-------------------|
-| Eurobank - Hero Banner | HeroImage | https://eurobank.com/hero.jpg | Hero background | /media/Project/main/main-website/eurobank/hero |
-| Eurobank - Feature Highlight | FeatureImage | https://eurobank.com/feature.png | Mobile app | /media/Project/main/main-website/eurobank/feature |
-
-Downloaded images available at: docs/ai/themes/<client>/images/
+```
+Step 1:  Create all datasource items (empty)
+Step 5:  Run upload script → image-manifest.json gets imageFieldXml values
+Step 2:  Populate all fields (text + links + images) using content-map + image-manifest
+Step 4:  Create and populate children (text + links + images)
 ```
 
-**Note:** No `upload_asset` MCP tool exists. Images must be uploaded manually to Media Library and assigned to fields in Pages editor. See `docs/ai/reference/agent-api-limitations.md`.
+Images were downloaded during Phase 2.5 (content extraction with `--download-images`). The local files and manifest are at `docs/ai/demos/<client>/images/`.
+
+**Read credentials:** Check `docs/ai/config/credentials.local.yaml` for `contentHub` settings. If `contentHub.host` is empty, skip automated upload and generate `images-to-upload.md` instead.
+
+**Step 5a — Run the upload script:**
+
+```bash
+node docs/ai/scripts/upload-to-content-hub.mjs \
+  --images-dir docs/ai/demos/<client>/images
+```
+
+The script reads credentials from `credentials.local.yaml` automatically. No CLI args needed if credentials are saved.
+
+The script performs 5 steps per image:
+1. `POST /api/v2.0/upload` — request upload URL
+2. `POST /api/v2.0/upload/process` — upload file binary
+3. `POST /api/v2.0/upload/finalize` — finalize → get `asset_id` + `asset_identifier`
+4. `POST /api/entities/{id}/lifecycle/approve` — auto-approve (Created → Approved)
+5. `POST /api/entities` (M.PublicLink) — create public link → get working public URL
+
+After completion, `image-manifest.json` is updated with per-image:
+- `assetId` — Content Hub numeric ID
+- `assetIdentifier` — Content Hub string identifier (used as `dam-id`)
+- `publicUrl` — publicly accessible URL (e.g., `https://host/api/public/content/{relativeUrl}?v={hash}`)
+- `thumbnailUrl` — thumbnail URL
+- `imageFieldXml` — ready-to-use Image field XML for XM Cloud datasource items
+
+**Step 5b — Set Image fields on datasource items:**
+
+For each uploaded image, read `imageFieldXml` from the manifest and update the datasource item:
+```
+update_fields_on_content_item(datasourceItemId, {
+  "HeroImage": '<Image src="https://host/api/public/content/abc123?v=def456" dam-id="assetIdentifier" alt="Hero" dam-content-type="Image" thumbnailsrc="https://host/api/gateway/12345/thumbnail" />'
+})
+```
+
+The `imageFieldXml` value from the manifest can be used directly — it contains the correct DAM Image format with `src`, `dam-id`, `alt`, `dam-content-type`, and `thumbnailsrc` attributes.
+
+Image field updates can run in parallel — they're independent items.
+
+**Step 5c — Handle failures:**
+
+If upload fails for any image:
+1. Record the failure in `demo-progress.yaml` section tracking: `imagesFailed` count
+2. Add the failed image to `docs/ai/demos/<client>/images-to-upload.md` with:
+   - Local file path (already downloaded)
+   - Content Hub host URL
+   - Source URL
+3. Continue with the next image — do NOT block the pipeline
+
+**Step 5d — Manual fallback (if no Content Hub credentials):**
+
+If the user didn't provide Content Hub credentials in Phase 0:
+1. Generate `images-to-upload.md` with local file paths and source URLs
+2. SE uploads manually to Content Hub
+3. SE confirms images are uploaded and approved
+4. Agent uses `search_assets` to find uploaded media items by name
+5. Agent builds Image field XML manually and sets on datasource items
 
 #### Step 6 — Record all new items
 
@@ -410,10 +517,15 @@ For list components, also track:
 
 The theme was extracted in Phase 1. All 18 template components consume `--brand-*` CSS variables (see `docs/ai/reference/brand-variables.md` for the full contract).
 
-**Write `src/app/globals-brand.css`:**
+**Two delivery methods** — prefer inlined, fall back to import:
+
+#### Method 1: Inlined in globals.css (PREFERRED)
+
+Paste the client `:root` block **above** `@layer base` in `src/app/globals.css`. An unlayered `:root` always beats `@layer base` in the CSS cascade, regardless of how Next.js processes the CSS.
 
 1. Read the theme YAML's `cssVariables` block (produced in Phase 1)
-2. Write a `:root` block to `src/app/globals-brand.css` with all `--brand-*` overrides:
+2. In `src/app/globals.css`, find the commented `/* CLIENT THEME */` placeholder above `@layer base`
+3. Replace it with the client's `:root` block:
    ```css
    :root {
      --brand-primary: #00827f;
@@ -422,19 +534,31 @@ The theme was extracted in Phase 1. All 18 template components consume `--brand-
      /* ... all 19 variables from the theme */
    }
    ```
-3. The import is already in place (`globals.css` imports `globals-brand.css`) — no additional wiring needed
+4. Record `themeDelivery: "globals-inlined"` in `demo-progress.yaml`
+
+#### Method 2: Separate globals-brand.css (FALLBACK)
+
+Only use this if you have verified the `@import` works in DevTools after build.
+
+1. Write the `:root` block to `src/app/globals-brand.css`
+2. Uncomment the `@import './globals-brand.css'` line at the bottom of `globals.css`
+3. Build and verify in DevTools that `--brand-primary` etc. resolve to client values, not defaults
+4. Record `themeDelivery: "globals-brand-import"` in `demo-progress.yaml`
+
+**Why Method 1 is preferred:** Next.js App Router CSS processing can strip or reorder `@import` statements. When this happens, the `@layer base` defaults win and the client theme doesn't apply. An unlayered `:root` block above `@layer base` is immune to this — it always wins the cascade.
 
 **Google Fonts (if applicable):**
 
-4. If the theme specifies `typography.googleFontsUrl`, add a `<link>` tag to `src/app/layout.tsx`:
-   ```html
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" />
-   ```
+If the theme specifies `typography.googleFontsUrl`, add a `<link>` tag to `src/app/layout.tsx`:
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" />
+```
 
 **Present the theme diff to the user before proceeding:**
-- Show the `globals-brand.css` content
+- Show the `:root` block content and where it was placed
 - Show the Google Fonts link (if any)
 - Note any font substitutions (proprietary -> Google Fonts alternative)
+- Note which delivery method was used (inlined / import)
 - Ask: "Does this look correct? Ready to apply?"
 
 The theme takes effect on next dev server restart. All 18 components pick up the new values automatically via `var(--brand-*)` references.
@@ -654,7 +778,7 @@ docs/ai/demos/<client-kebab>/
 - **Never recreate template components** — they already exist, just populate their datasource items with client content
 - **Always use the manifest** for item IDs — don't re-resolve paths that are already cached
 - **Always present the plan before executing** — the SE must approve the theme and build plan
-- **Mark images and links as manual** — the scraper can extract URLs but uploading to Media Library requires manual steps
+- **Automate images via Content Hub** — download during Phase 2.5 (`--download-images`), upload + approve + create public link via `upload-to-content-hub.mjs` in Phase 3 Step 5, set Image fields using DAM format (`<Image src="..." dam-id="..." />`). Requires Content Hub credentials in `credentials.local.yaml`. Fall back to manual `images-to-upload.md` if no credentials.
 - **Mark variants as manual** — generate the variant checklist, don't skip this step. See `docs/ai/reference/agent-api-limitations.md` for why.
 - **Use `insertAfterComponentId` for ordering** — add components sequentially, passing the previous component's instance ID to maintain build-plan order
 - **Use the existing Home page by default** — do not create a new subpage unless the user explicitly asks. The Home page already has the correct Page Design and URL routing. Note any OOB components for manual cleanup.

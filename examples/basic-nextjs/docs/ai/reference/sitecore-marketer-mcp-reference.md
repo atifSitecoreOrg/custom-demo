@@ -18,6 +18,7 @@ Do **not** claim that marketer MCP cannot create templates or renderings.
 
 ## Tool inventory
 
+**Content items:**
 - `create_content_item` — Create item with parent + template
 - `update_fields_on_content_item` — Update fields on existing item
 - `get_content_item_by_path` — Resolve item IDs by path
@@ -25,6 +26,11 @@ Do **not** claim that marketer MCP cannot create templates or renderings.
 - `delete_content` — Delete items (only if safe and explicitly requested)
 - `list_components` — Inspect existing renderings/components
 - `list_available_insertoptions` — Inspect insert options (content items only)
+
+**Assets (Media Library):**
+- `upload_asset` — Upload an image file to Media Library. Returns `{ success, mediaItem: { id } }`
+- `search_assets` — Search for assets by name/path
+- `get_asset_information` — Retrieve asset details by ID
 
 Use the server's actual tool names if they differ.
 
@@ -47,6 +53,41 @@ Check the manifest `lookups` section before calling `get_content_item_by_path`. 
 - Category subfolders (after first creation)
 
 See `docs/ai/skills/sitecore-maintain-manifest.md` → "Lookup cache rules".
+
+### Upload images to Content Hub DAM
+
+The demo builder uploads images to **Sitecore Content Hub** (not XM Cloud Media Library).
+Credentials are stored in `docs/ai/config/credentials.local.yaml` (gitignored).
+
+**Automated workflow** — use the upload script:
+```bash
+node docs/ai/scripts/upload-to-content-hub.mjs --images-dir docs/ai/demos/<client>/images
+```
+
+The script performs 5 steps per image:
+1. `POST /api/v2.0/upload` — request upload URL
+2. `POST /api/v2.0/upload/process` — upload file binary (multipart/form-data)
+3. `POST /api/v2.0/upload/finalize` — get `asset_id` + `asset_identifier`
+4. `POST /api/entities/{id}/lifecycle/approve` — auto-approve (Created → Approved)
+5. `POST /api/entities` (M.PublicLink entity) — create public link → get working public URL
+
+**Image field format (DAM):**
+```
+update_fields_on_content_item(itemId, {
+  "HeroImage": '<Image src="https://<CH_HOST>/api/public/content/<relativeUrl>?v=<hash>" dam-id="<assetIdentifier>" alt="Description" dam-content-type="Image" thumbnailsrc="https://<CH_HOST>/api/gateway/<assetId>/thumbnail" />'
+})
+```
+
+The script writes `imageFieldXml` to `image-manifest.json` — use it directly for field updates.
+
+**MCP asset tools** (for searching/verifying, NOT for upload):
+- `search_assets` — search for assets by name/path
+- `get_asset_information` — get asset details by UUID (XM Cloud Media Library only)
+- `update_asset` — update alt text and metadata
+
+**If Content Hub credentials are not available:**
+- Generate `images-to-upload.md` for manual upload
+- After SE uploads, use `search_assets` to find items and wire fields
 
 ### Field update sensitivity
 

@@ -15,7 +15,7 @@ This skill orchestrates the full demo creation pipeline:
 2.5. Content extraction + mapping — ALL CONTENT IN ENGLISH regardless of source language
 3. Content population (creates new client datasource items via MCP from content-map.yaml)
    - Verify `create_component_ds` children after creation (known reliability issue)
-4. Theme application (generates CSS variable overrides)
+4. Theme application — prefer inlining `:root` in `globals.css` above `@layer base` (unlayered wins cascade); fall back to `globals-brand.css` import only if verified in DevTools
 5. Custom component building (if matchType: "custom" in build plan)
 5.5. **Demo variant creation** (uses `sitecore-create-demo-variants` skill) — creates pixel-perfect custom variant per component matching the screenshot's exact layout/spacing
 6. Page assembly on existing Home page (adds API-addable components + generates manual tasks for context-only)

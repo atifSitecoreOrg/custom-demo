@@ -160,6 +160,44 @@ query:$site/*[@@name='Data']/*[@@templatename='<FolderTemplateName>']|query:$sha
 
 ---
 
+## Image Field Format (Content Hub DAM)
+
+When using Content Hub as the DAM, Image fields use the DAM format with `src`, `dam-id`, `dam-content-type`, and `thumbnailsrc` attributes:
+
+```xml
+<Image src="https://<CH_HOST>/api/public/content/<relativeUrl>?v=<versionHash>"
+       dam-id="<assetIdentifier>"
+       alt="Description"
+       dam-content-type="Image"
+       thumbnailsrc="https://<CH_HOST>/api/gateway/<assetId>/thumbnail" />
+```
+
+**MCP field update:**
+```
+update_fields_on_content_item(itemId, {
+  "HeroImage": '<Image src="https://host/api/public/content/abc123?v=def" dam-id="xyz" alt="Hero" dam-content-type="Image" thumbnailsrc="https://host/api/gateway/12345/thumbnail" />'
+})
+```
+
+The `upload-to-content-hub.mjs` script produces the `imageFieldXml` value ready for direct use.
+
+**Content Hub upload pipeline (5 steps per image):**
+1. `POST /api/v2.0/upload` — request upload URL
+2. `POST /api/v2.0/upload/process` — upload file binary
+3. `POST /api/v2.0/upload/finalize` — get `asset_id` + `asset_identifier`
+4. `POST /api/entities/{id}/lifecycle/approve` — auto-approve
+5. `POST /api/entities` (M.PublicLink) — create public link for working URL
+
+**Credentials:** stored in `docs/ai/config/credentials.local.yaml` (gitignored)
+
+**Legacy format (XM Cloud Media Library without DAM):**
+```xml
+<image mediaid="{3F2504E0-4F89-11D3-9A0C-0305E82C3301}" />
+```
+Use this only when Content Hub is not connected and images are in XM Cloud Media Library directly.
+
+---
+
 ## Named Exports
 
 - Named exports only (`export const Default`), never `export default`

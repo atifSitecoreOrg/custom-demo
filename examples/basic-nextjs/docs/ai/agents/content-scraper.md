@@ -121,7 +121,7 @@ For each build plan section, map the extracted (and translated) content to the s
 | Single-Line Text | Plain text string, no HTML |
 | Rich Text | Wrap in `<p>` tags. Preserve `<strong>`, `<em>`, `<ul>`, `<li>` if present in source. Strip classes, IDs, and inline styles. |
 | General Link | Object: `{ text, href, target }` — Phase 3 converts to Sitecore XML |
-| Image | Object: `{ src, alt, note: "needs Media Library upload" }` — Phase 3 logs to manual tasks |
+| Image | Object: `{ src, alt }` — Phase 3 downloads, uploads via `upload_asset`, and wires to field |
 
 ### Step 6 — Handle missing content
 

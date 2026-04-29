@@ -209,9 +209,63 @@ After adding a component and setting a shared datasource, the auto-created local
 
 ---
 
+## 5. Image upload — fully automated via Content Hub Upload API
+
+**Date discovered:** 2026-04-29
+**Severity:** Resolved — images are now fully automated
+**Status:** Tested and proven on Content Hub sandbox
+
+### Background
+
+Early versions stated "No `upload_asset` MCP tool exists." While the XM Cloud Marketer MCP still doesn't expose `upload_asset` as a tool, the **Content Hub Upload API v2** is available and fully supports automated image upload, approval, and public link creation.
+
+### Solution: Content Hub Upload API v2
+
+Script: `docs/ai/scripts/upload-to-content-hub.mjs`
+
+**5 steps per image (all automated):**
+1. `POST /api/v2.0/upload` — request upload URL
+2. `POST /api/v2.0/upload/process` — upload file binary
+3. `POST /api/v2.0/upload/finalize` — get `asset_id` + `asset_identifier`
+4. `POST /api/entities/{id}/lifecycle/approve` — auto-approve (Created → Approved)
+5. `POST /api/entities` (M.PublicLink) — create public link for working public URL
+
+**Auth:** Simple auth (`POST /api/authenticate` with username/password) or OAuth password grant. Credentials stored in `docs/ai/config/credentials.local.yaml` (gitignored).
+
+### Image field format (DAM)
+
+XM Cloud datasource Image fields use the Content Hub DAM format:
+```xml
+<Image src="https://<CH_HOST>/api/public/content/<relativeUrl>?v=<hash>"
+       dam-id="<assetIdentifier>"
+       alt="Description"
+       dam-content-type="Image"
+       thumbnailsrc="https://<CH_HOST>/api/gateway/<assetId>/thumbnail" />
+```
+
+The upload script writes `imageFieldXml` to `image-manifest.json` — use directly with `update_fields_on_content_item`.
+
+### Pipeline integration
+
+Phase 2.5: `content-extractor.mjs --download-images` downloads all section images locally
+Phase 3 Step 5: `upload-to-content-hub.mjs` uploads + approves + creates public links
+Phase 3 Step 5b: Agent reads `imageFieldXml` from manifest, sets Image fields on datasource items via MCP
+
+**Tested:** 50 images from howdens.com uploaded to `ffde.sitecoresandbox.cloud`, all approved, all public URLs working, Image field set on datasource item via MCP — confirmed in Pages editor.
+
+### MCP asset tools (for search/verify only)
+
+- `search_assets` — search for assets by name (not for upload)
+- `get_asset_information` — get asset details by UUID (XM Cloud Media Library only, not Content Hub)
+- `update_asset` — update alt text and metadata
+
+---
+
 ## References
 
 - Agent API docs: https://api-docs.sitecore.com/ai-capabilities/agent-api
+- Asset API docs: https://api-docs.sitecore.com/sai/agent-api/assets
+- Content Hub Upload API: https://doc.sitecore.com/ch/en/developers/cloud-dev/upload.html
 - Marketer MCP tools reference: https://doc.sitecore.com/sai/en/users/sitecoreai/marketer-mcp-tools-reference.html
 - Pages API (UpdateFields): `PATCH /api/v1/pages/{pageId}` — page fields only, not component parameters
 - Test evidence: `docs/ai/demos/home-page-components.json` — Home page component dump showing FieldNames values
