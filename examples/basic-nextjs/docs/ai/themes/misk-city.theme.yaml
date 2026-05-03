@@ -1,0 +1,119 @@
+# Client Brand Theme — Misk City (Mohammed Bin Salman Nonprofit City)
+# Extracted from: https://miskcity.sa/en/
+
+client:
+  name: "Misk City"
+  sourceUrl: "https://miskcity.sa/en/"
+  extractedAt: "2026-05-03T17:30:00+04:00"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#0b5fff"
+  primaryForeground: "#ffffff"
+  secondary: "#6b6c7e"
+  secondaryForeground: "#ffffff"
+  accent: "#0b5fff"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#1c1c24"
+  muted: "#f4f4f6"
+  mutedForeground: "#6b6c7e"
+  # Hero screenshot: white nav bar, blue links; computed header sample was dark — using hero-first white bar.
+  headerBackground: "#ffffff"
+  headerForeground: "#1c1c24"
+  footerBackground: "#272833"
+  footerForeground: "#c8cdd5"
+  border: "#e2e4ea"
+  ring: "#0b5fff"
+  extra:
+    - { name: "computedHeaderBg", value: "#272833" }
+    - { name: "note", value: "If nav measures dark in DevTools, likely sticky/scroll state — theme favors above-the-fold white bar." }
+
+typography:
+  headingFamily: "'Outfit', 'PolySans', system-ui, sans-serif"
+  headingWeight: "800"
+  bodyFamily: "'Outfit', 'PolySans', system-ui, sans-serif"
+  bodyWeight: "400"
+  monoFamily: "ui-monospace, monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+  scale:
+    hero: "clamp(2.5rem, 5vw, 5rem)"
+    h1: "3rem"
+    h2: "2.25rem"
+    h3: "1.5rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "uppercase"
+  letterSpacing: "normal"
+  lineHeight: "normal"
+
+spacing:
+  density: "spacious"
+  sectionGap: "6rem"
+  containerMaxWidth: "1280px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0.25rem"
+  buttonRadius: "0.25rem"
+  cardRadius: "0.5rem"
+  imageRadius: "0px"
+  shadowStyle: "subtle"
+  borderStyle: "minimal"
+
+tone:
+  overall: "modern visionary institutional"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "flat"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#0b5fff"
+      secondary: "#6b6c7e"
+      accent: "#0b5fff"
+  fontFamily:
+    heading: ["Outfit", "system-ui", "sans-serif"]
+    body: ["Outfit", "system-ui", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.25rem"
+    button: "0.25rem"
+    card: "0.5rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #0b5fff;
+    --brand-primary-foreground: #ffffff;
+    --brand-accent: #0b5fff;
+    --brand-accent-foreground: #ffffff;
+    --brand-dark: #272833;
+    --brand-dark-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #1c1c24;
+    --brand-muted: #f4f4f6;
+    --brand-muted-fg: #6b6c7e;
+    --brand-border: #e2e4ea;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #1c1c24;
+    --brand-footer-bg: #272833;
+    --brand-footer-fg: #c8cdd5;
+    --brand-heading-font: 'Outfit', system-ui, sans-serif;
+    --brand-body-font: 'Outfit', system-ui, sans-serif;
+    --brand-radius: 0.25rem;
+    --brand-button-radius: 0.25rem;
+    --brand-card-radius: 0.5rem;
+  }
+
+extraction:
+  confidence: "medium"
+  method: "playwright-full"
+  notes:
+    - "Design tokens from DOM: --primary #0b5fff, --secondary #6b6c7e (cssVariables in extracted-styles.json)."
+    - "Computed header was rgb(39,40,51) vs hero screenshot showing a white nav — header tokens follow screenshot; dark kept as --brand-dark / extra computedHeaderBg."
+    - "PolySans/Ping are served as self-hosted OTFs only — demo uses Google Font 'Outfit' as geometric sans substitute (similar tone)."
+    - "Hero: uppercase white headline over night aerial photography; carousel thumbs at bottom."
+    - "Image border-radius from computed styles: 0px (sharp imagery)."
