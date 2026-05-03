@@ -199,3 +199,44 @@ export const WithLabels = ({ fields, params, page }: LogoCloudProps): JSX.Elemen
     </div>
   );
 };
+
+/* ────────────────────────────────────────────
+   MiskLogoCarousel — horizontal snap strip (arrow-free; scroll or swipe)
+   ──────────────────────────────────────────── */
+export const MiskLogoCarousel = ({ fields, params, page }: LogoCloudProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <LogoCloudDefaultComponent />;
+  const items = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component logo-cloud', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-12 md:py-16"
+        style={{ backgroundColor: 'var(--brand-muted, #f4f4f6)' }}
+      >
+        <div className="mx-auto max-w-7xl">
+          <SectionTitle datasource={datasource} isEditing={isEditing} />
+          <div className="-mx-4 flex snap-x snap-mandatory gap-10 overflow-x-auto px-4 pb-2 md:gap-14 md:justify-center md:overflow-visible">
+            {items.map((item) => (
+              <div
+                key={item.id}
+                className="min-w-[140px] shrink-0 snap-center md:min-w-0 md:shrink"
+              >
+                <LogoWrapper item={item} isEditing={isEditing}>
+                  {(item.logoImage?.jsonValue?.value?.src || isEditing) && (
+                    <ContentSdkImage
+                      field={item.logoImage?.jsonValue}
+                      className="h-10 max-w-[140px] object-contain opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+                    />
+                  )}
+                </LogoWrapper>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

@@ -212,6 +212,67 @@ export const BackgroundImage = ({ fields, params, page }: HeroBannerProps): JSX.
 };
 
 /* ────────────────────────────────────────────
+   MiskCityHeroCarousel — full-bleed hero, uppercase headline, carousel-thumb strip (single-slide demo)
+   ──────────────────────────────────────────── */
+export const MiskCityHeroCarousel = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+
+  if (!fields) return <HeroBannerDefaultComponent />;
+
+  return (
+    <div className={cn('component hero-banner', styles)} id={RenderingIdentifier}>
+      <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden pb-20">
+        {(fields.HeroImage?.value?.src || isEditing) && (
+          <div className="absolute inset-0">
+            <ContentSdkImage
+              field={fields.HeroImage}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        )}
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 py-20 text-center text-white">
+          <div className="space-y-6">
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h1"
+                className="text-2xl font-semibold uppercase leading-tight tracking-[0.12em] sm:text-3xl md:text-4xl lg:text-5xl font-[var(--brand-heading-font,inherit)]"
+              />
+            )}
+            {(fields.Subtitle?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Subtitle}
+                className="mx-auto max-w-2xl text-base opacity-90 sm:text-lg"
+              />
+            )}
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+              <PrimaryButton field={fields.PrimaryLink} isEditing={isEditing} />
+              <SecondaryButton field={fields.SecondaryLink} isEditing={isEditing} />
+            </div>
+          </div>
+        </div>
+        <div
+          className="absolute bottom-6 left-0 right-0 z-10 flex justify-center gap-2"
+          aria-hidden
+        >
+          {Array.from({ length: 5 }).map((_, i) => (
+            <span
+              key={i}
+              className={cn(
+                'h-2.5 w-2.5 rotate-45 border border-white/80',
+                i === 0 ? 'bg-white' : 'bg-white/20'
+              )}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
    VideoBackground — poster image with video overlay indicator
    ──────────────────────────────────────────── */
 export const VideoBackground = ({ fields, params, page }: HeroBannerProps): JSX.Element => {

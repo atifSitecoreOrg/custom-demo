@@ -1,4 +1,5 @@
 import React, { JSX } from 'react';
+import type { CSSProperties } from 'react';
 import {
   Field,
   ImageField,
@@ -68,6 +69,61 @@ const SectionHeader = ({
         style={{ color: 'var(--brand-fg, #111111)' }}
       />
     )}
+  </div>
+);
+
+const WithImagesStyleCard = ({
+  card,
+  isEditing,
+  imageWrapClassName,
+  imageWrapStyle,
+  imageClassName,
+}: {
+  card: FeatureCardItemFields;
+  isEditing?: boolean;
+  imageWrapClassName?: string;
+  imageWrapStyle?: CSSProperties;
+  imageClassName?: string;
+}): JSX.Element => (
+  <div
+    className="flex flex-col overflow-hidden rounded-[var(--brand-card-radius,0.75rem)]"
+    style={{
+      backgroundColor: 'var(--brand-bg, #ffffff)',
+      border: '1px solid var(--brand-border, #e5e7eb)',
+    }}
+  >
+    {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
+      <div className={cn('overflow-hidden', imageWrapClassName)} style={imageWrapStyle}>
+        <ContentSdkImage
+          field={card.cardImage?.jsonValue}
+          className={cn('h-48 w-full object-cover', imageClassName)}
+        />
+      </div>
+    )}
+    <div className="flex flex-1 flex-col p-6">
+      {(card.cardTitle?.jsonValue?.value || isEditing) && (
+        <Text
+          field={card.cardTitle?.jsonValue}
+          tag="h3"
+          className="text-lg font-semibold font-[var(--brand-heading-font,inherit)]"
+          style={{ color: 'var(--brand-fg, #111111)' }}
+        />
+      )}
+      {(card.cardDescription?.jsonValue?.value || isEditing) && (
+        <ContentSdkRichText
+          field={card.cardDescription?.jsonValue}
+          className="mt-2 flex-1 text-sm opacity-70 font-[var(--brand-body-font,inherit)]"
+          style={{ color: 'var(--brand-fg, #111111)' }}
+        />
+      )}
+      {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+        <ContentSdkLink
+          field={card.cardLink?.jsonValue}
+          className="mt-4 inline-flex text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
+          style={{ color: 'var(--brand-primary)' }}
+        />
+      )}
+    </div>
   </div>
 );
 
@@ -225,47 +281,128 @@ export const WithImages = ({ fields, params, page }: FeatureCardsGridProps): JSX
           <SectionHeader datasource={datasource} isEditing={isEditing} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {cards.map((card) => (
-              <div
-                key={card.id}
-                className="flex flex-col overflow-hidden rounded-[var(--brand-card-radius,0.75rem)]"
-                style={{
-                  backgroundColor: 'var(--brand-bg, #ffffff)',
-                  border: '1px solid var(--brand-border, #e5e7eb)',
-                }}
-              >
-                {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
-                  <ContentSdkImage
-                    field={card.cardImage?.jsonValue}
-                    className="h-48 w-full object-cover"
-                  />
-                )}
-                <div className="flex flex-1 flex-col p-6">
-                  {(card.cardTitle?.jsonValue?.value || isEditing) && (
-                    <Text
-                      field={card.cardTitle?.jsonValue}
-                      tag="h3"
-                      className="text-lg font-semibold font-[var(--brand-heading-font,inherit)]"
-                      style={{ color: 'var(--brand-fg, #111111)' }}
-                    />
-                  )}
-                  {(card.cardDescription?.jsonValue?.value || isEditing) && (
-                    <ContentSdkRichText
-                      field={card.cardDescription?.jsonValue}
-                      className="mt-2 flex-1 text-sm opacity-70 font-[var(--brand-body-font,inherit)]"
-                      style={{ color: 'var(--brand-fg, #111111)' }}
-                    />
-                  )}
-                  {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
-                    <ContentSdkLink
-                      field={card.cardLink?.jsonValue}
-                      className="mt-4 inline-flex text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
-                      style={{ color: 'var(--brand-primary)' }}
-                    />
-                  )}
-                </div>
-              </div>
+              <WithImagesStyleCard key={card.id} card={card} isEditing={isEditing} />
             ))}
           </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   Misk City — asymmetric featured + two stacked (Spaces)
+   ──────────────────────────────────────────── */
+export const MiskSpacesAsymmetric = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+  const [first, second, third] = cards;
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-16 md:py-24"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+      >
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader datasource={datasource} isEditing={isEditing} />
+          <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-2 lg:auto-rows-fr">
+            {first && (
+              <div className="lg:col-span-2 lg:row-span-2">
+                <WithImagesStyleCard card={first} isEditing={isEditing} />
+              </div>
+            )}
+            {second && (
+              <div className="lg:col-span-1">
+                <WithImagesStyleCard card={second} isEditing={isEditing} />
+              </div>
+            )}
+            {third && (
+              <div className="lg:col-span-1">
+                <WithImagesStyleCard card={third} isEditing={isEditing} />
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   Misk City — hex-mask imagery (Leasing)
+   ──────────────────────────────────────────── */
+export const MiskLeasingHex = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+  const hexClip: CSSProperties = {
+    clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+  };
+  const hexWrap =
+    'flex h-52 w-full items-center justify-center bg-[var(--brand-muted,#f4f4f6)] p-4';
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-16 md:py-24"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+      >
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader datasource={datasource} isEditing={isEditing} />
+          <div className="grid gap-6 md:grid-cols-3">
+            {cards.map((card) => (
+              <WithImagesStyleCard
+                key={card.id}
+                card={card}
+                isEditing={isEditing}
+                imageWrapClassName={hexWrap}
+                imageWrapStyle={hexClip}
+                imageClassName="h-full max-h-44 w-auto object-contain"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   Misk City — two-up row + full-width feature (News)
+   ──────────────────────────────────────────── */
+export const MiskNewsAsymmetric = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+  const top = cards.slice(0, 2);
+  const bottom = cards[2];
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-16 md:py-24"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+      >
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader datasource={datasource} isEditing={isEditing} />
+          <div className="grid gap-6 md:grid-cols-2">
+            {top.map((card) => (
+              <WithImagesStyleCard key={card.id} card={card} isEditing={isEditing} />
+            ))}
+          </div>
+          {bottom && (
+            <div className="mt-6">
+              <WithImagesStyleCard card={bottom} isEditing={isEditing} />
+            </div>
+          )}
         </div>
       </section>
     </div>
