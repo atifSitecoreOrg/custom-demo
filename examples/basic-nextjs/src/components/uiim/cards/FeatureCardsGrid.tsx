@@ -58,7 +58,7 @@ const SectionHeader = ({
       <Text
         field={datasource.title?.jsonValue}
         tag="h2"
-        className="text-3xl font-bold tracking-tight sm:text-4xl font-[var(--brand-heading-font,inherit)]"
+        className="text-2xl font-bold uppercase tracking-[0.12em] sm:text-3xl font-[var(--brand-heading-font,inherit)]"
         style={{ color: 'var(--brand-fg, #111111)' }}
       />
     )}

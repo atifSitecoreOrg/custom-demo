@@ -22,6 +22,7 @@ import * as ProductPricingCards from 'src/components/uiim/cards/ProductPricingCa
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
 import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
 import * as CTABanner from 'src/components/uiim/banners/CTABanner';
+import * as MiskCityLogo from 'src/components/branding/MiskCityLogo';
 import * as Title from 'src/components/basic/title/Title';
 import * as RowSplitter from 'src/components/basic/row-splitter/RowSplitter';
 import * as RichText from 'src/components/basic/rich-text/RichText';
@@ -59,6 +60,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FeatureCardsGrid', { ...FeatureCardsGrid }],
   ['HeroBanner', { ...HeroBanner }],
   ['CTABanner', { ...CTABanner }],
+  ['MiskCityLogo', { ...MiskCityLogo }],
   ['Title', { ...Title }],
   ['RowSplitter', { ...RowSplitter }],
   ['RichText', { ...RichText }],

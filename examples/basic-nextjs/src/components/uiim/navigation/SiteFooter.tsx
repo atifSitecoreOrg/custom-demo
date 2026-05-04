@@ -1,7 +1,7 @@
 import React, { JSX } from 'react';
-import Link from 'next/link';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { MiskCityLogo } from '@/components/branding/MiskCityLogo';
 
 type SiteFooterProps = ComponentProps;
 
@@ -15,28 +15,18 @@ const SiteFooterDefaultComponent = (): JSX.Element => (
 
 const LINK_COLUMNS = [
   {
-    title: 'Products',
-    links: ['Overview', 'Features', 'Pricing', 'Integrations'],
+    title: 'Discover',
+    links: ['About the City', 'Vision', 'Master plan'],
   },
   {
-    title: 'Company',
-    links: ['About', 'Careers', 'Blog', 'Press'],
+    title: 'Visit',
+    links: ['Visitors Center', 'Events', 'The City Hub'],
   },
   {
-    title: 'Support',
-    links: ['Help Center', 'Contact', 'Documentation', 'Status'],
+    title: 'Lease',
+    links: ['Offices', 'Retail', 'Residence'],
   },
 ];
-
-const Logo = () => (
-  <Link
-    href="/"
-    className="text-xl font-bold tracking-tight"
-    style={{ color: 'var(--brand-footer-fg, #ffffff)' }}
-  >
-    <span style={{ color: 'var(--brand-primary)' }}>Brand</span>Logo
-  </Link>
-);
 
 const SocialIcons = () => (
   <div className="flex items-center gap-4">
@@ -63,7 +53,7 @@ const Copyright = () => (
     className="text-sm opacity-50 font-[var(--brand-body-font,inherit)]"
     style={{ color: 'var(--brand-footer-fg, #ffffff)' }}
   >
-    &copy; {new Date().getFullYear()} BrandName. All rights reserved.
+    &copy; {new Date().getFullYear()} Mohammed Bin Salman Nonprofit City. All rights reserved.
   </p>
 );
 
@@ -89,11 +79,11 @@ export const Default = (props: SiteFooterProps): JSX.Element => {
           <div className="grid gap-8 md:grid-cols-5">
             {/* Logo + description */}
             <div className="md:col-span-2 space-y-4">
-              <Logo />
+              <MiskCityLogo variant="onDark" href="/" />
               <p
-                className="max-w-xs text-sm opacity-60 font-[var(--brand-body-font,inherit)]"
+                className="max-w-sm text-sm opacity-60 font-[var(--brand-body-font,inherit)]"
               >
-                Building the future of digital experiences. Trusted by teams worldwide.
+                A visionary home for young, dynamic, creative people — in the heart of Riyadh.
               </p>
               <SocialIcons />
             </div>
@@ -158,9 +148,9 @@ export const Minimal = (props: SiteFooterProps): JSX.Element => {
         }}
       >
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-8 sm:flex-row sm:justify-between sm:px-6">
-          <Logo />
+          <MiskCityLogo variant="onDark" size="sm" href="/" />
           <nav className="flex flex-wrap items-center gap-6 text-sm opacity-60">
-            {['About', 'Products', 'Blog', 'Contact', 'Privacy'].map((link) => (
+            {['About', 'Visit', 'Lease', 'News', 'Contact'].map((link) => (
               <a
                 key={link}
                 href="#"
@@ -214,10 +204,10 @@ export const MegaFooter = (props: SiteFooterProps): JSX.Element => {
           <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-8 sm:flex-row sm:justify-between sm:px-6">
             <div>
               <h3 className="text-lg font-semibold font-[var(--brand-heading-font,inherit)]">
-                Subscribe to our newsletter
+                Stay connected to Misk City
               </h3>
               <p className="mt-1 text-sm opacity-60 font-[var(--brand-body-font,inherit)]">
-                Get the latest updates delivered to your inbox.
+                News and updates from Mohammed Bin Salman Nonprofit City.
               </p>
             </div>
             <div className="flex w-full max-w-md gap-2">
@@ -249,9 +239,9 @@ export const MegaFooter = (props: SiteFooterProps): JSX.Element => {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
           <div className="grid gap-8 md:grid-cols-6">
             <div className="md:col-span-2 space-y-4">
-              <Logo />
-              <p className="max-w-xs text-sm opacity-60 font-[var(--brand-body-font,inherit)]">
-                Building the future of digital experiences. Trusted by teams worldwide.
+              <MiskCityLogo variant="onDark" href="/" />
+              <p className="max-w-sm text-sm opacity-60 font-[var(--brand-body-font,inherit)]">
+                A visionary home for young, dynamic, creative people — in the heart of Riyadh.
               </p>
               <SocialIcons />
             </div>

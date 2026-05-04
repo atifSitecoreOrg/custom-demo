@@ -21,9 +21,10 @@
    An unlayered :root block above @layer base ALWAYS wins the cascade.
    =================================================================== */
 
-/* Misk City — Phase 4 (from docs/ai/themes/misk-city.theme.yaml) */
+/* Misk City — aligned with live site mark + typography (Outfit) */
 :root {
-  --brand-primary: #0b5fff;
+  /* Primary aligns with official geometric mark navy (#233FAD) */
+  --brand-primary: #233fad;
   --brand-primary-foreground: #ffffff;
   --brand-accent: #0b5fff;
   --brand-accent-foreground: #ffffff;
@@ -53,7 +54,8 @@
     --card-foreground: 228 62% 18%;
     --popover: 0 0% 100%;
     --popover-foreground: 228 62% 18%;
-    --primary: 228 62% 24%;
+    /* Misk City primary (~#233fad) — keeps shadcn buttons/links aligned with brand */
+    --primary: 226 67% 41%;
     --primary-foreground: 0 0% 100%;
     --secondary: 195 50% 94%;
     --secondary-foreground: 228 62% 18%;
@@ -65,7 +67,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 228 62% 24%;
+    --ring: 226 67% 41%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -115,8 +117,12 @@
   * {
     @apply border-border;
   }
+  html {
+    font-family: var(--brand-body-font, 'Outfit', system-ui, sans-serif);
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--brand-body-font, 'Outfit', system-ui, sans-serif);
   }
 }
 
