@@ -27,7 +27,7 @@ components:
 
   - id: navigation-header
     name: "Navigation Header"
-    kind: context-only
+    kind: list
     category: Navigation
     priority: 2
     variants: [Default, Transparent, Minimal]
@@ -42,7 +42,40 @@ components:
       Transparent: "transparent overlay on hero, usually with light text"
       Minimal: "logo and hamburger icon only"
     themeMapping: "tone.navStyle → Default=solid-bar, Transparent=transparent-overlay, Minimal=minimal"
-    fieldCount: 0  # context-only
+    parentFields:
+      - { name: "BrandLogo", type: "Image", purpose: "site logo image" }
+      - { name: "CtaLabel", type: "Single-Line Text", purpose: "CTA button text" }
+      - { name: "CtaLink", type: "General Link", purpose: "CTA button link" }
+    childFields:
+      - { name: "LinkText", type: "Single-Line Text", purpose: "nav link label" }
+      - { name: "LinkUrl", type: "General Link", purpose: "nav link URL" }
+    fieldCount: 5  # parent 3 + child 2
+
+  - id: hero-banner-carousel
+    name: "Hero Banner Carousel"
+    kind: list
+    category: Banners
+    priority: 2.5  # just before static hero
+    variants: [Default, WithThumbnails]
+    visualKeywords:
+      - hero carousel
+      - hero slider
+      - rotating banners
+      - slideshow hero
+      - multiple hero slides
+      - auto-playing banner
+    variantSelectionHints:
+      Default: "full-width slides with dot indicators and arrows, auto-play"
+      WithThumbnails: "thumbnail strip below main slide for navigation"
+    parentFields:
+      - { name: "Title", type: "Single-Line Text", purpose: "carousel aria label" }
+    childFields:
+      - { name: "SlideTitle", type: "Single-Line Text", purpose: "slide headline" }
+      - { name: "SlideSubtitle", type: "Rich Text", purpose: "slide subtext" }
+      - { name: "SlideImage", type: "Image", purpose: "slide background image" }
+      - { name: "PrimaryLink", type: "General Link", purpose: "primary CTA" }
+      - { name: "SecondaryLink", type: "General Link", purpose: "secondary CTA" }
+    fieldCount: 6  # parent 1 + child 5
 
   - id: hero-banner
     name: "Hero Banner"
@@ -278,7 +311,7 @@ components:
 
   - id: footer
     name: "Footer"
-    kind: context-only
+    kind: datasource
     category: Navigation
     priority: 99  # always last
     variants: [Default, Minimal, MegaFooter]
@@ -292,7 +325,9 @@ components:
       Default: "multi-column links, logo, social icons"
       Minimal: "single row with essential links"
       MegaFooter: "extensive footer with newsletter, multiple sections"
-    fieldCount: 0  # context-only
+    parentFields:
+      - { name: "BrandLogo", type: "Image", purpose: "site logo for footer (inverted)" }
+    fieldCount: 1
 
   - id: newsletter-signup
     name: "Newsletter / Email Signup"

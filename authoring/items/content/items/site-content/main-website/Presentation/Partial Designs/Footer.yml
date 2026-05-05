@@ -14,7 +14,7 @@ SharedFields:
     <image mediaid="{D3DBAE27-29E3-4690-BC4F-CA3949AE8999}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "3d22e9cf-d76a-4237-8131-880a5fb9c004"
+  Value: "241fb8c3-fc99-4c9b-bf21-1e01b1453547"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -24,6 +24,7 @@ SharedFields:
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
           uid="{DFD74E57-3439-425B-8730-C43566BE5238}"
+          s:ds="f8fdfefe-119a-49de-9eae-36849c17b9d3"
           s:id="{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}"
           s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B143CFE84-1E77-4961-975C-38564DC43DB9%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
           s:ph="headless-footer" />
@@ -56,11 +57,11 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "3ca48ec2-3515-41b7-8f44-f38e63c53019"
+      Value: "6d3f4580-adf5-40ff-85c7-f035da1d53bb"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\federico.mujica@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260411T195045Z
+      Value: 20260505T173456Z

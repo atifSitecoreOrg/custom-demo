@@ -20,6 +20,7 @@ import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight'
 import * as FAQAccordion from 'src/components/uiim/content/FAQAccordion';
 import * as ProductPricingCards from 'src/components/uiim/cards/ProductPricingCards';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
+import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
 import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
 import * as CTABanner from 'src/components/uiim/banners/CTABanner';
 import * as Title from 'src/components/basic/title/Title';
@@ -57,6 +58,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FAQAccordion', { ...FAQAccordion }],
   ['ProductPricingCards', { ...ProductPricingCards }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid }],
+  ['HeroBannerCarousel', { ...HeroBannerCarousel, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner }],
   ['CTABanner', { ...CTABanner }],
   ['Title', { ...Title }],

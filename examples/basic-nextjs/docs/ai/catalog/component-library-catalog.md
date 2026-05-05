@@ -38,22 +38,51 @@ and optional link. Often dismissible.
 
 ## 2. Navigation Header
 
-The main site header with logo, menu items, and CTA button(s). This is typically a
-context-only component reading from route/site settings, but may have rendering params.
+The main site header with brand logo, authored navigation links, and CTA button.
+This is a list component — the parent datasource holds the logo and CTA, child items
+are individual navigation links.
 
-- **Kind:** context-only
+- **Kind:** list (parent = header data, children = nav links)
 - **Category:** Navigation
 - **Variants:**
   - `Default` — solid background bar with inline links
   - `Transparent` — transparent overlay on hero, text changes on scroll
-  - `Minimal` — logo + hamburger only (mobile-first)
-- **Fields (route/rendering params):**
-  - Logo comes from site settings
-  - Navigation items from Sitecore navigation structure
-  - `CtaLabel` (rendering param, Single-Line Text)
-  - `CtaLink` (rendering param, General Link)
+  - `Minimal` — logo only, centered
+- **Fields (parent — NavigationHeaderData):**
+  - `BrandLogo` (Image) — site logo
+  - `CtaLabel` (Single-Line Text) — CTA button text
+  - `CtaLink` (General Link) — CTA button link
+- **Fields (child — NavigationLink):**
+  - `LinkText` (Single-Line Text) — nav link label
+  - `LinkUrl` (General Link) — nav link URL
 - **Common on:** all sites
 - **Sage example:** Black bar with Sage logo, nav links, "Acceso Clientes/Partners" CTA
+- **Demo builder note:** The Navigation Contents Resolver must be removed from this rendering.
+  Nav links are authored as child datasource items, not auto-generated from the site tree.
+
+---
+
+## 2.5. Hero Banner Carousel
+
+A rotating hero section with multiple slides, each with its own headline, subtext,
+background image, and CTAs. Auto-plays with dot indicators and prev/next arrows.
+
+- **Kind:** list (parent = carousel, children = slides)
+- **Category:** Banners
+- **Variants:**
+  - `Default` — full-width slides with dot indicators, arrows, auto-play (5s)
+  - `WithThumbnails` — thumbnail strip below the main slide for navigation
+- **Fields (parent):**
+  - `Title` (Single-Line Text) — optional, used as aria-label
+- **Fields (child — per slide):**
+  - `SlideTitle` (Single-Line Text)
+  - `SlideSubtitle` (Rich Text)
+  - `SlideImage` (Image) — full-bleed background
+  - `PrimaryLink` (General Link)
+  - `SecondaryLink` (General Link)
+- **Common on:** retail, hospitality, automotive, real estate — sites with multiple hero messages
+- **When to use instead of Hero Banner:** when the client homepage has a rotating/sliding hero
+  with multiple panels, or when there are 2+ distinct hero messages above the fold
 
 ---
 
@@ -339,21 +368,22 @@ heading like "Trusted by" or "Our partners".
 
 ## 15. Footer
 
-The site footer with logo, link columns, social icons, and legal text.
-Usually context-only, reading from site structure.
+The site footer with brand logo, link columns, social icons, and legal text.
+Uses a datasource for the BrandLogo image (rendered with inverted colors for dark backgrounds).
+Link columns and social icons are currently hardcoded placeholders.
 
-- **Kind:** context-only
+- **Kind:** datasource
 - **Category:** Navigation
 - **Variants:**
   - `Default` — multi-column links with logo and social icons
   - `Minimal` — single row with essential links
   - `MegaFooter` — extensive footer with newsletter signup, multiple sections
-- **Fields (route/rendering params):**
-  - Footer content typically comes from site-level data sources
-  - `CopyrightText` (rendering param)
-  - `SocialLinks` (rendering param or datasource)
+- **Fields (SiteFooterData datasource):**
+  - `BrandLogo` (Image) — site logo, displayed with CSS invert for dark footer
 - **Common on:** all sites
 - **Sage example:** Sage logo, link columns (Empresa, Productos, Soporte), social icons, legal links
+- **Demo builder note:** The BrandLogo is set on the SiteFooter datasource item, separate
+  from the NavigationHeader datasource. Both need the logo image set during demo build.
 
 ---
 

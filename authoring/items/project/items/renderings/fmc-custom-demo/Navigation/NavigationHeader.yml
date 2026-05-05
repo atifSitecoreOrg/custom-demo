@@ -7,17 +7,50 @@ SharedFields:
 - ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
   Hint: componentName
   Value: NavigationHeader
+- ID: "069a8361-b1cd-437c-8c32-a3be78941446"
+  Hint: Placeholders
+  Value: 
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query NavigationHeaderQuery($datasource: String!, $language: String!) {
+      datasource: item(path: $datasource, language: $language) {
+        brandLogo: field(name: "BrandLogo") { jsonValue }
+        ctaLabel: field(name: "CtaLabel") { jsonValue }
+        ctaLink: field(name: "CtaLink") { jsonValue }
+        children {
+          results {
+            id
+            linkText: field(name: "LinkText") { jsonValue }
+            linkUrl: field(name: "LinkUrl") { jsonValue }
+          }
+        }
+      }
+    }
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/NavigationHeaderData"
 - ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
   Hint: Parameters Template
   Value: "{2072AD97-A552-49A4-A417-2C8F40C52F9A}"
 - ID: "b0b15510-b138-470e-8f33-8da2e228aafe"
   Hint: Rendering Contents Resolver
-  Value: "{B28B1B20-953B-4BFF-925A-9AE48CA00CDC}"
+  Value: 
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:$site/*[@@name='Data']/*[@@templatename='NavigationHeaderData Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='NavigationHeaderData Folder']"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "63b3934c-0ef0-4e3e-9c05-3b9453878630"
+  Value: "7d900357-f1c4-439c-b8d4-6cef1f88fc0d"
+- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
+  Hint: OtherProperties
+  Value: IsRenderingsWithDynamicPlaceholders=true
 Languages:
 - Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "ebbef005-3921-4442-acd6-17ad07085e4c"
   Versions:
   - Version: 1
     Fields:
@@ -34,11 +67,11 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ed5e6481-cb32-4ec2-a018-55d8dbe1a968"
+      Value: "21f25d80-0163-4c1d-bee9-b0a2d675bc97"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\federico.mujica@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260325T121511Z
+      Value: 20260505T202011Z

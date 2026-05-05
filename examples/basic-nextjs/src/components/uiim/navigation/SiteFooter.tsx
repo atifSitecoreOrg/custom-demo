@@ -1,9 +1,32 @@
 import React, { JSX } from 'react';
+import {
+  ImageField,
+  NextImage as ContentSdkImage,
+} from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 
-type SiteFooterProps = ComponentProps;
+type SiteFooterProps = ComponentProps & {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  fields: any;
+};
+
+function getBrandLogo(props: SiteFooterProps): ImageField | undefined {
+  const fields = props.fields;
+  // Path 1: ComponentQuery → fields.data.datasource
+  const fromFields = fields?.data?.datasource?.brandLogo?.jsonValue;
+  if (fromFields) return fromFields;
+  // Path 2: rendering.fields.data.datasource
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const rendering = props.rendering as any;
+  const fromRendering = rendering?.fields?.data?.datasource?.brandLogo?.jsonValue;
+  if (fromRendering) return fromRendering;
+  // Path 3: Direct datasource field access
+  const fromDirect = rendering?.fields?.BrandLogo;
+  if (fromDirect?.value?.src) return fromDirect;
+  return undefined;
+}
 
 const SiteFooterDefaultComponent = (): JSX.Element => (
   <div className="component site-footer">
@@ -28,15 +51,27 @@ const LINK_COLUMNS = [
   },
 ];
 
-const Logo = () => (
-  <Link
-    href="/"
-    className="text-xl font-bold tracking-tight"
-    style={{ color: 'var(--brand-footer-fg, #ffffff)' }}
-  >
-    <span style={{ color: 'var(--brand-primary)' }}>Brand</span>Logo
-  </Link>
-);
+const Logo = ({ brandLogo }: { brandLogo?: ImageField }) => {
+  const hasImage = brandLogo?.value?.src;
+  return (
+    <Link
+      href="/"
+      className="flex items-center text-xl font-bold tracking-tight"
+      style={{ color: 'var(--brand-footer-fg, #ffffff)' }}
+    >
+      {hasImage ? (
+        <ContentSdkImage
+          field={brandLogo}
+          className="h-8 w-auto object-contain brightness-0 invert sm:h-10"
+        />
+      ) : (
+        <>
+          <span style={{ color: 'var(--brand-primary)' }}>Brand</span>Logo
+        </>
+      )}
+    </Link>
+  );
+};
 
 const SocialIcons = () => (
   <div className="flex items-center gap-4">
@@ -73,6 +108,7 @@ const Copyright = () => (
 export const Default = (props: SiteFooterProps): JSX.Element => {
   const { params } = props;
   const { styles, RenderingIdentifier } = params;
+  const brandLogo = getBrandLogo(props);
 
   if (!params) return <SiteFooterDefaultComponent />;
 
@@ -89,7 +125,7 @@ export const Default = (props: SiteFooterProps): JSX.Element => {
           <div className="grid gap-8 md:grid-cols-5">
             {/* Logo + description */}
             <div className="md:col-span-2 space-y-4">
-              <Logo />
+              <Logo brandLogo={brandLogo} />
               <p
                 className="max-w-xs text-sm opacity-60 font-[var(--brand-body-font,inherit)]"
               >
@@ -145,6 +181,7 @@ export const Default = (props: SiteFooterProps): JSX.Element => {
 export const Minimal = (props: SiteFooterProps): JSX.Element => {
   const { params } = props;
   const { styles, RenderingIdentifier } = params;
+  const brandLogo = getBrandLogo(props);
 
   if (!params) return <SiteFooterDefaultComponent />;
 
@@ -158,7 +195,7 @@ export const Minimal = (props: SiteFooterProps): JSX.Element => {
         }}
       >
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-8 sm:flex-row sm:justify-between sm:px-6">
-          <Logo />
+          <Logo brandLogo={brandLogo} />
           <nav className="flex flex-wrap items-center gap-6 text-sm opacity-60">
             {['About', 'Products', 'Blog', 'Contact', 'Privacy'].map((link) => (
               <a
@@ -183,6 +220,7 @@ export const Minimal = (props: SiteFooterProps): JSX.Element => {
 export const MegaFooter = (props: SiteFooterProps): JSX.Element => {
   const { params } = props;
   const { styles, RenderingIdentifier } = params;
+  const brandLogo = getBrandLogo(props);
 
   if (!params) return <SiteFooterDefaultComponent />;
 
@@ -249,7 +287,7 @@ export const MegaFooter = (props: SiteFooterProps): JSX.Element => {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
           <div className="grid gap-8 md:grid-cols-6">
             <div className="md:col-span-2 space-y-4">
-              <Logo />
+              <Logo brandLogo={brandLogo} />
               <p className="max-w-xs text-sm opacity-60 font-[var(--brand-body-font,inherit)]">
                 Building the future of digital experiences. Trusted by teams worldwide.
               </p>

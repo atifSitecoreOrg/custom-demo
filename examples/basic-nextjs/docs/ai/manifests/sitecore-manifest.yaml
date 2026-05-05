@@ -15,9 +15,9 @@ project:
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}"
-  lastUpdatedAt: "2026-03-25T22:00:00Z"
-  renderingCount: 22
+  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}"
+  lastUpdatedAt: "2026-05-05T12:00:00Z"
+  renderingCount: 23
   warning: "MCP cannot read this field — value may be stale if modified outside this session"
 
 components:
@@ -126,35 +126,59 @@ components:
     notes: []
 
   - name: "NavigationHeader"
-    kind: "context-only"
+    kind: "list"
     category: "Navigation"
     status: "complete"
     createdAt: "2026-03-25T12:30:00Z"
-    updatedAt: "2026-03-25T14:00:00Z"
+    updatedAt: "2026-05-05T16:00:00Z"
 
     react:
       filePath: "src/components/uiim/navigation/NavigationHeader.tsx"
       componentMapKey: "NavigationHeader"
-      dataStrategy: "Navigation Contents Resolver (fields prop)"
+      dataStrategy: "ComponentQuery (BrandLogo + CtaLabel + CtaLink from datasource, NavigationLink children)"
       variants:
         - "Default"
         - "Transparent"
         - "Minimal"
 
-    pageTemplateChanges:
-      templatePath: "/sitecore/templates/Project/main/Page"
-      templateId: "{CEBD0936-6B37-42B5-B169-369BB1C3C06A}"
-      addedSection: "Navigation"
-      addedFields:
-        - { name: "ShowInNavigation", type: "Checkbox", sectionId: "{4D61754D-44D8-4968-B4B7-D8E3A36272ED}" }
-      standardValuesUpdated: true
-      pagesUpdated:
-        - { name: "Home", itemId: "{E2124310-F817-4644-8671-BFF8E72B66D7}", ShowInNavigation: "1", NavigationTitle: "Home" }
-        - { name: "About", itemId: "{4C60B186-2F64-4502-A9FB-892204F3216D}", ShowInNavigation: "1", NavigationTitle: "About" }
-
     templates:
-      datasource: null
-      folder: null
+      parent:
+        name: "NavigationHeaderData"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/NavigationHeaderData"
+        itemId: "{9B720C4E-E7E7-4C12-BCA1-E92270B476CC}"
+        sectionName: "Data"
+        fields:
+          - { name: "BrandLogo", type: "Image" }
+          - { name: "CtaLabel", type: "Single-Line Text" }
+          - { name: "CtaLink", type: "General Link" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{65112E1D-30AB-4BDF-9EA3-A74AD7ADB657}"
+          linked: true
+          masters: ["NavigationLink"]
+        horizonDatasourceGrouping: true
+
+      child:
+        name: "NavigationLink"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/NavigationLink"
+        itemId: "{626C308F-5897-48F3-BF83-AEFB503CB1E4}"
+        sectionName: "Data"
+        fields:
+          - { name: "LinkText", type: "Single-Line Text" }
+          - { name: "LinkUrl", type: "General Link" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{A47220D9-9448-484B-85F7-571141E21375}"
+          linked: true
+
+      folder:
+        name: "NavigationHeaderData Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/NavigationHeaderData Folder"
+        itemId: "{C26817C1-89F4-435A-B3CC-5CB20692886E}"
+        standardValues:
+          itemId: "{59F8657F-CEEB-4B18-BABB-3787A053E193}"
+          linked: true
+          masters: ["NavigationHeaderData"]
 
       renderingParams:
         name: "NavigationHeader"
@@ -162,19 +186,29 @@ components:
         itemId: "{2072AD97-A552-49A4-A417-2C8F40C52F9A}"
         baseTemplatesSet: true
 
-    datasourceFolder: null
+    datasourceFolder:
+      name: "NavigationHeaders"
+      path: "/sitecore/content/main/main-website/Data/NavigationHeaders"
+      itemId: "{A1055559-2113-4BAF-B3C3-05C38404DED2}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "Main Navigation"
+        itemId: "{8254EB2C-9F05-4082-8CB7-48A968EA6EF1}"
+      exampleChildren:
+        - { name: "Home", itemId: "{F244D21A-540D-4451-B3E0-7BDEDCB00DC3}" }
+        - { name: "About", itemId: "{C3B693C8-0135-4B86-BE16-7823180171DD}" }
 
     rendering:
       name: "NavigationHeader"
       path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Navigation/NavigationHeader"
       itemId: "{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}"
       componentName: "NavigationHeader"
-      datasourceTemplatePath: ""
-      datasourceLocationQuery: ""
+      datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/NavigationHeaderData"
+      datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='NavigationHeaderData Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='NavigationHeaderData Folder']"
       parametersTemplateId: "{2072AD97-A552-49A4-A417-2C8F40C52F9A}"
-      componentQuery: ""
+      componentQuery: "query NavigationHeaderQuery($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { brandLogo: field(name: \"BrandLogo\") { jsonValue } ctaLabel: field(name: \"CtaLabel\") { jsonValue } ctaLink: field(name: \"CtaLink\") { jsonValue } children { results { id linkText: field(name: \"LinkText\") { jsonValue } linkUrl: field(name: \"LinkUrl\") { jsonValue } } } } }"
       addFieldEditorButton: "1"
-      renderingContentsResolver: "Navigation Contents Resolver"
+      renderingContentsResolver: ""
       registeredInAvailableRenderings: true
 
     headlessVariants:
@@ -186,32 +220,26 @@ components:
         - { name: "Minimal", itemId: "{608E0EC7-E2C6-4093-A1A1-3962FF17885A}" }
 
     verification:
-      checkedAt: "2026-03-25T12:30:00Z"
+      checkedAt: "2026-05-05T16:00:00Z"
       passed:
-        - "No datasource template created (context-only)"
-        - "No datasource folder created"
-        - "No ComponentQuery used"
-        - "Rendering Parameters template created with 4 base templates"
-        - "Rendering created as JSON Rendering"
-        - "Component Name is PascalCase matching TSX filename"
-        - "Parameters Template set to GUID"
-        - "AddFieldEditorButton set to 1"
-        - "Rendering registered in Available Renderings (appended)"
-        - "Headless Variants container created"
-        - "Default, Transparent, Minimal Variant Definitions created"
-        - "React file uses Navigation Contents Resolver fields"
-        - "Component map updated with componentType client"
-        - "Server module removed (no getComponentServerProps)"
-        - "ShowInNavigation checkbox added to Page template"
-        - "Page template SV updated with ShowInNavigation default = 1"
-        - "Home and About pages updated with ShowInNavigation = 1"
+        - "Parent template with base templates + HorizonDatasourceGrouping"
+        - "Child template with base templates"
+        - "All fields with correct Types"
+        - "SVs created and linked"
+        - "Parent __Masters → NavigationLink"
+        - "Folder template with __Masters → NavigationHeaderData"
+        - "Datasource folder under /Data"
+        - "Example parent + 2 child items"
+        - "Rendering with ComponentQuery (generic field access)"
+        - "React rewritten as list component"
       failed: []
       pendingManual:
-        - "Renderings on Available Renderings (silent-write)"
-        - "Rendering Contents Resolver must be set to Navigation Contents Resolver in Content Editor"
-        - "Data Source on component instance must point to Home item for nav root"
+        - "Remove Navigation Contents Resolver from rendering in Content Editor"
+        - "Silent-write fields (Datasource Template, Location, __Masters, insert options)"
+        - "Assign Main Navigation datasource to NavigationHeader in Header partial design"
 
-    notes: []
+    notes:
+      - "2026-05-05: Converted from context-only (Navigation Contents Resolver) to list datasource component. Nav links now authored as child items instead of auto-generated from site tree."
 
   - name: "HeroBanner"
     kind: "simple"
@@ -1461,23 +1489,42 @@ components:
     notes: []
 
   - name: "SiteFooter"
-    kind: "context-only"
+    kind: "context-only+datasource"
     category: "Navigation"
     status: "complete"
     createdAt: "2026-03-25T20:00:00Z"
-    updatedAt: "2026-03-25T20:00:00Z"
+    updatedAt: "2026-05-05T13:00:00Z"
 
     react:
       filePath: "src/components/uiim/navigation/SiteFooter.tsx"
       componentMapKey: "SiteFooter"
+      dataStrategy: "ComponentQuery (BrandLogo from datasource)"
       variants:
         - "Default"
         - "Minimal"
         - "MegaFooter"
 
     templates:
-      datasource: null
-      folder: null
+      datasource:
+        name: "SiteFooterData"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/SiteFooterData"
+        itemId: "{98B34BFF-0D74-4798-B2D8-CB52C19F7C92}"
+        sectionName: "Data"
+        fields:
+          - { name: "BrandLogo", type: "Image" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{CF55F07A-22B3-4514-B099-F390A90E187C}"
+          linked: true
+
+      folder:
+        name: "SiteFooterData Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/SiteFooterData Folder"
+        itemId: "{08DFAE03-D93A-4882-ADC4-2AB81ECEBCA1}"
+        standardValues:
+          itemId: "{FA1F6EE1-6678-441A-820E-0F6136B64EE2}"
+          linked: true
+          masters: ["SiteFooterData"]
 
       renderingParams:
         name: "SiteFooter"
@@ -1485,17 +1532,24 @@ components:
         itemId: "{E7E0DD7B-2039-4895-970B-20BB8FCD8C89}"
         baseTemplatesSet: true
 
-    datasourceFolder: null
+    datasourceFolder:
+      name: "SiteFooters"
+      path: "/sitecore/content/main/main-website/Data/SiteFooters"
+      itemId: "{79F4A73C-71D2-4959-8FDE-C7D9C8748990}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "Site Footer"
+        itemId: "{F8FDFEFE-119A-49DE-9EAE-36849C17B9D3}"
 
     rendering:
       name: "SiteFooter"
       path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Navigation/SiteFooter"
       itemId: "{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}"
       componentName: "SiteFooter"
-      datasourceTemplatePath: ""
-      datasourceLocationQuery: ""
+      datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/SiteFooterData"
+      datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='SiteFooterData Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='SiteFooterData Folder']"
       parametersTemplateId: "{E7E0DD7B-2039-4895-970B-20BB8FCD8C89}"
-      componentQuery: ""
+      componentQuery: "query SiteFooterData($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { brandLogo: field(name: \"BrandLogo\") { jsonValue } } }"
       addFieldEditorButton: "1"
       registeredInAvailableRenderings: true
 
@@ -1922,6 +1976,107 @@ components:
       failed: []
       pendingManual:
         - "Silent-write fields"
+
+    notes: []
+
+  - name: "HeroBannerCarousel"
+    kind: "list"
+    category: "Banners"
+    status: "complete"
+    createdAt: "2026-05-05T12:00:00Z"
+    updatedAt: "2026-05-05T12:00:00Z"
+
+    react:
+      filePath: "src/components/uiim/banners/HeroBannerCarousel.tsx"
+      componentMapKey: "HeroBannerCarousel"
+      variants:
+        - "Default"
+        - "WithThumbnails"
+
+    templates:
+      parent:
+        name: "HeroBannerCarousel"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Banners/HeroBannerCarousel"
+        itemId: "{91715B4F-D2EF-4748-AB3A-3653739F4C19}"
+        sectionName: "Data"
+        fields:
+          - { name: "Title", type: "Single-Line Text" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{7C6C2C5E-8273-4399-8B7E-5527EC1A4259}"
+          linked: true
+          masters: ["HeroBannerCarouselSlide"]
+        horizonDatasourceGrouping: true
+
+      child:
+        name: "HeroBannerCarouselSlide"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Banners/HeroBannerCarouselSlide"
+        itemId: "{4828B260-DC19-4C4F-BF0E-1DD5AE47EDCC}"
+        sectionName: "Data"
+        fields:
+          - { name: "SlideTitle", type: "Single-Line Text" }
+          - { name: "SlideSubtitle", type: "Rich Text" }
+          - { name: "SlideImage", type: "Image" }
+          - { name: "PrimaryLink", type: "General Link" }
+          - { name: "SecondaryLink", type: "General Link" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{192ECD6A-4F0A-4BFB-AAF5-8E865F55B945}"
+          linked: true
+
+      folder:
+        name: "HeroBannerCarousel Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Banners/HeroBannerCarousel Folder"
+        itemId: "{40F156B6-8298-4EDD-AE19-CCB4030CA11E}"
+        standardValues:
+          itemId: "{D781C7A3-99D1-4EBB-8D75-969E1468D83C}"
+          linked: true
+          masters: ["HeroBannerCarousel"]
+
+      renderingParams:
+        name: "HeroBannerCarousel"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Banners/HeroBannerCarousel"
+        itemId: "{F159AA7F-9083-4F44-90C7-97F13AC725CC}"
+        baseTemplatesSet: true
+
+    datasourceFolder:
+      name: "HeroBannerCarousels"
+      path: "/sitecore/content/main/main-website/Data/HeroBannerCarousels"
+      itemId: "{E4703202-A87E-4387-987C-6B69E67ACADC}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "Hero Banner Carousel"
+        itemId: "{DF14FC47-D277-434F-B8FF-3CDBBBEDA1DE}"
+      exampleChildren:
+        - { name: "Slide 1", itemId: "{F70268F3-F6BE-44A8-9CA5-B5BD36003115}" }
+        - { name: "Slide 2", itemId: "{53464312-21AC-4ED5-851D-8F1433F07EFC}" }
+
+    rendering:
+      name: "HeroBannerCarousel"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Banners/HeroBannerCarousel"
+      itemId: "{4C5C1FA5-C077-491D-9686-40D0F68EF03E}"
+      componentName: "HeroBannerCarousel"
+      datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Banners/HeroBannerCarousel"
+      datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='HeroBannerCarousel Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='HeroBannerCarousel Folder']"
+      parametersTemplateId: "{F159AA7F-9083-4F44-90C7-97F13AC725CC}"
+      componentQuery: "query HeroBannerCarousel($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { title: field(name: \"Title\") { jsonValue } children { results { id slideTitle: field(name: \"SlideTitle\") { jsonValue } slideSubtitle: field(name: \"SlideSubtitle\") { jsonValue } slideImage: field(name: \"SlideImage\") { jsonValue } primaryLink: field(name: \"PrimaryLink\") { jsonValue } secondaryLink: field(name: \"SecondaryLink\") { jsonValue } } } } }"
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+
+    verification:
+      passed:
+        - "Parent template created with base templates"
+        - "Child template created with base templates"
+        - "Parent + child sections + fields created with explicit Type"
+        - "Parent + child __Standard Values created and linked"
+        - "Folder template + SV created"
+        - "Datasource folder under /Data"
+        - "Example parent + 2 child items created"
+        - "Rendering created as Json Rendering with ComponentQuery"
+        - "Rendering registered in Available Renderings"
+      pendingManual:
+        - "Silent-write fields (__Masters on parent SV, folder SV, folder instance insert options)"
+        - "Available Renderings (silent-write)"
 
     notes: []
 
