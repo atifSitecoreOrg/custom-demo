@@ -292,6 +292,7 @@ components:
         - { name: "BackgroundImage", itemId: "{948210B2-B8AF-47C1-A04F-E220071C0A63}" }
         - { name: "VideoBackground", itemId: "{96586509-EBD7-4642-A127-0C65AEE1BD99}" }
         - { name: "Minimal", itemId: "{FA46BF9A-3783-4615-B4E6-5F5B33A78B48}" }
+        - { name: "MiskCityHeroCarousel", itemId: "{184F2A0C-1031-4EB0-925A-4EDCB94D253E}", template: "Variant Definition", source: "MCP user-marketer 2026-05-04" }
 
     verification:
       checkedAt: "2026-03-25T13:30:00Z"
@@ -307,8 +308,8 @@ components:
         - "Datasource folder created with insert options"
         - "Example datasource item created"
         - "Rendering registered in Available Renderings (appended)"
-        - "All 5 Headless Variant Definitions created"
-        - "React file created with 5 variants"
+        - "All 6 Headless Variant Definitions (incl. MiskCityHeroCarousel, MCP 2026-05-04)"
+        - "React file created with 6 variants"
         - "Component map updated"
       failed: []
       pendingManual:
@@ -1227,6 +1228,9 @@ components:
         - { name: "Default", itemId: "{495EF058-D306-4328-ABE4-261E7CFE8E9E}" }
         - { name: "TwoColumn", itemId: "{0BCA5162-9643-49F3-BEE2-6B5243287D5E}" }
         - { name: "WithImages", itemId: "{0378DF47-C562-4BE1-8BA7-DFE429A2015A}" }
+        - { name: "MiskSpacesAsymmetric", itemId: "{F7B467C2-382A-4209-B24D-AD6758E7DD57}", template: "Variant Definition", source: "MCP user-marketer 2026-05-04" }
+        - { name: "MiskLeasingHex", itemId: "{441DD566-5797-4A3F-A373-03A162EBC317}", template: "Variant Definition", source: "MCP user-marketer 2026-05-04" }
+        - { name: "MiskNewsAsymmetric", itemId: "{B32DF645-9106-4FEE-B9FF-F45F07ED9A28}", template: "Variant Definition", source: "MCP user-marketer 2026-05-04" }
 
     verification:
       checkedAt: "2026-03-25T18:30:00Z"
@@ -1240,8 +1244,8 @@ components:
         - "Example parent + 3 child items"
         - "Rendering Parameters with 4 base templates"
         - "Rendering with ComponentQuery (generic field access)"
-        - "All 3 Headless Variant Definitions"
-        - "React file with 3 variants"
+        - "All 6 Headless Variant Definitions (incl. Misk variants, MCP 2026-05-04)"
+        - "React file with 6 variants"
         - "Component map updated"
       failed: []
       pendingManual:
@@ -1437,6 +1441,7 @@ components:
         - { name: "Default", itemId: "{125C1A27-2F29-4A84-B45A-DD43279C23CE}" }
         - { name: "Grid", itemId: "{8CCCB55E-D891-4F4B-B8C7-E254DC95C9F1}" }
         - { name: "WithLabels", itemId: "{2D8CB372-0881-4F56-ACE4-A69E3ABDEC1E}" }
+        - { name: "MiskLogoCarousel", itemId: "{41D604FE-C7D5-4164-BE4C-A03A985BBFD8}", template: "Variant Definition", source: "MCP user-marketer 2026-05-04" }
 
     verification:
       checkedAt: "2026-03-25T19:30:00Z"
@@ -1450,8 +1455,8 @@ components:
         - "Example parent + 3 child items"
         - "Rendering Parameters with 4 base templates"
         - "Rendering with ComponentQuery (generic field access)"
-        - "All 3 Headless Variant Definitions"
-        - "React file with 3 variants"
+        - "All 4 Headless Variant Definitions (incl. MiskLogoCarousel, MCP 2026-05-04)"
+        - "React file with 4 variants"
         - "Component map updated"
       failed: []
       pendingManual:
