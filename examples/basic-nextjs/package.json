@@ -49,9 +49,10 @@
     "@radix-ui/react-toggle": "1.1.1",
     "@radix-ui/react-toggle-group": "1.1.1",
     "@radix-ui/react-tooltip": "1.1.6",
-    "@sitecore-cloudsdk/core": "^0.5.4",
-    "@sitecore-cloudsdk/events": "^0.5.4",
-    "@sitecore-content-sdk/nextjs": "^1.5.1",
+    "@sitecore-content-sdk/analytics-core": "^2.0.0",
+    "@sitecore-content-sdk/events": "^2.0.0",
+    "@sitecore-content-sdk/nextjs": "^2.0.0",
+    "@sitecore-content-sdk/personalize": "^2.0.0",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -60,8 +61,8 @@
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.544.0",
-    "next": "15.5.12",
-    "next-intl": "^4.3.5",
+    "next": "^16.1.1",
+    "next-intl": "^4.9.1",
     "next-themes": "^0.4.6",
     "react": "^19.2.4",
     "react-day-picker": "^9.4.3",
@@ -79,18 +80,30 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@sitecore-content-sdk/cli": "^1.0.0",
-    "@types/node": "^22.15.14",
+    "@sitecore-content-sdk/cli": "^2.0.0",
+    "@types/node": "^24.10.4",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "cross-env": "^10.0.0",
     "eslint": "^9.33.0",
-    "eslint-config-next": "15.5.12",
+    "eslint-config-next": "16.1.1",
     "npm-run-all2": "^8.0.4",
     "playwright": "^1.58.2",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.1",
     "typescript": "5.7.3"
+  },
+  "overrides": {
+    "picomatch": "4.0.4",
+    "anymatch": {
+      "picomatch": "2.3.2"
+    },
+    "micromatch": {
+      "picomatch": "2.3.2"
+    },
+    "brace-expansion@^5.0.0": "5.0.5",
+    "lodash-es": "4.18.1",
+    "flatted": "3.4.2"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production npm-run-all --serial sitecore-tools:generate-map sitecore-tools:build next:build",

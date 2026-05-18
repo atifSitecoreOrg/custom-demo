@@ -11,6 +11,8 @@ const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom',
   testTimeout: 15000,
   moduleNameMapper: {
+    // Resolve sitecore.config for tests (CdpPageView and others)
+    '^sitecore\\.config$': '<rootDir>/sitecore.config.ts',
     // Handle module aliases (should match paths in tsconfig.json)
     '^@/(.*)$': '<rootDir>/src/$1',
     '^components/(.*)$': '<rootDir>/src/components/$1',
@@ -36,14 +38,13 @@ const customJestConfig = {
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   testMatch: [
-    '<rootDir>/src/_tests_/**/*.test.{js,ts,tsx}',
-    '<rootDir>/src/**/*.test.{js,ts,tsx}',
+    '<rootDir>/src/__tests__/**/*.test.{js,ts,tsx}',
   ],
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!src/**/*.d.ts',
     '!src/**/*.mock.{ts,tsx}',
-    '!src/_tests_/**/*',
+    '!src/__tests__/**/*',
   ],
 };
 

@@ -6,6 +6,7 @@ This guide will help you get started and ensure a smooth contribution process.
 ## Table of Contents
 
 - [Pre-requisites](#-pre-requisites)
+- [What we do not accept](#what-we-do-not-accept)
 - [FAQ for Contributors](#faq-for-contributors)
 - [Branching Strategy](#-branching-strategy)
 - [Development Setup](#-development-setup)
@@ -16,6 +17,7 @@ This guide will help you get started and ensure a smooth contribution process.
 - [Submitting a Pull Request](#submitting-a-pull-request)
 - [Code Review Process](#code-review-process)
 - [AI-Assisted Development](#-ai-assisted-development)
+  - [Skills: Capability Map](#skills-capability-map)
   - [Claude Code Guide](#claude-code-guide)
   - [Cursor AI Rules](#cursor-ai-rules)
   - [Windsurf IDE Rules](#windsurf-ide-rules)
@@ -34,6 +36,12 @@ Ensure the following tools are installed on your system:
 
 - **npm**: Version `10` or above.  
   Check with: `npm -v`
+
+---
+
+## What we do not accept
+
+This repository does **not** accept pull requests that add **new example sites** (for example, a new top-level app under `examples/`, or an equivalent that introduces an additional starter site). To build and ship your own application, use this repository as a [GitHub template](README.md#github-template) or maintain your own fork, and make changes there.
 
 ---
 
@@ -130,7 +138,7 @@ Navigate to the relevant example (e.g., kit-nextjs-article-starter) and start th
 
 5. 🚀 Submitting a Pull Request
 Once your changes are ready:
-Make sure your branch is up-to-date with upstream/main and create your PR against the **dmz** branch.
+Make sure your branch is up-to-date with upstream/main and create your PR against the **dmz** branch. Pull requests that add [new example sites](#what-we-do-not-accept) are out of scope and will be closed.
 
     ✅ Before submitting:
       - Run code formatters or linters if configured.
@@ -157,6 +165,10 @@ Make sure your branch is up-to-date with upstream/main and create your PR agains
 ## 🤖 AI-Assisted Development
 
 This repository includes comprehensive AI coding agent guidance files to help maintain consistent code quality and follow Sitecore XM Cloud best practices across multiple AI assistants.
+
+### Skills: Capability Map
+
+The repository includes **[docs/Skills.md](docs/Skills.md)** – a high-level capability grouping for the starter kits that helps AI tools and developers understand what the starters support and when to use each area.
 
 ### Claude Code Guide
 
