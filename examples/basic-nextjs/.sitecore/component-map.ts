@@ -72,7 +72,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Image', { ...Image }],
   ['SitecoreStyles', { ...SitecoreStyles, componentType: 'client' }],
   ['CdpPageView', { ...CdpPageView, componentType: 'client' }],
-  ['ContentBlock', { ...ContentBlock }],
+  ['ContentBlock', { ...ContentBlock, componentType: 'client' }],
   ['Container', { ...Container }],
   ['ColumnSplitter', { ...ColumnSplitter }],
 ]);
