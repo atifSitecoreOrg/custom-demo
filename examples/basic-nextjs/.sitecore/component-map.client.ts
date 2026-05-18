@@ -10,6 +10,7 @@ import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarou
 import * as Navigation from 'src/components/basic/navigation/Navigation';
 import * as SitecoreStyles from 'src/components/basic/content-sdk/SitecoreStyles';
 import * as CdpPageView from 'src/components/basic/content-sdk/CdpPageView';
+import * as ContentBlock from 'src/components/basic/content-block/ContentBlock';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCClientWrapper],
@@ -22,6 +23,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Navigation', { ...Navigation }],
   ['SitecoreStyles', { ...SitecoreStyles }],
   ['CdpPageView', { ...CdpPageView }],
+  ['ContentBlock', { ...ContentBlock }],
 ]);
 
 export default componentMap;

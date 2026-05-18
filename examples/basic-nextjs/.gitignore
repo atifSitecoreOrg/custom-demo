@@ -21,7 +21,7 @@ docs/ai/demos/*/
 docs/ai/themes/*/
 
 # Content SDK reference clone (used by coding agents, not project code)
-content-sdk/
+/content-sdk/
 
 # Log files
 *.log*
