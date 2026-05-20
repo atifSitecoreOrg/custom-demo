@@ -217,6 +217,189 @@ export const Default = ({ fields, params, page }: HeroBannerCarouselProps): JSX.
 };
 
 /* ────────────────────────────────────────────
+   JetourUAE — full-screen, bottom-left text, progress lines, automotive style
+   ──────────────────────────────────────────── */
+export const JetourUAE = ({ fields, params, page }: HeroBannerCarouselProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  const slides = datasource?.children?.results || [];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const goTo = useCallback(
+    (index: number) => {
+      if (slides.length === 0) return;
+      setActiveIndex(((index % slides.length) + slides.length) % slides.length);
+      setProgress(0);
+    },
+    [slides.length]
+  );
+
+  useEffect(() => {
+    if (isPaused || isEditing || slides.length <= 1) return;
+    setProgress(0);
+    const duration = 5000;
+    const interval = 50;
+    let elapsed = 0;
+    const ticker = setInterval(() => {
+      elapsed += interval;
+      setProgress(Math.min((elapsed / duration) * 100, 100));
+      if (elapsed >= duration) {
+        goTo(activeIndex + 1);
+      }
+    }, interval);
+    return () => clearInterval(ticker);
+  }, [activeIndex, isPaused, isEditing, slides.length, goTo]);
+
+  if (!datasource || slides.length === 0) return <HeroBannerCarouselDefaultComponent />;
+
+  const ariaLabel = datasource.title?.jsonValue?.value || 'Jetour Models';
+
+  return (
+    <div className={cn('component hero-banner-carousel', styles)} id={RenderingIdentifier}>
+      <section
+        className="relative w-full overflow-hidden"
+        style={{ height: '92vh', minHeight: '560px' }}
+        aria-label={ariaLabel}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Slides */}
+        <div
+          className="flex h-full transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        >
+          {slides.map((slide) => (
+            <div
+              key={slide.id}
+              className="relative h-full w-full flex-shrink-0 overflow-hidden"
+            >
+              {/* Background image */}
+              {(slide.slideImage?.jsonValue?.value?.src || isEditing) && (
+                <div className="absolute inset-0">
+                  <ContentSdkImage
+                    field={slide.slideImage?.jsonValue}
+                    className="h-full w-full object-cover object-center"
+                  />
+                </div>
+              )}
+              {/* Gradient — dark on right side where content sits */}
+              <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+              {/* Content — bottom-right aligned */}
+              <div className="absolute bottom-0 right-0 z-10 px-8 pb-24 md:px-16 md:pb-28 max-w-2xl text-right">
+                {(slide.slideTitle?.jsonValue?.value || isEditing) && (
+                  <Text
+                    field={slide.slideTitle?.jsonValue}
+                    tag="h2"
+                    className="text-3xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-[var(--brand-heading-font,inherit)] uppercase"
+                  />
+                )}
+                {(slide.slideSubtitle?.jsonValue?.value || isEditing) && (
+                  <ContentSdkRichText
+                    field={slide.slideSubtitle?.jsonValue}
+                    className="mt-3 text-base text-white/80 max-w-xl md:text-lg"
+                  />
+                )}
+                <div className="mt-6 flex flex-wrap items-center justify-end gap-4">
+                  {(slide.primaryLink?.jsonValue?.value?.href || isEditing) && (
+                    <ContentSdkLink
+                      field={slide.primaryLink?.jsonValue}
+                      className="inline-flex items-center justify-center px-7 py-3 text-sm font-semibold uppercase tracking-wider transition-opacity hover:opacity-90"
+                      style={{
+                        backgroundColor: 'var(--brand-primary)',
+                        color: 'var(--brand-primary-foreground)',
+                        borderRadius: '2px',
+                      }}
+                    />
+                  )}
+                  {(slide.secondaryLink?.jsonValue?.value?.href || isEditing) && (
+                    <ContentSdkLink
+                      field={slide.secondaryLink?.jsonValue}
+                      className="inline-flex items-center justify-center px-7 py-3 text-sm font-semibold uppercase tracking-wider border border-white text-white bg-transparent transition-opacity hover:bg-white/10"
+                      style={{ borderRadius: '2px' }}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Prev / Next arrows — minimal style */}
+        {slides.length > 1 && !isEditing && (
+          <>
+            <button
+              type="button"
+              onClick={() => goTo(activeIndex - 1)}
+              className="absolute right-16 bottom-8 z-20 flex items-center justify-center w-10 h-10 border border-white/50 text-white transition hover:border-white"
+              aria-label="Previous slide"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={() => goTo(activeIndex + 1)}
+              className="absolute right-4 bottom-8 z-20 flex items-center justify-center w-10 h-10 border border-white/50 text-white transition hover:border-white"
+              aria-label="Next slide"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="9 6 15 12 9 18" />
+              </svg>
+            </button>
+          </>
+        )}
+
+        {/* Progress line indicators at bottom */}
+        {slides.length > 1 && (
+          <div className="absolute bottom-0 left-0 right-0 z-20 flex">
+            {slides.map((slide, i) => (
+              <button
+                key={slide.id}
+                type="button"
+                onClick={() => goTo(i)}
+                className="relative h-1 flex-1 transition-all"
+                style={{ backgroundColor: 'rgba(255,255,255,0.25)' }}
+                aria-label={`Go to slide ${i + 1}`}
+              >
+                {i === activeIndex && (
+                  <span
+                    className="absolute inset-y-0 left-0 transition-none"
+                    style={{
+                      width: `${progress}%`,
+                      backgroundColor: 'var(--brand-accent, #e63900)',
+                    }}
+                  />
+                )}
+                {i < activeIndex && (
+                  <span
+                    className="absolute inset-0"
+                    style={{ backgroundColor: 'rgba(255,255,255,0.7)' }}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Slide counter — top-right */}
+        {slides.length > 1 && (
+          <div className="absolute top-6 right-6 z-20 text-white/70 text-sm font-mono tabular-nums">
+            {String(activeIndex + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+          </div>
+        )}
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
    WithThumbnails — thumbnail strip below main slide
    ──────────────────────────────────────────── */
 export const WithThumbnails = ({ fields, params, page }: HeroBannerCarouselProps): JSX.Element => {

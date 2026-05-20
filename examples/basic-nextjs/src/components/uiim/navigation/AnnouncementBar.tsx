@@ -78,6 +78,49 @@ export const Default = ({ fields, params, page }: AnnouncementBarProps): JSX.Ele
   );
 };
 
+/* JetourUAE variant — dark top bar matching jetouruae.com header strip */
+export const JetourUAE = ({ fields, params, page }: AnnouncementBarProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+
+  if (!fields) return <AnnouncementBarDefaultComponent />;
+
+  return (
+    <div className={cn('component announcement-bar', styles)} id={RenderingIdentifier}>
+      <div
+        className="w-full px-4"
+        style={{ backgroundColor: '#111111', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between h-8">
+          {/* Left: message with accent left-border */}
+          <div className="flex items-center gap-3">
+            <span
+              className="inline-block h-3 w-0.5 shrink-0"
+              style={{ backgroundColor: 'var(--brand-accent, #c8102e)' }}
+            />
+            {(fields.Message?.value || isEditing) && (
+              <Text
+                field={fields.Message}
+                tag="span"
+                className="text-[10px] font-medium uppercase tracking-[0.15em]"
+                style={{ color: 'rgba(255,255,255,0.55)' }}
+              />
+            )}
+          </div>
+          {/* Right: link */}
+          {(fields.BarLink?.value?.href || isEditing) && (
+            <ContentSdkLink
+              field={fields.BarLink}
+              className="text-[10px] font-semibold uppercase tracking-[0.15em] transition-opacity hover:opacity-100"
+              style={{ color: 'rgba(255,255,255,0.45)' }}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Highlight = ({ fields, params, page }: AnnouncementBarProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;

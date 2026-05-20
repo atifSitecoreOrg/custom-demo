@@ -196,6 +196,72 @@ export const Split = ({ fields, params, page }: CTABannerProps): JSX.Element => 
 };
 
 /* ────────────────────────────────────────────
+   JetourUAE — full-bleed image, left-aligned, automotive CTA
+   ──────────────────────────────────────────── */
+export const JetourUAE = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <CTABannerDefaultComponent />;
+
+  return (
+    <div className={cn('component cta-banner', styles)} id={RenderingIdentifier}>
+      <section className="relative w-full overflow-hidden" style={{ minHeight: '340px' }}>
+        {/* Background image */}
+        {(fields.BackgroundImage?.value?.src || isEditing) && (
+          <div className="absolute inset-0">
+            <ContentSdkImage
+              field={fields.BackgroundImage}
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+        )}
+        {/* Dark overlay — left-to-right gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20" />
+
+        {/* Content — left aligned */}
+        <div className="relative z-10 flex h-full items-center px-8 py-16 md:px-16 md:py-20">
+          <div className="max-w-xl">
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-3xl font-bold tracking-tight text-white uppercase font-[var(--brand-heading-font,inherit)] md:text-4xl"
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-4 text-base text-white/80 font-[var(--brand-body-font,inherit)]"
+              />
+            )}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              {(fields.PrimaryLink?.value?.href || isEditing) && (
+                <ContentSdkLink
+                  field={fields.PrimaryLink}
+                  className="inline-flex items-center justify-center px-7 py-3 text-sm font-semibold uppercase tracking-wider transition-opacity hover:opacity-90"
+                  style={{
+                    backgroundColor: 'var(--brand-primary)',
+                    color: 'var(--brand-primary-foreground)',
+                    borderRadius: '2px',
+                  }}
+                />
+              )}
+              {(fields.SecondaryLink?.value?.href || isEditing) && (
+                <ContentSdkLink
+                  field={fields.SecondaryLink}
+                  className="inline-flex items-center justify-center px-7 py-3 text-sm font-semibold uppercase tracking-wider border border-white text-white bg-transparent transition-opacity hover:bg-white/10"
+                  style={{ borderRadius: '2px' }}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
    Minimal — subtle background, inline text + link
    ──────────────────────────────────────────── */
 export const Minimal = ({ fields, params, page }: CTABannerProps): JSX.Element => {

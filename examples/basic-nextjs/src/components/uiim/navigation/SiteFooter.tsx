@@ -176,6 +176,183 @@ export const Default = (props: SiteFooterProps): JSX.Element => {
 };
 
 /* ────────────────────────────────────────────
+   JetourUAE — automotive multi-column footer matching jetouruae.com design
+   ──────────────────────────────────────────── */
+const JETOUR_COLUMNS = [
+  {
+    title: 'Models',
+    links: ['Jetour T1', 'Jetour T2', 'Jetour G700', 'Jetour Dashing', 'Pre-Owned'],
+    hrefs: [
+      'https://www.jetouruae.com/en/new-models/jetour-t1/',
+      'https://www.jetouruae.com/en/new-models/jetour-t2/',
+      'https://www.jetouruae.com/en/new-models/jetour-g700/',
+      'https://www.jetouruae.com/en/new-models/jetour-dashing/',
+      'https://www.jetouruae.com/en/pre-owned-cars/',
+    ],
+  },
+  {
+    title: 'Services',
+    links: ['Book a Service', 'Service Centers', 'Warranty', 'Fleet Sales'],
+    hrefs: [
+      'https://www.jetouruae.com/en/book-a-service/',
+      'https://www.jetouruae.com/en/service-centers/',
+      'https://www.jetouruae.com/en/',
+      'https://www.jetouruae.com/en/fleet-sales/',
+    ],
+  },
+  {
+    title: 'Company',
+    links: ['About Us', 'Blog & News', 'Showrooms', 'Contact Us'],
+    hrefs: [
+      'https://www.jetouruae.com/en/about-us/',
+      'https://www.jetouruae.com/en/blog/',
+      'https://www.jetouruae.com/en/showrooms/',
+      'https://www.jetouruae.com/en/contact-us/',
+    ],
+  },
+];
+
+const SOCIAL_LINKS = [
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/JetourUAE',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/JetourUAE',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@JetourUAE',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+        <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="white" />
+      </svg>
+    ),
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@jetouruae',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+      </svg>
+    ),
+  },
+];
+
+export const JetourUAE = (props: SiteFooterProps): JSX.Element => {
+  const { params } = props;
+  const { styles, RenderingIdentifier } = params;
+  const brandLogo = getBrandLogo(props);
+
+  if (!params) return <SiteFooterDefaultComponent />;
+
+  return (
+    <div className={cn('component site-footer', styles)} id={RenderingIdentifier}>
+      <footer
+        className="w-full"
+        style={{ backgroundColor: 'var(--brand-footer-bg, #111111)' }}
+      >
+        {/* Main footer grid */}
+        <div className="mx-auto max-w-7xl px-6 py-14 sm:px-8 md:py-16">
+          <div className="grid gap-12 md:grid-cols-4">
+
+            {/* ── Col 1: Logo + tagline + social ── */}
+            <div className="flex flex-col gap-5">
+              <Link href="/" className="inline-flex items-center">
+                {brandLogo?.value?.src ? (
+                  <ContentSdkImage
+                    field={brandLogo}
+                    className="h-9 w-auto object-contain brightness-0 invert"
+                  />
+                ) : (
+                  <span className="text-xl font-bold tracking-widest uppercase text-white font-[var(--brand-heading-font,inherit)]">
+                    JETOUR
+                  </span>
+                )}
+              </Link>
+              <p className="text-sm leading-relaxed text-white/40 font-[var(--brand-body-font,inherit)]">
+                Premium Chinese SUVs in the UAE.<br />Distributed by Elite Group Holding.
+              </p>
+              {/* Social icons row */}
+              <div className="flex items-center gap-3">
+                {SOCIAL_LINKS.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="flex h-9 w-9 items-center justify-center text-white/50 transition-colors hover:text-white"
+                    style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: '2px' }}
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Cols 2-4: Nav link columns ── */}
+            {JETOUR_COLUMNS.map((col) => (
+              <div key={col.title}>
+                <h3 className="mb-5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/35 font-[var(--brand-heading-font,inherit)]">
+                  {col.title}
+                </h3>
+                <ul className="flex flex-col gap-3">
+                  {col.links.map((link, i) => (
+                    <li key={link}>
+                      <a
+                        href={col.hrefs[i] || '#'}
+                        className="text-sm text-white/55 transition-colors hover:text-white font-[var(--brand-body-font,inherit)]"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* ── Bottom bar ── */}
+          <div
+            className="mt-14 flex flex-col items-start justify-between gap-4 border-t pt-8 sm:flex-row sm:items-center"
+            style={{ borderColor: 'rgba(255,255,255,0.07)' }}
+          >
+            <p className="text-xs text-white/30 font-[var(--brand-body-font,inherit)]">
+              &copy; {new Date().getFullYear()} Elite Group Holding LLC. All Rights Reserved.
+            </p>
+            <div className="flex items-center gap-6 text-xs text-white/30">
+              <a href="https://www.jetouruae.com/en/privacy-policy/" className="transition-colors hover:text-white/70">
+                Privacy Policy
+              </a>
+              <span style={{ color: 'rgba(255,255,255,0.15)' }}>|</span>
+              <a href="https://www.jetouruae.com/en/terms/" className="transition-colors hover:text-white/70">
+                Terms &amp; Conditions
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
    Minimal — single row
    ──────────────────────────────────────────── */
 export const Minimal = (props: SiteFooterProps): JSX.Element => {

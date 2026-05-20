@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 @import 'tailwindcss';
 
 /* ColumnSplitter dynamic classes — injected by Sitecore rendering params at runtime */
@@ -86,29 +87,46 @@
    An unlayered :root block above @layer base ALWAYS wins the cascade.
    =================================================================== */
 
-/* CLIENT THEME — uncomment or replace with client values from Phase 4:
+/* Jetour UAE — brand theme applied by sitecore-build-demo Phase 4 */
 :root {
-  --brand-primary: #00827f;
+  /* ── Jetour brand tokens ── */
+  --brand-primary: #1a1a1a;
   --brand-primary-foreground: #ffffff;
-  --brand-accent: #00dc00;
-  --brand-accent-foreground: #1a1a1a;
-  --brand-dark: #1a1a2e;
+  --brand-accent: #c8102e;
+  --brand-accent-foreground: #ffffff;
+  --brand-dark: #1a1a1a;
   --brand-dark-foreground: #ffffff;
   --brand-bg: #ffffff;
-  --brand-fg: #1a1a2e;
+  --brand-fg: #1a1a1a;
   --brand-muted: #f5f5f5;
   --brand-muted-foreground: #6b7280;
   --brand-border: #e5e7eb;
-  --brand-header-bg: #1a1a2e;
-  --brand-header-fg: #ffffff;
-  --brand-footer-bg: #1a1a2e;
-  --brand-footer-fg: #9ca3af;
-  --brand-heading-font: 'Poppins', sans-serif;
-  --brand-body-font: 'Open Sans', sans-serif;
-  --brand-button-radius: 0.375rem;
-  --brand-card-radius: 0.75rem;
+  --brand-header-bg: #ffffff;
+  --brand-header-fg: #1a1a1a;
+  --brand-footer-bg: #111111;
+  --brand-footer-fg: #d1d5db;
+  --brand-heading-font: 'Montserrat', sans-serif;
+  --brand-body-font: 'Montserrat', sans-serif;
+  --brand-button-radius: 2px;
+  --brand-card-radius: 2px;
+
+  /* ── Override shadcn/ui HSL tokens so Tailwind utilities (text-primary,
+         bg-primary, ring-*, etc.) use Jetour colours not Saga navy ── */
+  --foreground: 0 0% 10%;
+  --card-foreground: 0 0% 10%;
+  --popover-foreground: 0 0% 10%;
+  --primary: 0 0% 10%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 10%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 43%;
+  --accent: 350 86% 43%;
+  --accent-foreground: 0 0% 100%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 0 0% 10%;
 }
-*/
 
 @layer base {
   :root {

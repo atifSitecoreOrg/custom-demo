@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { JSX, useState, useCallback, useEffect } from 'react';
 import {
@@ -275,6 +275,428 @@ export const WithImages = ({ fields, params, page }: FeatureCardsGridProps): JSX
 };
 
 /* ────────────────────────────────────────────
+   JetourUAEModels — dark automotive carousel, portrait cards with gradient overlay
+   ──────────────────────────────────────────── */
+export const JetourUAEModels = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  const cards = datasource?.children?.results || [];
+
+  const VISIBLE = { sm: 1, md: 2, lg: 3 };
+  const [pageIndex, setPageIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(VISIBLE.lg);
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setVisibleCount(w < 640 ? VISIBLE.sm : w < 1024 ? VISIBLE.md : VISIBLE.lg);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const totalPages = Math.max(1, Math.ceil(cards.length / visibleCount));
+  const clampedPage = Math.min(pageIndex, totalPages - 1);
+
+  const goTo = useCallback(
+    (idx: number) => setPageIndex(((idx % totalPages) + totalPages) % totalPages),
+    [totalPages]
+  );
+
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-16 md:py-20"
+        style={{ backgroundColor: 'var(--brand-dark, #1a1a1a)' }}
+      >
+        <div className="mx-auto max-w-7xl">
+          {/* Section header + arrows */}
+          <div className="mb-8 flex items-end justify-between">
+            <div>
+              {(datasource.title?.jsonValue?.value || isEditing) && (
+                <Text
+                  field={datasource.title?.jsonValue}
+                  tag="h2"
+                  className="text-3xl font-bold tracking-tight text-white uppercase font-[var(--brand-heading-font,inherit)] md:text-4xl"
+                />
+              )}
+              {(datasource.description?.jsonValue?.value || isEditing) && (
+                <ContentSdkRichText
+                  field={datasource.description?.jsonValue}
+                  className="mt-2 text-sm text-white/50 font-[var(--brand-body-font,inherit)]"
+                />
+              )}
+            </div>
+            {/* Arrow controls — top-right */}
+            {totalPages > 1 && !isEditing && (
+              <div className="flex gap-2 shrink-0 ml-4">
+                <button
+                  type="button"
+                  onClick={() => goTo(clampedPage - 1)}
+                  className="flex h-10 w-10 items-center justify-center border border-white/30 text-white transition hover:border-white"
+                  aria-label="Previous models"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => goTo(clampedPage + 1)}
+                  className="flex h-10 w-10 items-center justify-center border border-white/30 text-white transition hover:border-white"
+                  aria-label="Next models"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="9 6 15 12 9 18" />
+                  </svg>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Carousel track */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${clampedPage * 100}%)` }}
+            >
+              {cards.map((card) => (
+                <div
+                  key={card.id}
+                  className="flex-shrink-0 px-2"
+                  style={{ width: `${100 / visibleCount}%` }}
+                >
+                  <div
+                    className="group relative flex flex-col overflow-hidden"
+                    style={{ borderRadius: '2px' }}
+                  >
+                    <div className="relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
+                      {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
+                        <ContentSdkImage
+                          field={card.cardImage?.jsonValue}
+                          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                          <Text
+                            field={card.cardTitle?.jsonValue}
+                            tag="h3"
+                            className="text-white font-bold uppercase tracking-wide text-lg font-[var(--brand-heading-font,inherit)]"
+                          />
+                        )}
+                        {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                          <ContentSdkRichText
+                            field={card.cardDescription?.jsonValue}
+                            className="mt-1 text-white/70 text-xs font-[var(--brand-body-font,inherit)]"
+                          />
+                        )}
+                        {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                          <ContentSdkLink
+                            field={card.cardLink?.jsonValue}
+                            className="mt-3 inline-flex items-center border border-white/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-black"
+                            style={{ borderRadius: '2px' }}
+                          />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Dot indicators */}
+          {totalPages > 1 && (
+            <div className="mt-6 flex gap-1.5">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => goTo(i)}
+                  className="h-0.5 transition-all"
+                  style={{
+                    width: i === clampedPage ? '32px' : '16px',
+                    backgroundColor: i === clampedPage
+                      ? 'var(--brand-accent, #e63900)'
+                      : 'rgba(255,255,255,0.25)',
+                  }}
+                  aria-label={`Go to page ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* JetourUAEServices — white bg, full-width image-top service cards matching jetouruae.com */
+export const JetourUAEServices = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-16 md:py-20" style={{ backgroundColor: '#ffffff' }}>
+        <div className="mx-auto max-w-7xl">
+          {/* Section header — left-aligned with accent underline */}
+          <div className="mb-10">
+            {(datasource.title?.jsonValue?.value || isEditing) && (
+              <Text
+                field={datasource.title?.jsonValue}
+                tag="h2"
+                className="text-2xl font-bold uppercase tracking-tight font-[var(--brand-heading-font,inherit)] md:text-3xl"
+                style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+              />
+            )}
+            {/* Red accent underline */}
+            <div className="mt-3 h-0.5 w-12" style={{ backgroundColor: 'var(--brand-accent, #c8102e)' }} />
+            {(datasource.description?.jsonValue?.value || isEditing) && (
+              <ContentSdkRichText
+                field={datasource.description?.jsonValue}
+                className="mt-4 text-sm opacity-55 font-[var(--brand-body-font,inherit)]"
+                style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+              />
+            )}
+          </div>
+
+          {/* Cards — full-width image on top */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {cards.map((card) => (
+              <div
+                key={card.id}
+                className="group flex flex-col overflow-hidden"
+                style={{ border: '1px solid var(--brand-border, #e5e7eb)' }}
+              >
+                {/* Full-width image */}
+                {(card.cardImage?.jsonValue?.value?.src || isEditing) ? (
+                  <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                    <ContentSdkImage
+                      field={card.cardImage?.jsonValue}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {/* Subtle dark overlay on hover */}
+                    <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
+                  </div>
+                ) : (
+                  /* Placeholder block when no image */
+                  <div
+                    className="flex items-center justify-center"
+                    style={{ aspectRatio: '16/9', backgroundColor: 'var(--brand-muted, #f5f5f5)' }}
+                  >
+                    <span className="text-xs opacity-30 font-[var(--brand-body-font,inherit)]">Image</span>
+                  </div>
+                )}
+
+                {/* Card body */}
+                <div className="flex flex-1 flex-col p-6">
+                  {/* Accent bar */}
+                  <div className="mb-4 h-0.5 w-8" style={{ backgroundColor: 'var(--brand-accent, #c8102e)' }} />
+                  {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                    <Text
+                      field={card.cardTitle?.jsonValue}
+                      tag="h3"
+                      className="text-base font-bold uppercase tracking-wide font-[var(--brand-heading-font,inherit)]"
+                      style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+                    />
+                  )}
+                  {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                    <ContentSdkRichText
+                      field={card.cardDescription?.jsonValue}
+                      className="mt-3 flex-1 text-sm leading-relaxed opacity-60 font-[var(--brand-body-font,inherit)]"
+                      style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+                    />
+                  )}
+                  {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                    <ContentSdkLink
+                      field={card.cardLink?.jsonValue}
+                      className="mt-5 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider transition-opacity hover:opacity-70"
+                      style={{ color: 'var(--brand-accent, #c8102e)' }}
+                    />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   JetourUAENews — white bg, image-top news cards, horizontal carousel
+   ──────────────────────────────────────────── */
+export const JetourUAENews = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  const cards = datasource?.children?.results || [];
+
+  const VISIBLE = { sm: 1, md: 2, lg: 3 };
+  const [pageIndex, setPageIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(VISIBLE.lg);
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setVisibleCount(w < 640 ? VISIBLE.sm : w < 1024 ? VISIBLE.md : VISIBLE.lg);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const totalPages = Math.max(1, Math.ceil(cards.length / visibleCount));
+  const clampedPage = Math.min(pageIndex, totalPages - 1);
+
+  const goTo = useCallback(
+    (idx: number) => setPageIndex(((idx % totalPages) + totalPages) % totalPages),
+    [totalPages]
+  );
+
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full bg-white">
+        {/* Dark header strip — "MEDIA CENTRE" */}
+        <div className="w-full px-4 py-10 md:py-12" style={{ backgroundColor: '#111111' }}>
+          <div className="mx-auto max-w-7xl flex items-end justify-between gap-4">
+            <div>
+              {(datasource.title?.jsonValue?.value || isEditing) && (
+                <Text
+                  field={datasource.title?.jsonValue}
+                  tag="h2"
+                  className="text-2xl font-bold uppercase tracking-widest text-white font-[var(--brand-heading-font,inherit)] md:text-3xl"
+                />
+              )}
+              {(datasource.description?.jsonValue?.value || isEditing) && (
+                <ContentSdkRichText
+                  field={datasource.description?.jsonValue}
+                  className="mt-2 text-sm text-white/50 font-[var(--brand-body-font,inherit)] max-w-xl"
+                />
+              )}
+            </div>
+            {totalPages > 1 && !isEditing && (
+              <div className="flex gap-1.5 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => goTo(clampedPage - 1)}
+                  className="flex h-9 w-9 items-center justify-center border border-white/20 text-white/60 transition hover:border-white/60 hover:text-white"
+                  aria-label="Previous articles"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => goTo(clampedPage + 1)}
+                  className="flex h-9 w-9 items-center justify-center border border-white/20 text-white/60 transition hover:border-white/60 hover:text-white"
+                  aria-label="Next articles"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="9 6 15 12 9 18" />
+                  </svg>
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Cards area — white background */}
+        <div className="w-full px-4 py-10 md:py-14">
+          <div className="mx-auto max-w-7xl">
+            {/* Carousel track */}
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${clampedPage * 100}%)` }}
+              >
+                {cards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="flex-shrink-0 px-3"
+                    style={{ width: `${100 / visibleCount}%` }}
+                  >
+                    <div className="group flex flex-col overflow-hidden h-full">
+                      {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
+                        <div className="overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                          <ContentSdkImage
+                            field={card.cardImage?.jsonValue}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-1 flex-col pt-5 pb-2">
+                        {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                          <Text
+                            field={card.cardTitle?.jsonValue}
+                            tag="h3"
+                            className="text-sm font-bold leading-snug font-[var(--brand-heading-font,inherit)] mb-3"
+                            style={{ color: 'var(--brand-fg, #212121)' }}
+                          />
+                        )}
+                        {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                          <ContentSdkRichText
+                            field={card.cardDescription?.jsonValue}
+                            className="flex-1 text-xs leading-relaxed opacity-55 font-[var(--brand-body-font,inherit)]"
+                            style={{ color: 'var(--brand-fg, #212121)' }}
+                          />
+                        )}
+                        {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                          <ContentSdkLink
+                            field={card.cardLink?.jsonValue}
+                            className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest transition-opacity hover:opacity-70"
+                            style={{ color: 'var(--brand-accent, #c8102e)' }}
+                          />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Dot indicators */}
+            {totalPages > 1 && (
+              <div className="mt-6 flex gap-1.5">
+                {Array.from({ length: totalPages }).map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => goTo(i)}
+                    className="h-0.5 transition-all"
+                    style={{
+                      width: i === clampedPage ? '32px' : '16px',
+                      backgroundColor: i === clampedPage
+                        ? 'var(--brand-accent, #c8102e)'
+                        : 'var(--brand-border, #e0e0e0)',
+                    }}
+                    aria-label={`Go to page ${i + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
    Carousel — horizontal scrolling cards with dots + arrows
    ──────────────────────────────────────────── */
 export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
@@ -438,6 +860,152 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
               ))}
             </div>
           )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+
+/* JetourUAEAbout - three-column dark brand pillars (About section) */
+/* JetourUAEAbout — 3-column light-background about section matching jetouruae.com */
+export const JetourUAEAbout = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-16 md:py-20 bg-white">
+        <div className="mx-auto max-w-7xl">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="p"
+              className="mb-10 text-xs font-bold uppercase tracking-[0.3em] font-[var(--brand-heading-font,inherit)]"
+              style={{ color: 'var(--brand-accent, #c8102e)' }}
+            />
+          )}
+          <div className="grid gap-12 md:grid-cols-3 md:gap-10">
+            {cards.map((card, idx) => (
+              <div key={card.id} className="flex flex-col">
+                <div className="mb-4 h-0.5 w-10" style={{ backgroundColor: idx === 0 ? 'var(--brand-accent, #c8102e)' : 'var(--brand-fg, #212121)' }} />
+                {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                  <Text
+                    field={card.cardTitle?.jsonValue}
+                    tag="h3"
+                    className="mb-4 text-lg font-bold uppercase tracking-tight font-[var(--brand-heading-font,inherit)] leading-snug"
+                    style={{ color: 'var(--brand-fg, #212121)' }}
+                  />
+                )}
+                {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                  <ContentSdkRichText
+                    field={card.cardDescription?.jsonValue}
+                    className="flex-1 text-sm leading-relaxed font-[var(--brand-body-font,inherit)]"
+                    style={{ color: 'var(--brand-fg-muted, #555555)' }}
+                  />
+                )}
+                {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                  <ContentSdkLink
+                    field={card.cardLink?.jsonValue}
+                    className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-opacity hover:opacity-70"
+                    style={{ color: 'var(--brand-accent, #c8102e)' }}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* JetourUAELocations — dark section with patterned background + location cards */
+export const JetourUAELocations = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section
+        className="relative w-full px-4 py-16 md:py-24 overflow-hidden"
+        style={{ backgroundColor: '#111111' }}
+      >
+        {/* Subtle geometric background pattern */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 60px),
+              repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 60px)`,
+          }}
+        />
+        {/* Red accent bar at bottom edge */}
+        <div className="absolute bottom-0 left-0 right-0 h-0.5" style={{ backgroundColor: 'var(--brand-accent, #c8102e)' }} />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mb-10 flex items-end justify-between gap-4">
+            <div>
+              {(datasource.title?.jsonValue?.value || isEditing) && (
+                <Text
+                  field={datasource.title?.jsonValue}
+                  tag="h2"
+                  className="text-3xl font-bold tracking-tight text-white uppercase font-[var(--brand-heading-font,inherit)] md:text-4xl"
+                />
+              )}
+              {(datasource.description?.jsonValue?.value || isEditing) && (
+                <ContentSdkRichText
+                  field={datasource.description?.jsonValue}
+                  className="mt-2 text-sm text-white/50 font-[var(--brand-body-font,inherit)]"
+                />
+              )}
+            </div>
+          </div>
+
+          <div className="grid gap-px md:grid-cols-2 lg:grid-cols-3" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>
+            {cards.map((card) => (
+              <div
+                key={card.id}
+                className="group flex flex-col gap-3 p-7 transition-colors"
+                style={{ backgroundColor: '#161616' }}
+              >
+                {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
+                  <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                    <ContentSdkImage
+                      field={card.cardImage?.jsonValue}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <div className="mt-1 h-0.5 w-8" style={{ backgroundColor: 'var(--brand-accent, #c8102e)' }} />
+                {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                  <Text
+                    field={card.cardTitle?.jsonValue}
+                    tag="h3"
+                    className="text-sm font-bold uppercase tracking-wider text-white font-[var(--brand-heading-font,inherit)]"
+                  />
+                )}
+                {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                  <ContentSdkRichText
+                    field={card.cardDescription?.jsonValue}
+                    className="flex-1 text-xs leading-relaxed text-white/50 font-[var(--brand-body-font,inherit)]"
+                  />
+                )}
+                {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                  <ContentSdkLink
+                    field={card.cardLink?.jsonValue}
+                    className="mt-2 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest transition-opacity hover:opacity-70"
+                    style={{ color: 'var(--brand-accent, #c8102e)' }}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
