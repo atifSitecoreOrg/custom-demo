@@ -2409,14 +2409,13 @@ pageTemplates:
       renderingExists: true
       renderingComponentName: true
       renderingParametersTemplate: true
-      renderingDatasourceTemplate: pendingManual
-      renderingDatasourceLocation: pendingManual
-      registeredInAvailableRenderings: pendingManual
+      renderingDatasourceTemplate: true
+      renderingDatasourceLocation: true
+      registeredInAvailableRenderings: true
 
     notes:
       - "2026-05-20: Created SearchExperienceV2 (Issue #34). Replaces JSON config with 7 individual template fields. ADR 0004."
-      - "2026-05-20: Datasource Template and Datasource Location fields set via MCP but not readable back — verify in Content Editor."
-      - "2026-05-20: Available Renderings updated with pipe-appended rendering ID — MCP cannot confirm field value, verify in Content Editor."
+      - "2026-05-20: All 3 pendingManual items verified via get_component and get_allowed_comps_by_ph — datasource template, datasource location, and available renderings all confirmed."
 
 lookups:
   - path: "/sitecore/content/main/main-website/Data"
