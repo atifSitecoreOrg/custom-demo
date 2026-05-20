@@ -2327,6 +2327,136 @@ pageTemplates:
       - "2026-05-18: Template moved from /sitecore/templates/Project/fmc-custom-demo/Page Types to /sitecore/templates/Project/main/Page Types per project conventions."
       - "2026-05-18: Created Article Layout partial design + Article page design (Issue #15). Components placed in headless-main. Page Design and Partial Design association via MCP (silent-write) — verify linkage in Content Editor."
 
+  - name: "SearchExperience"
+    kind: "simple"
+    category: "Search"
+    status: "complete"
+    createdAt: "2026-05-18T12:00:00Z"
+    updatedAt: "2026-05-20T12:00:00Z"
+    note: "V1 OOTB component from starter kit. Preserved for comparison with V2. See ADR 0003."
+
+    react:
+      filePath: "src/components/search-experience/SearchExperience.tsx"
+      componentMapKey: "SearchExperience"
+      variants:
+        - "Default"
+        - "LoadMore"
+
+    templates:
+      datasource:
+        name: "Search Experience"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search/Search Experience"
+        itemId: "{51121015-6E69-4E58-AD50-48D426F75816}"
+        baseTemplatesSet: true
+
+      folder:
+        name: "SearchExperience Folder"
+        itemId: "{79C97264-71EF-4573-85AB-32B5AAE59592}"
+
+      renderingParams:
+        name: "SearchExperience"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Search/SearchExperience"
+        itemId: "{1CEDC37D-38EB-46AB-A4D4-FBFC708DEA96}"
+        baseTemplatesSet: true
+
+    datasourceFolder:
+      name: "Search Experiences"
+      path: "/sitecore/content/main/main-website/Data/Search Experiences"
+      itemId: "{1E320CFC-62AD-4378-97F7-6BFF5875BB3A}"
+
+    rendering:
+      name: "SearchExperience"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Search/SearchExperience"
+      itemId: "{01FAB68F-ADAE-4AD1-BFC6-1AE6125E71E7}"
+      componentName: "SearchExperience"
+      parametersTemplate: "{1CEDC37D-38EB-46AB-A4D4-FBFC708DEA96}"
+      registeredInAvailableRenderings: false
+
+    notes:
+      - "2026-05-20: Backfilled into manifest from live Sitecore. Created before manifest existed."
+      - "2026-05-20: Not registered in Available Renderings (Page Content). V1 uses a different registration path."
+
+  - name: "PreviewSearch"
+    kind: "simple"
+    category: "Search"
+    status: "complete"
+    createdAt: "2026-05-18T12:00:00Z"
+    updatedAt: "2026-05-20T12:00:00Z"
+    note: "OOTB preview/typeahead search from starter kit."
+
+    templates:
+      datasource:
+        name: "PreviewSearch"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search/PreviewSearch"
+        itemId: "{9E0A42E1-0D5C-4E7D-9CBD-65B95AE302B0}"
+        baseTemplatesSet: true
+
+      folder:
+        name: "PreviewSearch Folder"
+        itemId: "{33F32834-88F1-4AF3-BBF2-0FE1F65A280A}"
+
+      renderingParams:
+        name: "PreviewSearch"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Search/PreviewSearch"
+        itemId: "{5CB6E348-70EC-4408-AB41-ACBD8CA97B37}"
+        baseTemplatesSet: true
+
+    datasourceFolder:
+      name: "PreviewSearches"
+      path: "/sitecore/content/main/main-website/Data/PreviewSearches"
+      itemId: "{047DA76C-BF7A-4B53-A5EA-3A356A45B6F1}"
+
+    rendering:
+      name: "PreviewSearch"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Search/PreviewSearch"
+      itemId: "{2EC8DE4B-5A47-4217-8C53-E57BD1B80F03}"
+      componentName: "PreviewSearch"
+      parametersTemplate: "{5CB6E348-70EC-4408-AB41-ACBD8CA97B37}"
+
+    notes:
+      - "2026-05-20: Backfilled into manifest from live Sitecore. Created before manifest existed."
+
+  - name: "SearchResults"
+    kind: "simple"
+    category: "Search"
+    status: "complete"
+    createdAt: "2026-05-18T12:00:00Z"
+    updatedAt: "2026-05-20T12:00:00Z"
+    note: "Old Cloud SDK search results component. Deleted from React but Sitecore items remain."
+
+    templates:
+      datasource:
+        name: "SearchResults"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search/SearchResults"
+        itemId: "{5CF70CBE-F1C9-4E58-A424-A6614EBD7071}"
+        baseTemplatesSet: true
+
+      folder:
+        name: "SearchResults Folder"
+        itemId: "{DB87528F-801E-4170-A642-A48200AF38D0}"
+
+      renderingParams:
+        name: "SearchResults"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Search/SearchResults"
+        itemId: "{5406C548-15C9-4377-89B4-E58BC1D62DDF}"
+        baseTemplatesSet: true
+
+    datasourceFolder:
+      name: "SearchResults"
+      path: "/sitecore/content/main/main-website/Data/SearchResults"
+      itemId: "{A03B9129-4D08-435E-B038-29802CE6A603}"
+
+    rendering:
+      name: "SearchResults"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Search/SearchResults"
+      itemId: "{D33F0079-E54F-48C3-A33A-6A3A83146DA8}"
+      componentName: "SearchResults"
+      parametersTemplate: "{5406C548-15C9-4377-89B4-E58BC1D62DDF}"
+
+    notes:
+      - "2026-05-20: Backfilled into manifest from live Sitecore. Created before manifest existed."
+      - "2026-05-20: React component was deleted (ADR 0003 pivot). Sitecore items remain as orphans — safe to clean up later."
+
   - name: "SearchExperienceV2"
     kind: "simple"
     category: "Search"
@@ -2421,6 +2551,15 @@ lookups:
   - path: "/sitecore/content/main/main-website/Data"
     itemId: "{E6C852B5-B70D-412C-B5C6-E6502842F74E}"
     lastReadAt: "2026-03-25T12:00:00Z"
+  - path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search"
+    itemId: "{44092340-AF76-44F3-A6C3-AA7347CE9D8B}"
+    lastReadAt: "2026-05-20T12:00:00Z"
+  - path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Search"
+    itemId: "{F741895B-29B4-4DC4-BDB7-053860880C4C}"
+    lastReadAt: "2026-05-20T12:00:00Z"
+  - path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Search"
+    itemId: "{E1647CE1-4C12-4F5D-86A6-60848D035B4B}"
+    lastReadAt: "2026-05-20T12:00:00Z"
   - path: "/sitecore/templates/Project/fmc-custom-demo"
     itemId: "{9CAD33DE-63B0-46A0-9EF0-B5B0F1C81630}"
     lastReadAt: "2026-03-25T12:00:00Z"
