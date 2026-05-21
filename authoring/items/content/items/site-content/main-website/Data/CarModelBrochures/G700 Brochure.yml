@@ -1,0 +1,37 @@
+﻿---
+ID: "a1b2c4d5-f009-4009-b009-000000000441"
+Parent: "a1b2c4d5-f009-4009-b009-000000000440"
+Template: "a1b2c4d5-f005-4005-b005-000000000070"
+Path: "/sitecore/content/main/main-website/Data/CarModelBrochures/G700 Brochure"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2a28c964-8958-4ee5-b08b-a522bebff3d4"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T000000Z
+    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
+      Hint: Title
+      Value: G700 Brochure Download
+    - ID: "SectionTitle-placeholder"
+      Hint: SectionTitle
+      Value: Jetour G700 Warranty and Service Packages
+    - ID: "SectionLabel-placeholder"
+      Hint: SectionLabel
+      Value: Download
+    - ID: "Description-placeholder"
+      Hint: Description
+      Value: <p>Start your journey with the Jetour G700, a plug-in hybrid SUV that redefines intelligent performance through unmatched power and opulence.</p>
+    - ID: "BrochureLinkLabel-placeholder"
+      Hint: BrochureLinkLabel
+      Value: Download the Jetour G700 Specs Brochure
+    - ID: "PrimaryLinkLabel-placeholder"
+      Hint: PrimaryLinkLabel
+      Value: Book Your Jetour G700 Now

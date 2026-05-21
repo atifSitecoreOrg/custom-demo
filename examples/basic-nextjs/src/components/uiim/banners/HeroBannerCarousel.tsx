@@ -277,21 +277,19 @@ export const JetourUAE = ({ fields, params, page }: HeroBannerCarouselProps): JS
               key={slide.id}
               className="relative h-full w-full flex-shrink-0 overflow-hidden"
             >
-              {/* Background image */}
-              {(slide.slideImage?.jsonValue?.value?.src || isEditing) && (
-                <div className="absolute inset-0">
-                  <ContentSdkImage
-                    field={slide.slideImage?.jsonValue}
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-              )}
-              {/* Gradient — dark on right side where content sits */}
-              <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/40 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              {/* Background image — always render wrapper so Page Builder editing chrome appears */}
+              <div className="absolute inset-0">
+                <ContentSdkImage
+                  field={slide.slideImage?.jsonValue}
+                  className="h-full w-full object-cover object-center"
+                />
+              </div>
+              {/* Gradient overlays — pointer-events-none so Page Builder image chrome works */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-l rtl:bg-gradient-to-r from-black/85 via-black/40 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-              {/* Content — bottom-right aligned */}
-              <div className="absolute bottom-0 right-0 z-10 px-8 pb-24 md:px-16 md:pb-28 max-w-2xl text-right">
+              {/* Content — bottom-right (ltr) / bottom-left (rtl) */}
+              <div className="absolute bottom-0 right-0 rtl:right-auto rtl:left-0 z-10 px-8 pb-24 md:px-16 md:pb-28 max-w-2xl text-end">
                 {(slide.slideTitle?.jsonValue?.value || isEditing) && (
                   <Text
                     field={slide.slideTitle?.jsonValue}
@@ -305,14 +303,14 @@ export const JetourUAE = ({ fields, params, page }: HeroBannerCarouselProps): JS
                     className="mt-3 text-base text-white/80 max-w-xl md:text-lg"
                   />
                 )}
-                <div className="mt-6 flex flex-wrap items-center justify-end gap-4">
+                <div className="mt-6 flex flex-wrap items-center justify-end rtl:justify-start gap-4">
                   {(slide.primaryLink?.jsonValue?.value?.href || isEditing) && (
                     <ContentSdkLink
                       field={slide.primaryLink?.jsonValue}
-                      className="inline-flex items-center justify-center px-7 py-3 text-sm font-semibold uppercase tracking-wider transition-opacity hover:opacity-90"
+                      className="inline-flex items-center justify-center px-7 py-3 text-sm font-bold uppercase tracking-wider transition-opacity hover:opacity-90"
                       style={{
-                        backgroundColor: 'var(--brand-primary)',
-                        color: 'var(--brand-primary-foreground)',
+                        backgroundColor: 'var(--brand-accent, #c8102e)',
+                        color: '#ffffff',
                         borderRadius: '2px',
                       }}
                     />
@@ -330,13 +328,18 @@ export const JetourUAE = ({ fields, params, page }: HeroBannerCarouselProps): JS
           ))}
         </div>
 
-        {/* Prev / Next arrows — minimal style */}
-        {slides.length > 1 && !isEditing && (
+        {/* Prev / Next arrows — always shown so authors can navigate slides in Page Builder */}
+        {slides.length > 1 && (
           <>
             <button
               type="button"
               onClick={() => goTo(activeIndex - 1)}
-              className="absolute right-16 bottom-8 z-20 flex items-center justify-center w-10 h-10 border border-white/50 text-white transition hover:border-white"
+              className={cn(
+                'absolute z-20 flex items-center justify-center w-10 h-10 border text-white transition',
+                isEditing
+                  ? 'left-4 top-1/2 -translate-y-1/2 border-white bg-black/60 hover:bg-black/80'
+                  : 'right-16 bottom-8 border-white/50 hover:border-white'
+              )}
               aria-label="Previous slide"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -346,13 +349,24 @@ export const JetourUAE = ({ fields, params, page }: HeroBannerCarouselProps): JS
             <button
               type="button"
               onClick={() => goTo(activeIndex + 1)}
-              className="absolute right-4 bottom-8 z-20 flex items-center justify-center w-10 h-10 border border-white/50 text-white transition hover:border-white"
+              className={cn(
+                'absolute z-20 flex items-center justify-center w-10 h-10 border text-white transition',
+                isEditing
+                  ? 'right-4 top-1/2 -translate-y-1/2 border-white bg-black/60 hover:bg-black/80'
+                  : 'right-4 bottom-8 border-white/50 hover:border-white'
+              )}
               aria-label="Next slide"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <polyline points="9 6 15 12 9 18" />
               </svg>
             </button>
+            {/* Editing mode: slide counter label so authors know which slide they're on */}
+            {isEditing && (
+              <div className="absolute top-4 left-1/2 z-20 -translate-x-1/2 rounded bg-black/70 px-3 py-1 text-xs font-semibold text-white tabular-nums">
+                Slide {activeIndex + 1} / {slides.length}
+              </div>
+            )}
           </>
         )}
 

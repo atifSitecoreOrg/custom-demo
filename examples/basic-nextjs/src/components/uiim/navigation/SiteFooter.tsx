@@ -271,13 +271,14 @@ export const JetourUAE = (props: SiteFooterProps): JSX.Element => {
         <div className="mx-auto max-w-7xl px-6 py-14 sm:px-8 md:py-16">
           <div className="grid gap-12 md:grid-cols-4">
 
-            {/* ── Col 1: Logo + tagline + social ── */}
+            {/* ── Col 1: Dual logos + tagline + social ── */}
             <div className="flex flex-col gap-5">
+              {/* Primary: Jetour logo */}
               <Link href="/" className="inline-flex items-center">
                 {brandLogo?.value?.src ? (
                   <ContentSdkImage
                     field={brandLogo}
-                    className="h-9 w-auto object-contain brightness-0 invert"
+                    className="h-8 w-auto object-contain brightness-0 invert"
                   />
                 ) : (
                   <span className="text-xl font-bold tracking-widest uppercase text-white font-[var(--brand-heading-font,inherit)]">
@@ -285,8 +286,28 @@ export const JetourUAE = (props: SiteFooterProps): JSX.Element => {
                   </span>
                 )}
               </Link>
-              <p className="text-sm leading-relaxed text-white/40 font-[var(--brand-body-font,inherit)]">
-                Premium Chinese SUVs in the UAE.<br />Distributed by Elite Group Holding.
+              {/* Separator */}
+              <div className="flex items-center gap-3">
+                <div className="h-px flex-1" style={{ backgroundColor: 'rgba(255,255,255,0.08)' }} />
+                <span className="text-[9px] uppercase tracking-widest text-white/20">by</span>
+                <div className="h-px flex-1" style={{ backgroundColor: 'rgba(255,255,255,0.08)' }} />
+              </div>
+              {/* Secondary: Elite Group Holding */}
+              <a
+                href="https://elitegroupholding.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-col gap-0.5 group"
+              >
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/60 group-hover:text-white/90 transition-colors font-[var(--brand-heading-font,inherit)]">
+                  Elite Group Holding
+                </span>
+                <span className="text-[9px] uppercase tracking-widest text-white/25 font-[var(--brand-body-font,inherit)]">
+                  Exclusive UAE Partner
+                </span>
+              </a>
+              <p className="text-xs leading-relaxed text-white/35 font-[var(--brand-body-font,inherit)]">
+                Jetour vehicles distributed exclusively by Elite Group Holding in the UAE.
               </p>
               {/* Social icons row */}
               <div className="flex items-center gap-3">

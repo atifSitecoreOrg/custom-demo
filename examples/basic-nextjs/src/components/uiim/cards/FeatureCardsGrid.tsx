@@ -24,6 +24,8 @@ interface FeatureCardItemFields {
 interface FeatureCardsGridDatasource {
   title: { jsonValue: Field<string> };
   description: { jsonValue: Field<string> };
+  ctaLink?: { jsonValue: LinkField };
+  ctaLabel?: { jsonValue: Field<string> };
   children: {
     results: FeatureCardItemFields[];
   };
@@ -375,13 +377,13 @@ export const JetourUAEModels = ({ fields, params, page }: FeatureCardsGridProps)
                     style={{ borderRadius: '2px' }}
                   >
                     <div className="relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
-                      {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
-                        <ContentSdkImage
-                          field={card.cardImage?.jsonValue}
-                          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      {/* Always render so Page Builder editing chrome activates on click */}
+                      <ContentSdkImage
+                        field={card.cardImage?.jsonValue}
+                        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                      {/* pointer-events-none keeps editing overlays clickable */}
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-4">
                         {(card.cardTitle?.jsonValue?.value || isEditing) && (
                           <Text
@@ -479,24 +481,23 @@ export const JetourUAEServices = ({ fields, params, page }: FeatureCardsGridProp
                 style={{ border: '1px solid var(--brand-border, #e5e7eb)' }}
               >
                 {/* Full-width image */}
-                {(card.cardImage?.jsonValue?.value?.src || isEditing) ? (
-                  <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                  {card.cardImage?.jsonValue ? (
                     <ContentSdkImage
                       field={card.cardImage?.jsonValue}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    {/* Subtle dark overlay on hover */}
-                    <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
-                  </div>
-                ) : (
-                  /* Placeholder block when no image */
-                  <div
-                    className="flex items-center justify-center"
-                    style={{ aspectRatio: '16/9', backgroundColor: 'var(--brand-muted, #f5f5f5)' }}
-                  >
-                    <span className="text-xs opacity-30 font-[var(--brand-body-font,inherit)]">Image</span>
-                  </div>
-                )}
+                  ) : (
+                    <div
+                      className="flex h-full w-full items-center justify-center"
+                      style={{ backgroundColor: 'var(--brand-muted, #f5f5f5)' }}
+                    >
+                      <span className="text-xs opacity-30 font-[var(--brand-body-font,inherit)]">Image</span>
+                    </div>
+                  )}
+                  {/* pointer-events-none so editing overlays receive clicks */}
+                  <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
+                </div>
 
                 {/* Card body */}
                 <div className="flex flex-1 flex-col p-6">
@@ -535,7 +536,7 @@ export const JetourUAEServices = ({ fields, params, page }: FeatureCardsGridProp
 };
 
 /* ────────────────────────────────────────────
-   JetourUAENews — white bg, image-top news cards, horizontal carousel
+   JetourUAENews — dark section header + white/image cards matching jetouruae.com screenshot
    ──────────────────────────────────────────── */
 export const JetourUAENews = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
@@ -569,127 +570,169 @@ export const JetourUAENews = ({ fields, params, page }: FeatureCardsGridProps): 
 
   return (
     <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
-      <section className="w-full bg-white">
-        {/* Dark header strip — "MEDIA CENTRE" */}
-        <div className="w-full px-4 py-10 md:py-12" style={{ backgroundColor: '#111111' }}>
-          <div className="mx-auto max-w-7xl flex items-end justify-between gap-4">
-            <div>
-              {(datasource.title?.jsonValue?.value || isEditing) && (
-                <Text
-                  field={datasource.title?.jsonValue}
-                  tag="h2"
-                  className="text-2xl font-bold uppercase tracking-widest text-white font-[var(--brand-heading-font,inherit)] md:text-3xl"
-                />
-              )}
-              {(datasource.description?.jsonValue?.value || isEditing) && (
-                <ContentSdkRichText
-                  field={datasource.description?.jsonValue}
-                  className="mt-2 text-sm text-white/50 font-[var(--brand-body-font,inherit)] max-w-xl"
-                />
-              )}
-            </div>
-            {totalPages > 1 && !isEditing && (
-              <div className="flex gap-1.5 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => goTo(clampedPage - 1)}
-                  className="flex h-9 w-9 items-center justify-center border border-white/20 text-white/60 transition hover:border-white/60 hover:text-white"
-                  aria-label="Previous articles"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polyline points="15 18 9 12 15 6" />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => goTo(clampedPage + 1)}
-                  className="flex h-9 w-9 items-center justify-center border border-white/20 text-white/60 transition hover:border-white/60 hover:text-white"
-                  aria-label="Next articles"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polyline points="9 6 15 12 9 18" />
-                  </svg>
-                </button>
-              </div>
-            )}
-          </div>
+      <section className="w-full" style={{ backgroundColor: '#111111' }}>
+        {/* Section heading — centred on dark bg */}
+        <div className="px-4 pt-12 pb-8 text-center">
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.35em] text-white/35 font-[var(--brand-heading-font,inherit)]">
+            Media Centre
+          </p>
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="text-2xl font-bold text-white font-[var(--brand-heading-font,inherit)] md:text-3xl"
+            />
+          )}
+          {(datasource.description?.jsonValue?.value || isEditing) && (
+            <ContentSdkRichText
+              field={datasource.description?.jsonValue}
+              className="mx-auto mt-2 max-w-lg text-xs text-white/40 font-[var(--brand-body-font,inherit)]"
+            />
+          )}
         </div>
 
-        {/* Cards area — white background */}
-        <div className="w-full px-4 py-10 md:py-14">
-          <div className="mx-auto max-w-7xl">
-            {/* Carousel track */}
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${clampedPage * 100}%)` }}
-              >
-                {cards.map((card) => (
+        {/* Carousel — full width with edge arrows */}
+        <div className="relative">
+          {/* Prev arrow */}
+          {!isEditing && (
+            <button
+              type="button"
+              onClick={() => goTo(clampedPage - 1)}
+              className="absolute left-3 top-1/2 z-10 -translate-y-1/2 flex h-8 w-8 items-center justify-center border border-white/20 text-white/50 transition hover:border-white/60 hover:text-white rtl:left-auto rtl:right-3"
+              aria-label="Previous articles"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+          )}
+
+          <div className="overflow-hidden px-10 md:px-14">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${clampedPage * 100}%)` }}
+            >
+              {cards.map((card) => {
+                const hasImage = !!card.cardImage?.jsonValue?.value?.src;
+                return (
                   <div
                     key={card.id}
-                    className="flex-shrink-0 px-3"
+                    className="flex-shrink-0 px-1.5"
                     style={{ width: `${100 / visibleCount}%` }}
                   >
-                    <div className="group flex flex-col overflow-hidden h-full">
-                      {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
-                        <div className="overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                    {/* Card: full image fill OR white text card */}
+                    <div
+                      className="group relative flex flex-col overflow-hidden"
+                      style={{ aspectRatio: '3/4', backgroundColor: '#ffffff' }}
+                    >
+                      {hasImage || isEditing ? (
+                        /* Image card — image fills entire area */
+                        <>
                           <ContentSdkImage
                             field={card.cardImage?.jsonValue}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
+                          {/* Bottom gradient + title */}
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 p-4 rtl:text-right">
+                            {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                              <Text
+                                field={card.cardTitle?.jsonValue}
+                                tag="h3"
+                                className="text-sm font-bold leading-snug text-white font-[var(--brand-heading-font,inherit)]"
+                              />
+                            )}
+                            {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                              <ContentSdkLink
+                                field={card.cardLink?.jsonValue}
+                                className="mt-2 inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white/70 transition-colors hover:text-white"
+                              />
+                            )}
+                          </div>
+                        </>
+                      ) : (
+                        /* Text card — white bg, brand marks, dark title */
+                        <div className="flex h-full flex-col p-5">
+                          {/* Brand identity marks */}
+                          <div className="mb-4 flex items-center gap-2 rtl:flex-row-reverse">
+                            <span
+                              className="inline-flex items-center px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white"
+                              style={{ backgroundColor: 'var(--brand-accent, #c8102e)' }}
+                            >
+                              JETOUR
+                            </span>
+                            <span className="text-[8px] font-semibold uppercase tracking-wider text-gray-400">
+                              Elite Group Holding
+                            </span>
+                          </div>
+                          {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                            <Text
+                              field={card.cardTitle?.jsonValue}
+                              tag="h3"
+                              className="flex-1 text-sm font-bold leading-snug text-gray-900 font-[var(--brand-heading-font,inherit)]"
+                            />
+                          )}
+                          {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                            <ContentSdkRichText
+                              field={card.cardDescription?.jsonValue}
+                              className="mt-2 text-xs leading-relaxed text-gray-500 font-[var(--brand-body-font,inherit)] line-clamp-3"
+                            />
+                          )}
+                          {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                            <ContentSdkLink
+                              field={card.cardLink?.jsonValue}
+                              className="mt-auto pt-5 inline-flex items-center text-[11px] font-bold uppercase tracking-widest text-gray-500 transition-colors hover:text-gray-900"
+                            />
+                          )}
                         </div>
                       )}
-                      <div className="flex flex-1 flex-col pt-5 pb-2">
-                        {(card.cardTitle?.jsonValue?.value || isEditing) && (
-                          <Text
-                            field={card.cardTitle?.jsonValue}
-                            tag="h3"
-                            className="text-sm font-bold leading-snug font-[var(--brand-heading-font,inherit)] mb-3"
-                            style={{ color: 'var(--brand-fg, #212121)' }}
-                          />
-                        )}
-                        {(card.cardDescription?.jsonValue?.value || isEditing) && (
-                          <ContentSdkRichText
-                            field={card.cardDescription?.jsonValue}
-                            className="flex-1 text-xs leading-relaxed opacity-55 font-[var(--brand-body-font,inherit)]"
-                            style={{ color: 'var(--brand-fg, #212121)' }}
-                          />
-                        )}
-                        {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
-                          <ContentSdkLink
-                            field={card.cardLink?.jsonValue}
-                            className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest transition-opacity hover:opacity-70"
-                            style={{ color: 'var(--brand-accent, #c8102e)' }}
-                          />
-                        )}
-                      </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
-
-            {/* Dot indicators */}
-            {totalPages > 1 && (
-              <div className="mt-6 flex gap-1.5">
-                {Array.from({ length: totalPages }).map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => goTo(i)}
-                    className="h-0.5 transition-all"
-                    style={{
-                      width: i === clampedPage ? '32px' : '16px',
-                      backgroundColor: i === clampedPage
-                        ? 'var(--brand-accent, #c8102e)'
-                        : 'var(--brand-border, #e0e0e0)',
-                    }}
-                    aria-label={`Go to page ${i + 1}`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
+
+          {/* Next arrow */}
+          {!isEditing && (
+            <button
+              type="button"
+              onClick={() => goTo(clampedPage + 1)}
+              className="absolute right-3 top-1/2 z-10 -translate-y-1/2 flex h-8 w-8 items-center justify-center border border-white/20 text-white/50 transition hover:border-white/60 hover:text-white rtl:right-auto rtl:left-3"
+              aria-label="Next articles"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="9 6 15 12 9 18" />
+              </svg>
+            </button>
+          )}
+        </div>
+
+        {/* Dots + Read All News */}
+        <div className="flex flex-col items-center gap-5 py-8">
+          {totalPages > 1 && (
+            <div className="flex gap-2">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => goTo(i)}
+                  className="h-0.5 transition-all"
+                  style={{
+                    width: i === clampedPage ? '28px' : '14px',
+                    backgroundColor: i === clampedPage ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.18)',
+                  }}
+                  aria-label={`Go to page ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
+          {(datasource.ctaLink?.jsonValue?.value?.href || isEditing) && datasource.ctaLink?.jsonValue && (
+            <ContentSdkLink
+              field={datasource.ctaLink.jsonValue}
+              className="inline-flex items-center justify-center px-7 py-2.5 text-[11px] font-bold uppercase tracking-widest text-white border border-white/25 transition-colors hover:border-white/60 hover:bg-white/10"
+            />
+          )}
         </div>
       </section>
     </div>

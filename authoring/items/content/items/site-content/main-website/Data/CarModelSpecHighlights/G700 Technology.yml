@@ -1,0 +1,28 @@
+﻿---
+ID: "a1b2c4d5-f009-4009-b009-000000000431"
+Parent: "a1b2c4d5-f009-4009-b009-000000000430"
+Template: "a1b2c4d5-f004-4004-b004-000000000050"
+Path: "/sitecore/content/main/main-website/Data/CarModelSpecHighlights/G700 Technology"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "84256445-a35a-4e1f-aff1-15586895c7c8"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T000000Z
+    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
+      Hint: Title
+      Value: G700 Technology
+    - ID: "SectionTitle-placeholder"
+      Hint: SectionTitle
+      Value: Built To Lead. Born To Rule.
+    - ID: "BodyText-placeholder"
+      Hint: BodyText
+      Value: <p>Fully Transparent Chassis View, Advanced Driving Modes, and ultra-fast 800V charging — engineered for the extraordinary.</p>

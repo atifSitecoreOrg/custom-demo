@@ -91,28 +91,25 @@ export const JetourUAE = ({ fields, params, page }: AnnouncementBarProps): JSX.E
         className="w-full px-4"
         style={{ backgroundColor: '#111111', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between h-8">
-          {/* Left: message with accent left-border */}
-          <div className="flex items-center gap-3">
-            <span
-              className="inline-block h-3 w-0.5 shrink-0"
-              style={{ backgroundColor: 'var(--brand-accent, #c8102e)' }}
+        <div className="mx-auto flex max-w-7xl items-center justify-center h-8 gap-4">
+          {/* Red accent mark */}
+          <span
+            className="hidden sm:inline-block h-3 w-0.5 shrink-0"
+            style={{ backgroundColor: 'var(--brand-accent, #c8102e)' }}
+          />
+          {(fields.Message?.value || isEditing) && (
+            <Text
+              field={fields.Message}
+              tag="span"
+              className="text-[10px] font-medium uppercase tracking-[0.15em] text-center"
+              style={{ color: 'rgba(255,255,255,0.55)' }}
             />
-            {(fields.Message?.value || isEditing) && (
-              <Text
-                field={fields.Message}
-                tag="span"
-                className="text-[10px] font-medium uppercase tracking-[0.15em]"
-                style={{ color: 'rgba(255,255,255,0.55)' }}
-              />
-            )}
-          </div>
-          {/* Right: link */}
+          )}
           {(fields.BarLink?.value?.href || isEditing) && (
             <ContentSdkLink
               field={fields.BarLink}
-              className="text-[10px] font-semibold uppercase tracking-[0.15em] transition-opacity hover:opacity-100"
-              style={{ color: 'rgba(255,255,255,0.45)' }}
+              className="text-[10px] font-semibold uppercase tracking-[0.15em] transition-opacity hover:opacity-100 shrink-0"
+              style={{ color: 'var(--brand-accent, #c8102e)' }}
             />
           )}
         </div>

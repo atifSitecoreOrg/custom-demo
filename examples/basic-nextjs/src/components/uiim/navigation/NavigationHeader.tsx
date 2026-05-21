@@ -323,7 +323,7 @@ export const JetourUAE = ({ fields, params, page }: NavigationHeaderProps): JSX.
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-14 sm:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center shrink-0 order-first rtl:order-last">
             {brandLogo?.value?.src ? (
               <ContentSdkImage
                 field={brandLogo}
@@ -337,7 +337,7 @@ export const JetourUAE = ({ fields, params, page }: NavigationHeaderProps): JSX.
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden md:flex items-center gap-7 rtl:flex-row-reverse">
             {links.map((item) => (
               <ContentSdkLink
                 key={item.id}
@@ -352,7 +352,7 @@ export const JetourUAE = ({ fields, params, page }: NavigationHeaderProps): JSX.
           </nav>
 
           {/* CTA + hamburger */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 order-last rtl:order-first rtl:flex-row-reverse">
             {(datasource.ctaLink?.jsonValue?.value?.href || isEditing) && (
               <ContentSdkLink
                 field={datasource.ctaLink?.jsonValue}

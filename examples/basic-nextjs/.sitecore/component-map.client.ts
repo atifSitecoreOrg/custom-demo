@@ -6,6 +6,11 @@ import { Form } from '@sitecore-content-sdk/nextjs';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
 import * as NewsletterSignup from 'src/components/uiim/forms/NewsletterSignup';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
+import * as CarModelSpecGrid from 'src/components/uiim/car-model/CarModelSpecGrid';
+import * as CarModelNavTabs from 'src/components/uiim/car-model/CarModelNavTabs';
+import * as CarModelHero from 'src/components/uiim/car-model/CarModelHero';
+import * as CarModelGallery from 'src/components/uiim/car-model/CarModelGallery';
+import * as CarModelFeatureSlider from 'src/components/uiim/car-model/CarModelFeatureSlider';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
 import * as ArticleHero from 'src/components/uiim/article/ArticleHero';
 import * as SearchExperienceLoadMore from 'src/components/search-experience/SearchExperience.LoadMore';
@@ -41,6 +46,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NavigationHeader', { ...NavigationHeader }],
   ['NewsletterSignup', { ...NewsletterSignup }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid }],
+  ['CarModelSpecGrid', { ...CarModelSpecGrid }],
+  ['CarModelNavTabs', { ...CarModelNavTabs }],
+  ['CarModelHero', { ...CarModelHero }],
+  ['CarModelGallery', { ...CarModelGallery }],
+  ['CarModelFeatureSlider', { ...CarModelFeatureSlider }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel }],
   ['ArticleHero', { ...ArticleHero }],
   ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience }],

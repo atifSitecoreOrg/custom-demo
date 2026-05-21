@@ -1,0 +1,28 @@
+﻿---
+ID: "a1b2c4d5-f009-4009-b009-000000000456"
+Parent: "a1b2c4d5-f009-4009-b009-000000000451"
+Template: "a1b2c4d5-f006-4006-b006-000000000090"
+Path: "/sitecore/content/main/main-website/Data/CarModelNavTabs/G700 Nav Tabs/Next Steps Tab"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cdb384e7-f6e6-4192-9f57-c2e26230f7d0"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T000000Z
+    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
+      Hint: Title
+      Value: Next Steps
+    - ID: "TabLabel-placeholder"
+      Hint: TabLabel
+      Value: Next Steps
+    - ID: "AnchorId-placeholder"
+      Hint: AnchorId
+      Value: g700-next-steps

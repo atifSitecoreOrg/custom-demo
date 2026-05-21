@@ -19,7 +19,7 @@ SharedFields:
   Value: "{F337398E-5A93-4D46-B893-6AA2DCCB6E80}"
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: "query:$site/*[@@name='Data']/*[@@templatename='FeatureCardsGrid Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='FeatureCardsGrid Folder']"
+  Value: "query:$site//*[@@templatename='FeatureCardsGrid Folder']|query:$sharedSites//*[@@templatename='FeatureCardsGrid Folder']"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
   Value: "b55f7c56-9c25-499f-a5b2-e6a5e35e0ad4"

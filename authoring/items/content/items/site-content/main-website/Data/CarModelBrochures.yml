@@ -1,0 +1,19 @@
+﻿---
+ID: "a1b2c4d5-f009-4009-b009-000000000440"
+Parent: "e6c852b5-b70d-412c-b5c6-e6502842f74e"
+Template: "a1b2c4d5-f007-4007-b007-000000000130"
+Path: "/sitecore/content/main/main-website/Data/CarModelBrochures"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "70800455-43c8-4d8d-8593-def3794f28da"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T000000Z

@@ -20,6 +20,13 @@ import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight'
 import * as FAQAccordion from 'src/components/uiim/content/FAQAccordion';
 import * as ProductPricingCards from 'src/components/uiim/cards/ProductPricingCards';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
+import * as CarModelSpecHighlight from 'src/components/uiim/car-model/CarModelSpecHighlight';
+import * as CarModelSpecGrid from 'src/components/uiim/car-model/CarModelSpecGrid';
+import * as CarModelNavTabs from 'src/components/uiim/car-model/CarModelNavTabs';
+import * as CarModelHero from 'src/components/uiim/car-model/CarModelHero';
+import * as CarModelGallery from 'src/components/uiim/car-model/CarModelGallery';
+import * as CarModelFeatureSlider from 'src/components/uiim/car-model/CarModelFeatureSlider';
+import * as CarModelBrochure from 'src/components/uiim/car-model/CarModelBrochure';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
 import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
 import * as CTABanner from 'src/components/uiim/banners/CTABanner';
@@ -83,6 +90,13 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FAQAccordion', { ...FAQAccordion }],
   ['ProductPricingCards', { ...ProductPricingCards }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid, componentType: 'client' }],
+  ['CarModelSpecHighlight', { ...CarModelSpecHighlight }],
+  ['CarModelSpecGrid', { ...CarModelSpecGrid, componentType: 'client' }],
+  ['CarModelNavTabs', { ...CarModelNavTabs, componentType: 'client' }],
+  ['CarModelHero', { ...CarModelHero, componentType: 'client' }],
+  ['CarModelGallery', { ...CarModelGallery, componentType: 'client' }],
+  ['CarModelFeatureSlider', { ...CarModelFeatureSlider, componentType: 'client' }],
+  ['CarModelBrochure', { ...CarModelBrochure }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner }],
   ['CTABanner', { ...CTABanner }],

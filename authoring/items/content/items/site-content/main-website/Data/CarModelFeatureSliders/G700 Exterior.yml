@@ -1,0 +1,28 @@
+﻿---
+ID: "a1b2c4d5-f009-4009-b009-000000000411"
+Parent: "a1b2c4d5-f009-4009-b009-000000000410"
+Template: "a1b2c4d5-f003-4003-b003-000000000030"
+Path: "/sitecore/content/main/main-website/Data/CarModelFeatureSliders/G700 Exterior"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5cdaaa00-724a-4ae9-8bff-578ff70a7653"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T000000Z
+    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
+      Hint: Title
+      Value: G700 Exterior
+    - ID: "SectionTitle-placeholder"
+      Hint: SectionTitle
+      Value: G700 Exterior
+    - ID: "SectionLabel-placeholder"
+      Hint: SectionLabel
+      Value: Design

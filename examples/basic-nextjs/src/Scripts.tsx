@@ -2,6 +2,7 @@
 import { JSX } from 'react';
 import { EditingScripts } from '@sitecore-content-sdk/nextjs';
 import CdpPageView from 'components/content-sdk/CdpPageView';
+import '@/lib/suppress-dev-warnings';
 
 const Scripts = (): JSX.Element => {
   return (

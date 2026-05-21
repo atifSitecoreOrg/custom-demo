@@ -1,0 +1,13 @@
+﻿---
+ID: "8270d859-72c6-4e8e-a738-e4ee1df9c089"
+Parent: "25490ce2-fe27-4bed-8557-b2d9ffc2ff70"
+Template: "4d50cdae-c2d9-4de8-b080-8f992bfb1b55"
+Path: "/sitecore/content/main/main-website/Presentation/Headless Variants/CarModelSpecGrid/Default"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T000000Z

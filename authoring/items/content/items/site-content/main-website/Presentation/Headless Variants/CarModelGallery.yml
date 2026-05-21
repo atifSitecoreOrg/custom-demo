@@ -1,0 +1,13 @@
+﻿---
+ID: "a30447d2-d038-4086-8793-c7086e4d66de"
+Parent: "7bc665dc-d7da-418e-aec6-124d6291e93f"
+Template: "49c111d0-6867-4798-a724-1f103166e6e9"
+Path: "/sitecore/content/main/main-website/Presentation/Headless Variants/CarModelGallery"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T000000Z
