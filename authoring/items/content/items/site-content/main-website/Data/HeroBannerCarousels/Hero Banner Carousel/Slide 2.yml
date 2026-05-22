@@ -18,6 +18,12 @@ Languages:
       Hint: __Updated by
       Value: |
         sitecore\federico.mujica@sitecore.com
+    - ID: "1474d8b8-e0ec-4846-9710-6a81df7a519f"
+      Hint: SlideTitle
+      Value: Intelligent Performance
+    - ID: "f3094864-2fa0-4bb4-b4a6-a773bf06b96f"
+      Hint: SlideSubtitle
+      Value: Plug-in hybrid SUVs built for the modern UAE driver
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20260505T170926Z

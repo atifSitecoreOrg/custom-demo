@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "a1b2c4d5-f009-4009-b009-000000000422"
 Parent: "a1b2c4d5-f009-4009-b009-000000000420"
 Template: "a1b2c4d5-f003-4003-b003-000000000040"
@@ -20,9 +20,9 @@ Languages:
     - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
       Hint: Title
       Value: Seamless Connectivity
-    - ID: "FeatureTitle-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000042"
       Hint: FeatureTitle
       Value: Seamless Connectivity
-    - ID: "FeatureDescription-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000043"
       Hint: FeatureDescription
       Value: <p>Supports Apple CarPlay, Android Auto, Bluetooth, voice assistant, USB ports, and wireless charging on Luxury and Flagship trims.</p>

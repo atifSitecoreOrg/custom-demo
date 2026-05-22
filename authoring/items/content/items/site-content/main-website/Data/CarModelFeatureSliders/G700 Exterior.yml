@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "a1b2c4d5-f009-4009-b009-000000000411"
 Parent: "a1b2c4d5-f009-4009-b009-000000000410"
 Template: "a1b2c4d5-f003-4003-b003-000000000030"
@@ -20,9 +20,9 @@ Languages:
     - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
       Hint: Title
       Value: G700 Exterior
-    - ID: "SectionTitle-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000032"
       Hint: SectionTitle
       Value: G700 Exterior
-    - ID: "SectionLabel-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000033"
       Hint: SectionLabel
       Value: Design

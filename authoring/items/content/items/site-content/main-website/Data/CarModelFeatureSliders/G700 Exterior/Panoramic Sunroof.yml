@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "a1b2c4d5-f009-4009-b009-000000000414"
 Parent: "a1b2c4d5-f009-4009-b009-000000000411"
 Template: "a1b2c4d5-f003-4003-b003-000000000040"
@@ -20,9 +20,9 @@ Languages:
     - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
       Hint: Title
       Value: Panoramic Sunroof and Power Mirrors
-    - ID: "FeatureTitle-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000042"
       Hint: FeatureTitle
       Value: Panoramic Sunroof and Power Mirrors
-    - ID: "FeatureDescription-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000043"
       Hint: FeatureDescription
       Value: <p>A large panoramic sunroof standard on Comfort and Luxury, upgraded to segmented in Flagship, with power-folding mirrors and electric side steps.</p>

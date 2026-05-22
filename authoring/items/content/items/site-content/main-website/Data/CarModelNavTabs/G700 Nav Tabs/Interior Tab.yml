@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "a1b2c4d5-f009-4009-b009-000000000454"
 Parent: "a1b2c4d5-f009-4009-b009-000000000451"
 Template: "a1b2c4d5-f006-4006-b006-000000000090"
@@ -20,9 +20,9 @@ Languages:
     - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
       Hint: Title
       Value: G700 Interior
-    - ID: "TabLabel-placeholder"
+    - ID: "a1b2c4d5-f006-4006-b006-000000000092"
       Hint: TabLabel
       Value: G700 Interior
-    - ID: "AnchorId-placeholder"
+    - ID: "a1b2c4d5-f006-4006-b006-000000000093"
       Hint: AnchorId
       Value: g700-interior

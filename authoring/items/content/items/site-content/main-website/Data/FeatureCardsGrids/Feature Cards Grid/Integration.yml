@@ -20,7 +20,10 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
       Hint: CardTitle
-      Value: Integration
+      Value: Premium Comfort
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>Luxury interiors with Nappa leather, panoramic displays, and tri-zone climate control for every passenger.</p>
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20260325T134302Z

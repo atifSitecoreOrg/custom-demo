@@ -1,0 +1,25 @@
+---
+ID: "d4d4d4d4-4444-4444-d444-444444444404"
+Parent: "1f5a8b2c-6d0e-4f9a-3c7b-8e2d4f0b6a1c"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/main/main-website/Presentation/Page Branches/Car Model Page/$name/Data/Key Specs/Acceleration"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: 0–100 km/h
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: 5.4 seconds
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260522T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d4d4d4d4-4444-4444-d444-444444444404"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260522T000000Z

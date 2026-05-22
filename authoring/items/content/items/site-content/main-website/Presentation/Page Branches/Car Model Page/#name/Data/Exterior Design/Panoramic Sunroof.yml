@@ -1,0 +1,25 @@
+---
+ID: "b2b2b2b2-2222-4222-b222-222222222202"
+Parent: "9a2c4e6f-0d8b-4f3a-5c7e-2b4d0f8a1c5e"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/main/main-website/Presentation/Page Branches/Car Model Page/$name/Data/Exterior Design/Panoramic Sunroof"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Panoramic Sunroof
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>An expansive panoramic sunroof floods the cabin with natural light, elevating every journey with an open-air feel.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260522T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b2b2b2b2-2222-4222-b222-222222222202"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260522T000000Z

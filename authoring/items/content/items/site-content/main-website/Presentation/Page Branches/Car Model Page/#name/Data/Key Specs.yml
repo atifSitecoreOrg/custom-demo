@@ -8,27 +8,21 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
-      Hint: __Created
-      Value: 20260521T000000Z
-    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
-      Hint: __Owner
-      Value: |
-        sitecore\Admin
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\Admin
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "c7d8e9f0-a1b2-3456-cdef-789012345a12"
-    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
-      Hint: __Updated by
-      Value: |
-        sitecore\Admin
-    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
-      Hint: __Updated
-      Value: 20260521T000000Z
+    - ID: "3775c623-2a5c-4d86-a41f-9717038d7d73"
+      Hint: Title
+      Value: Key Specifications
+    - ID: "f9d6a2e8-15ee-4088-b4eb-60e1c66626d8"
+      Hint: Description
+      Value: <p>Technical specifications for the $name — engineered for power, efficiency, and the road ahead.</p>
     - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
       Hint: __Display name
-      Value: Key Specifications
+      Value: Key Specs
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260522T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d4d5d6e7-f8a9-0123-def0-456789012345"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260522T000000Z

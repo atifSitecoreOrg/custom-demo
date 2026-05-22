@@ -13,7 +13,10 @@ Languages:
       Value: 20260325T142111Z
     - ID: "8a1bde30-c1a6-4eb1-b30a-c9202cd3980a"
       Hint: Title
-      Value: Rich Text Block
+      Value: About Jetour UAE
+    - ID: "1e23eeda-e14c-429f-8ca5-4f1d3de10949"
+      Hint: Body
+      Value: <p>Jetour is a global automotive brand bringing intelligent, design-led SUVs to the UAE. With a focus on plug-in hybrid technology, premium interiors, and exceptional value, Jetour is redefining what drivers can expect from a modern SUV.</p>
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "93f72504-1da6-427c-a8c8-9ac83e061db6"

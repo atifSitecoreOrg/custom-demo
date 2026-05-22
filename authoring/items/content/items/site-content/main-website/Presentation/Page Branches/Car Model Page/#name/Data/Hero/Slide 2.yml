@@ -1,0 +1,25 @@
+---
+ID: "a1a1a1a1-1111-4111-a111-111111111102"
+Parent: "3e6f0a2c-7b4d-4c9e-1f5a-8b2d0e7c3f6a"
+Template: "4828b260-dc19-4c4f-bf0e-1dd5ae47edcc"
+Path: "/sitecore/content/main/main-website/Presentation/Page Branches/Car Model Page/$name/Data/Hero/Slide 2"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1474d8b8-e0ec-4846-9710-6a81df7a519f"
+      Hint: SlideTitle
+      Value: Intelligent Performance
+    - ID: "f3094864-2fa0-4bb4-b4a6-a773bf06b96f"
+      Hint: SlideSubtitle
+      Value: Plug-in hybrid power meets premium luxury
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260522T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1a1a1a1-1111-4111-a111-111111111102"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260522T000000Z

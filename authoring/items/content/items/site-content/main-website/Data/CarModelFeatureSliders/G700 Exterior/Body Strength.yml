@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "a1b2c4d5-f009-4009-b009-000000000413"
 Parent: "a1b2c4d5-f009-4009-b009-000000000411"
 Template: "a1b2c4d5-f003-4003-b003-000000000040"
@@ -20,9 +20,9 @@ Languages:
     - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
       Hint: Title
       Value: Body-on-Frame Strength
-    - ID: "FeatureTitle-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000042"
       Hint: FeatureTitle
       Value: Body-on-Frame Strength
-    - ID: "FeatureDescription-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000043"
       Hint: FeatureDescription
       Value: <p>Measures 5153 mm in length, 2050 mm in width, and 1960 mm in height, with a 2850 mm wheelbase and 230 mm ground clearance.</p>

@@ -23,4 +23,16 @@ Languages:
       Value: 20260325T140926Z
     - ID: "f6a33cbc-2271-4f11-89d1-fca832a641a4"
       Hint: Title
-      Value: Newsletter Signup
+      Value: Stay in the loop
+    - ID: "d9ef8800-c008-4205-82bc-c6f7ffd8329f"
+      Hint: Description
+      Value: <p>Get the latest Jetour news, model launches, and exclusive offers delivered to your inbox.</p>
+    - ID: "e2a5eaf9-edc2-464c-9cbb-2635fe5d6af0"
+      Hint: PlaceholderText
+      Value: Enter your email address
+    - ID: "e59c4d09-0b59-4053-bbae-a33e36163807"
+      Hint: ButtonText
+      Value: Subscribe
+    - ID: "7e630b65-08c4-45db-900a-98f76e8365b0"
+      Hint: SuccessMessage
+      Value: Thank you for subscribing to Jetour UAE updates.

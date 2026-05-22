@@ -11,9 +11,15 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260325T191452Z
+    - ID: "5f369cde-7169-4823-bb4a-8c68f68e0c82"
+      Hint: EyebrowText
+      Value: Jetour Technology
     - ID: "801e9d29-fa73-4b5a-8cde-04cde87dae6a"
       Hint: Title
-      Value: Feature Highlight
+      Value: Built To Lead. Born To Rule.
+    - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
+      Hint: Description
+      Value: <p>Fully transparent chassis view, advanced driving modes, and ultra-fast 800V charging — engineered for the extraordinary.</p>
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "95f5ff32-ba82-4b32-bc45-77bc19fa842d"

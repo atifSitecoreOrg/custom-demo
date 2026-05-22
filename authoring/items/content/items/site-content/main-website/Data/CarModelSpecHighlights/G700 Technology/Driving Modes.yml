@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "a1b2c4d5-f009-4009-b009-000000000433"
 Parent: "a1b2c4d5-f009-4009-b009-000000000431"
 Template: "a1b2c4d5-f004-4004-b004-000000000060"
@@ -20,9 +20,9 @@ Languages:
     - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
       Hint: Title
       Value: Advanced Driving Modes
-    - ID: "SpecTitle-placeholder"
+    - ID: "a1b2c4d5-f004-4004-b004-000000000062"
       Hint: SpecTitle
       Value: Advanced Driving Modes
-    - ID: "SpecDescription-placeholder"
+    - ID: "a1b2c4d5-f004-4004-b004-000000000063"
       Hint: SpecDescription
       Value: <p>Tank Turn, crawl mode, and low-speed 4WD for precision control in the most challenging off-road environments.</p>

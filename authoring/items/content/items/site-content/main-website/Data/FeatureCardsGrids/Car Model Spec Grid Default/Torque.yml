@@ -1,0 +1,25 @@
+---
+ID: "f2f2f2f2-2222-4222-b222-222222222203"
+Parent: "b1c2d3e4-f5a6-7890-abcd-ef1234567002"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Car Model Spec Grid Default/Torque"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Torque
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: 650 Nm
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260522T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f2f2f2f2-2222-4222-b222-222222222203"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260522T000000Z

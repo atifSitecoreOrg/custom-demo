@@ -1,0 +1,25 @@
+---
+ID: "c3c3c3c3-3333-4333-c333-333333333304"
+Parent: "5c7e0f4a-3b6d-4a2c-9f1e-4c8b0d6a2e5f"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/main/main-website/Presentation/Page Branches/Car Model Page/$name/Data/Interior Gallery/Climate"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Tri-Zone Climate Control
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>Independent climate zones for driver, passenger, and rear passengers ensure perfect comfort in the UAE heat.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260522T000000Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c3c3c3c3-3333-4333-c333-333333333304"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260522T000000Z

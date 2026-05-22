@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "a1b2c4d5-f009-4009-b009-000000000415"
 Parent: "a1b2c4d5-f009-4009-b009-000000000411"
 Template: "a1b2c4d5-f003-4003-b003-000000000040"
@@ -20,9 +20,9 @@ Languages:
     - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
       Hint: Title
       Value: All-Terrain Wheels
-    - ID: "FeatureTitle-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000042"
       Hint: FeatureTitle
       Value: All-Terrain Wheels
-    - ID: "FeatureDescription-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000043"
       Hint: FeatureDescription
       Value: <p>Wheel sizes range from 18 to 20 inches, with available all-terrain tire options for maximum off-road capability.</p>

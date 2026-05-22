@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "a1b2c4d5-f009-4009-b009-000000000412"
 Parent: "a1b2c4d5-f009-4009-b009-000000000411"
 Template: "a1b2c4d5-f003-4003-b003-000000000040"
@@ -20,9 +20,9 @@ Languages:
     - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
       Hint: Title
       Value: Bold and Elegant Design
-    - ID: "FeatureTitle-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000042"
       Hint: FeatureTitle
       Value: Bold and Elegant Design
-    - ID: "FeatureDescription-placeholder"
+    - ID: "a1b2c4d5-f003-4003-b003-000000000043"
       Hint: FeatureDescription
       Value: <p>A strong visual identity with a large front grille, Matrix LED headlights, and pronounced body lines inspired by wild landscapes.</p>
