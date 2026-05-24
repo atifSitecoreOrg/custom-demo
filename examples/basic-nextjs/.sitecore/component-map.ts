@@ -6,6 +6,7 @@ import { Form } from '@sitecore-content-sdk/nextjs';
 // end of built-in components
 import * as TestimonialBlock from 'src/components/uiim/social-proof/TestimonialBlock';
 import * as LogoCloud from 'src/components/uiim/social-proof/LogoCloud';
+import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
 import * as SiteFooter from 'src/components/uiim/navigation/SiteFooter';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
@@ -32,6 +33,10 @@ import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
 import * as CTABanner from 'src/components/uiim/banners/CTABanner';
 import * as ArticleHero from 'src/components/uiim/article/ArticleHero';
 import * as ArticleBody from 'src/components/uiim/article/ArticleBody';
+import * as input from 'src/components/ui/input';
+import * as card from 'src/components/ui/card';
+import * as button from 'src/components/ui/button';
+import * as badge from 'src/components/ui/badge';
 import * as SearchExperienceLoadMore from 'src/components/search-experience/SearchExperience.LoadMore';
 import * as SearchExperience from 'src/components/search-experience/SearchExperience';
 import * as useSearchField from 'src/components/search-experience/search-components/useSearchField';
@@ -76,6 +81,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Form', { ...Form, componentType: 'client' }],
   ['TestimonialBlock', { ...TestimonialBlock }],
   ['LogoCloud', { ...LogoCloud }],
+  ['SearchExperienceV2', { ...SearchExperienceV2, componentType: 'client' }],
   ['TabNavigationSection', { ...TabNavigationSection }],
   ['SiteFooter', { ...SiteFooter }],
   ['NavigationHeader', { ...NavigationHeader, componentType: 'client' }],
@@ -102,6 +108,10 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['CTABanner', { ...CTABanner }],
   ['ArticleHero', { ...ArticleHero, componentType: 'client' }],
   ['ArticleBody', { ...ArticleBody }],
+  ['input', { ...input }],
+  ['card', { ...card }],
+  ['button', { ...button }],
+  ['badge', { ...badge }],
   ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience, componentType: 'client' }],
   ['useSearchField', { ...useSearchField, componentType: 'client' }],
   ['useRouter', { ...useRouter, componentType: 'client' }],
