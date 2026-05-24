@@ -1,0 +1,52 @@
+﻿---
+ID: "8ca6c1ab-9682-4c7a-a6bd-1952dd949405"
+Parent: "7f5770e8-72b7-433c-a4bc-a11d463b318b"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Models Gallery/Jetour G700"
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "0559439e-9eb1-4630-b9f6-c92a68f58ef5"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T081823Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link text="Explore G700" anchor="" linktype="internal" class="" title="" target="" querystring="" id="{3A493964-AAD7-45B8-A8B1-722335974CB5}" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: "<p>Plug-in Hybrid Flagship SUV. Commanding presence, 263 kW combined power, 70 km pure electric range and premium luxury craftsmanship.</p>"
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3925b2a5-9288-469d-b74e-b626ff6dfe61"
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68876-LandingPageHero-2000x600?v=900efeb3" dam-id="zkI6K_qqS5-cOQbIH_9CUA" width="2000" height="600" alt="Jetour G700 Plug-in Hybrid" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68876/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Jetour G700
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T114314Z

@@ -1,0 +1,95 @@
+﻿---
+ID: "5073a917-3d99-467a-8e60-debc5f8dc12d"
+Parent: "39e3fd75-cd03-4812-b579-1a6596746caa"
+Template: "4828b260-dc19-4c4f-bf0e-1dd5ae47edcc"
+Path: "/sitecore/content/main/main-website/Data/HeroBannerCarousels/Jetour - Hero Carousel/Slide - T2"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1474d8b8-e0ec-4846-9710-6a81df7a519f"
+      Hint: SlideTitle
+      Value: Jetour T2
+    - ID: "2441786d-3461-4129-870d-448832993247"
+      Hint: PrimaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="استكشف T2" url="https://www.jetouruae.com/en/new-models/jetour-t2/" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230529Z
+    - ID: "25d25511-69d5-489b-8df0-ab9ae8f48964"
+      Hint: SlideImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68476-section3-img7?v=711f6b8e" dam-id="o5d5ht5EQpWyYCIECwWy7A" width="1920" height="1080" alt="Jetour T2" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68476/thumbnail" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7e674ba5-5a1e-4ba8-aaf6-3221d1b5ccc9"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260520T023234Z
+    - ID: "d9d24d4d-659e-4155-9137-9a3f25cf1937"
+      Hint: SecondaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="استفسر الآن" url="https://www.jetouruae.com/en/enquire-today/" />
+    - ID: "f3094864-2fa0-4bb4-b4a6-a773bf06b96f"
+      Hint: SlideSubtitle
+      Value: <p>الجمع بين تقنية الهجين القابل للشحن وأفضل أداء لسيارات الدفع الرباعي على الطرق الوعرة.</p>
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1474d8b8-e0ec-4846-9710-6a81df7a519f"
+      Hint: SlideTitle
+      Value: Jetour T2
+    - ID: "2441786d-3461-4129-870d-448832993247"
+      Hint: PrimaryLink
+      Value: |
+        <link text="Explore T2" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.jetouruae.com/en/new-models/jetour-t2/" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230529Z
+    - ID: "25d25511-69d5-489b-8df0-ab9ae8f48964"
+      Hint: SlideImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68476-section3-img7?v=711f6b8e" dam-id="o5d5ht5EQpWyYCIECwWy7A" width="1920" height="1080" alt="Jetour T2" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68476/thumbnail" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7a419e5f-045a-41d9-b6f8-fcaac3799713"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260519T230719Z
+    - ID: "d9d24d4d-659e-4155-9137-9a3f25cf1937"
+      Hint: SecondaryLink
+      Value: |
+        <link text="Enquire Now" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.jetouruae.com/en/enquire-today/" />
+    - ID: "f3094864-2fa0-4bb4-b4a6-a773bf06b96f"
+      Hint: SlideSubtitle
+      Value: "<p>Combining Plug-in Hybrid technology with the best off-road SUV performance.</p>"

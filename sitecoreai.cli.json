@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.sitecoreai.dev/v1/sitecoreai.cli.json",
+  "modules": [
+    "./**/*.module.json"
+  ],
+  "recipes": [
+    "recipes/**/*.recipe.ts"
+  ],
+  "serialization": {
+    "defaultMaxRelativeItemPathLength": 120,
+    "defaultModuleRelativeSerializationPath": "items",
+    "removeOrphansForRoles": true,
+    "removeOrphansForUsers": true,
+    "continueOnItemFailure": false,
+    "excludedFields": []
+  },
+  "settings": {
+    "cacheAuthenticationToken": true,
+    "versionComparisonEnabled": true,
+    "apiClientTimeoutInMinutes": 5,
+    "telemetryEnabled": true
+  },
+  "envProfiles": {
+    "dev": {
+      "organizationId": "org_Yr0e8LadQ1bxB05s",
+      "projectId": "1leYkxEwIyQAqinnVboiwB",
+      "environmentId": "27hjcqHiUEPKrgnn7ijwhy",
+      "environmentType": "cm",
+      "editingHostEnvironmentIds": [
+        "21Wa0txzCvt62wlASHfdjU"
+      ],
+      "host": "xmc-sitecoresaa6c12-aunsaidemo2161-devaa85.sitecorecloud.io",
+      "authority": "https://auth.sitecorecloud.io",
+      "allowWrite": true,
+      "deployTokenExpiresIn": 86400,
+      "deployTokenLastUpdated": "2026-05-24T09:07:02.014Z"
+    }
+  },
+  "defaultEnvProfile": "dev"
+}

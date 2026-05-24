@@ -1,0 +1,87 @@
+﻿---
+ID: "5241ae44-4a0f-4f53-9f81-22b689434344"
+Parent: "c1f8a492-eec3-4193-913b-9083c75e5c21"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Jetour - Services/Exclusive Jetour Offers"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230607Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="عرض العروض" url="https://www.jetouruae.com/en/offers/" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>احصل على المزيد مقابل أقل مع عروض السيارات الحصرية لدينا. اكتشف العروض المتاحة اليوم.</p>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "260cefe8-6f8a-4e42-b03b-15ec21ab19b1"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <image height="371" dam-content-type="Image" alt="عروض جيتور الحصرية" width="660" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68672/thumbnail" dam-id="tLKCtOmPRSuTLIVRdwUUUA" src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68672-section3-img25?v=34ffaf38" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: عروض جيتور الحصرية
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260520T023230Z
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230607Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link text="View Offers" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.jetouruae.com/en/offers/" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>Get more for less with our exclusive car offers and promotions. See what offers are available today.</p>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "eadab182-6629-43aa-b0de-54b06e36259f"
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68672-section3-img25?v=34ffaf38" dam-id="tLKCtOmPRSuTLIVRdwUUUA" width="660" height="371" alt="Jetour Exclusive Offers" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68672/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Exclusive Jetour Offers
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260519T230808Z

@@ -1,0 +1,72 @@
+﻿---
+ID: "ecc06b3e-861b-4a76-98ef-24d50f8312a3"
+Parent: "fc477ab7-989a-4058-ae1a-8aa49a2fa021"
+Template: "e94d3c21-7de5-4270-b691-8e29673a1e2c"
+Path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Models/G700/Key Specs"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T081829Z
+    - ID: "3775c623-2a5c-4d86-a41f-9717038d7d73"
+      Hint: Title
+      Value: G700 Key Specs
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6cecf8e9-2479-4429-80b6-a3d364e81bf8"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T081829Z
+    - ID: "f9d6a2e8-15ee-4088-b4eb-60e1c66626d8"
+      Hint: Description
+      Value: "The numbers that define the G700 Plug-in Hybrid flagship."
+  - Version: 2
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T093534Z
+    - ID: "3775c623-2a5c-4d86-a41f-9717038d7d73"
+      Hint: Title
+      Value:  Key Specs
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "722167df-24b9-484f-ad47-d0b192c4ae59"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
+      Hint: __Valid from
+      Value: 20260521T093534Z
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T114222Z
+    - ID: "f9d6a2e8-15ee-4088-b4eb-60e1c66626d8"
+      Hint: Description
+      Value: The core specifications that define the Jetour T2 Luxury Plus.

@@ -1,0 +1,31 @@
+﻿---
+ID: "fc477ab7-989a-4058-ae1a-8aa49a2fa021"
+Parent: "f1768be2-0ea9-4d7d-bbc1-ad3a3621c852"
+Template: "d78f8fc7-d951-4771-a3e7-f2709984d4ed"
+Path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Models/G700"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T081745Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "137f3c22-0872-4a3d-b9fc-b9125fe8b348"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T081745Z

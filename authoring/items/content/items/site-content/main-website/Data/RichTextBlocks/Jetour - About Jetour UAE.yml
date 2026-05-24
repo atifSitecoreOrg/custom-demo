@@ -1,0 +1,73 @@
+﻿---
+ID: "6f300a94-3399-42fe-8559-749d626fb04d"
+Parent: "e94da9f2-19a0-4eeb-9f1c-c5b53df8d8ed"
+Template: "d74f19b9-2239-4f05-8b2f-727393777ed8"
+Path: "/sitecore/content/main/main-website/Data/RichTextBlocks/Jetour - About Jetour UAE"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1e23eeda-e14c-429f-8ca5-4f1d3de10949"
+      Hint: Body
+      Value: |
+        <p>تتعاون جيتور حصريًا مع مجموعة إيليت القابضة لتقديم علامة جيتور التجارية إلى الإمارات العربية المتحدة، مما يمثل علامة فارقة في مشهد السيارات في المنطقة.</p><p>يجمع هذا التعاون الحصري بين عقود من الخبرة الواسعة في الصناعة، مدفوعة بالتزام مشترك لتقديم سيارات استثنائية بأسعار تنافسية للغاية. يضمن هذا التعاون أن يتمتع العملاء في الإمارات العربية المتحدة بقيمة لا مثيل لها وراحة بال كاملة.</p><h2>تاريخ علامة جيتور التجارية</h2><p>جيتور هي جزء من مجموعة سيارات معترف بها عالميًا ومقرها الصين، وتتمتع بعقود من الخبرة في هندسة السيارات. مع مجموعة واسعة من العلامات التجارية المملوكة ذاتيًا والمشتركة، تدير جيتور شركات فرعية مستقلة متخصصة في قطاعات المركبات المتنوعة.</p><p>منذ إنشائها، تم تصميم جيتور لتلبية الاحتياجات المتطورة للمستهلكين العصريين، وخاصة أولئك الذين يبحثون عن المغامرة والتنوع والراحة في تجربة القيادة الخاصة بهم. سرعان ما أثبتت جيتور نفسها كلاعب رئيسي في سوق سيارات الدفع الرباعي والكروس أوفر، مستهدفة العائلات والمستكشفين الحضريين والمحترفين الشباب.</p><p>يتم دفع النمو السريع لجيتور من خلال فلسفتها الأساسية "السفر+" — رؤية لتقديم أكثر من مجرد سيارة للمستخدمين، بل منصة لنمط حياة يتمحور حول الاستكشاف والاستمتاع.</p><h2>حول مجموعة إيليت القابضة</h2><p>مجموعة إيليت القابضة هي تكتل مقره الإمارات العربية المتحدة ملتزم بالتميز والابتكار والنزاهة عبر مجموعة متنوعة من المجالات التي تشمل السيارات، التجارة الإلكترونية، الاستثمارات، والعقارات والمقاولات.</p><p>مع خطط توسع طموحة، تستعد مجموعة إيليت القابضة للتوسع عبر مختلف الصناعات، بهدف تشغيل أكثر من 20 منشأة استراتيجية في جميع أنحاء الإمارات العربية المتحدة. يدفعهم التزامهم بالتميز والعمل الجماعي لتحقيق مهمتهم في تعزيز النمو وتقديم نتائج متميزة.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230434Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8a1bde30-c1a6-4eb1-b30a-c9202cd3980a"
+      Hint: Title
+      Value: عن جيتور الإمارات
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ebd22135-6bfd-4e5c-a2b2-464ec68ad9cb"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260520T023209Z
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1e23eeda-e14c-429f-8ca5-4f1d3de10949"
+      Hint: Body
+      Value: |
+        <p>Jetour has exclusively partnered with Elite Group Holding to introduce the Jetour brand to the UAE, marking a milestone in the region's automotive landscape.</p><p>This exclusive partnership combines decades of extensive experience in the industry, driven by a shared commitment to delivering exceptional vehicles at highly competitive prices. This collaboration ensures that customers in the UAE enjoy both unparalleled value and complete peace of mind.</p><h2>Jetour Brand History</h2><p>Jetour is part of a globally recognized automotive group based in China, boasting decades of expertise in automotive engineering. With an extensive portfolio of both self-owned and joint-venture brands, Jetour operates independent subsidiaries that specialize in diverse vehicle segments.</p><p>From its inception, Jetour was designed to meet the evolving needs of modern consumers, particularly those seeking adventure, versatility, and comfort in their driving experience. Jetour quickly established itself as a key player in the SUV and crossover market, targeting families, urban explorers, and young professionals.</p><p>Jetour's rapid growth is driven by its core philosophy of "Travel+" — a vision to provide users with more than just a vehicle, but a platform for a lifestyle centered around exploration and enjoyment.</p><h2>About Elite Group Holding</h2><p>Elite Group Holding is a UAE-based conglomerate with a steadfast commitment to excellence, innovation, and integrity across a diverse portfolio that includes Automotive, E-commerce, Investments, and Real Estate &amp; Contracting.</p><p>With visionary expansion plans, Elite Group Holding is poised to expand across various industries, aiming to operate over 20 strategically located facilities across the UAE. Their dedication to excellence and teamwork drives their mission to foster growth and deliver outstanding results.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230434Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8a1bde30-c1a6-4eb1-b30a-c9202cd3980a"
+      Hint: Title
+      Value: About Jetour UAE
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4ba6e106-7369-41aa-86aa-f2c942393d8b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260519T230452Z

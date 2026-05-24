@@ -1,0 +1,94 @@
+﻿---
+ID: "ce8fec2c-861d-49ca-a0fd-8c2267431277"
+Parent: "6565d16e-5989-481b-af40-cffa4d58df12"
+Template: "460f2b72-a839-4a13-8a9e-4c75b93ce1a5"
+Path: "/sitecore/content/main/main-website/Data/LegalComplianceBanners/Jetour - Warranty Banner_var2"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230420Z
+    - ID: "3c09d0d0-6254-4fd1-b00f-8f7d453d8b08"
+      Hint: BannerImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68653-section3-img23?v=ce5743eb" dam-id="Xi--xuLPTryBmb_q2Lw49Q" width="897" height="505" alt="section3-img23.jpg" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68653/thumbnail" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "6c7c427a-4516-40ee-9a91-58961cf2a788"
+      Hint: Title
+      Value: ضمان وخدمة Jetour التي لا مثيل لها
+    - ID: "8b983eb1-6611-472e-9bb6-43cfb3e59036"
+      Hint: PrimaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="احصل على المزيد من المعلومات" url="https://www.jetouruae.com/en/enquire-today/" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "aae19c1e-7313-4469-a7d0-23e5b32a3f7f"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T124951Z
+    - ID: "ed70c4a6-83ac-4423-9cff-ec8ecfd8303a"
+      Hint: Description
+      Value: <p>تقدم Jetour ضمانًا استثنائيًا <strong>لمدة 10 سنوات / مليون كيلومتر</strong> بالإضافة إلى مجموعة متنوعة من الخدمات والعقود المجانية. قد بأمان، قد مع Jetour. تطبق الشروط والأحكام.</p>
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230420Z
+    - ID: "3c09d0d0-6254-4fd1-b00f-8f7d453d8b08"
+      Hint: BannerImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68653-section3-img23?v=ce5743eb" dam-id="Xi--xuLPTryBmb_q2Lw49Q" width="897" height="505" alt="section3-img23.jpg" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68653/thumbnail" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "6c7c427a-4516-40ee-9a91-58961cf2a788"
+      Hint: Title
+      Value: "Jetour's Groundbreaking Warranty and Premium Services!"
+    - ID: "8b983eb1-6611-472e-9bb6-43cfb3e59036"
+      Hint: PrimaryLink
+      Value: |
+        <link linktype="external" url="https://www.jetouruae.com/en/enquire-today/" text="Discover More Today!" anchor="" querystring=""/>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c5317dda-ceb9-4068-b316-a2a06f911e7a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T124952Z
+    - ID: "ed70c4a6-83ac-4423-9cff-ec8ecfd8303a"
+      Hint: Description
+      Value: |
+        <div class="ck-content"><p>Jetour elevates peace of mind with an extraordinary <strong>10-year / 1 million km warranty</strong>, complemented by a multitude of complimentary services and exclusive contracts. Drive with confidence, Drive Jetour—where excellence meets assurance! Terms and conditions apply.</p></div>

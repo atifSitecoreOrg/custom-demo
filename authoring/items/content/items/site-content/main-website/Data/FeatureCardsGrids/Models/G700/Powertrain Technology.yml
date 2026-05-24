@@ -1,0 +1,72 @@
+﻿---
+ID: "7de6a551-dff7-43d0-86c5-27ef32c6f18c"
+Parent: "fc477ab7-989a-4058-ae1a-8aa49a2fa021"
+Template: "e94d3c21-7de5-4270-b691-8e29673a1e2c"
+Path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Models/G700/Powertrain Technology"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T081825Z
+    - ID: "3775c623-2a5c-4d86-a41f-9717038d7d73"
+      Hint: Title
+      Value: G700 Powertrain and Technology
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e5819fbe-339a-4d54-a2a3-5a53b1966501"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T081826Z
+    - ID: "f9d6a2e8-15ee-4088-b4eb-60e1c66626d8"
+      Hint: Description
+      Value: "The G700 Plug-in Hybrid combines a powerful 2.0T engine with an electric motor for performance without compromise."
+  - Version: 2
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T093534Z
+    - ID: "3775c623-2a5c-4d86-a41f-9717038d7d73"
+      Hint: Title
+      Value: Powertrain and Technology
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "72ec9bfa-a067-444e-a7ca-69dcb285ebb0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
+      Hint: __Valid from
+      Value: 20260521T093534Z
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T114231Z
+    - ID: "f9d6a2e8-15ee-4088-b4eb-60e1c66626d8"
+      Hint: Description
+      Value: "The Jetour T2 combines a 2.0T 4-cylinder engine with modern technology for confident on-road and off-road performance."

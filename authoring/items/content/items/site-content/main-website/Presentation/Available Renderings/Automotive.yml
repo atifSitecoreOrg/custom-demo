@@ -1,0 +1,48 @@
+﻿---
+ID: "9db6d5e3-960c-4b1c-b4c8-5f9103474637"
+Parent: "e34b54b8-020c-438e-94c0-8b4761189891"
+Template: "76da0a8d-fc7e-42b2-af1e-205b49e43f98"
+Path: "/sitecore/content/main/main-website/Presentation/Available Renderings/Automotive"
+SharedFields:
+- ID: "715ae6c0-71c8-4744-ab4f-65362d20ad65"
+  Hint: Renderings
+  Value: |
+    {A1B2C3D4-E005-4F05-A005-000000000001}
+    {A1B2C3D4-E003-4F03-A003-000000000001}
+    {A1B2C3D4-E002-4F02-A002-000000000001}
+    {A1B2C3D4-E006-4F06-A006-000000000001}
+    {A1B2C3D4-E004-4F04-A004-000000000001}
+    {D14E1611-3C23-405A-8A49-4CF306CDFABE}
+    {E820B466-222C-42D2-B523-B5AD28746184}
+    {4C5C1FA5-C077-491D-9686-40D0F68EF03E}
+    {58490557-5582-4B19-9E31-CE6A80F95D93}
+    {85CC2A41-AC6F-4C10-9C2F-44308B48C453}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "63def5f8-6230-4ef7-a84e-3bcca5e4e814"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260524T082117Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c2783548-2eae-4d97-8798-3f58b3a9050b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260524T082301Z

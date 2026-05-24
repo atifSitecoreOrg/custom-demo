@@ -1,0 +1,87 @@
+﻿---
+ID: "7f6b3b70-25b7-4ceb-93b8-4b4fb5d8b823"
+Parent: "a4ab6f44-4886-409d-80df-cefd174b142c"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Jetour - Latest News/Why Ramadan Is the Best Time to Buy a Car"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230628Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="اقرأ المزيد" url="https://www.jetouruae.com/en/blog/why-ramadan-is-the-best-time-to-buy-a-car-in-the-uae/" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>اكتشف لماذا يقدم موسم رمضان بعضًا من أفضل العروض والترويجات لمشتري السيارات في الإمارات العربية المتحدة.</p>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "44f1d065-cd4c-4655-a959-d1fc5770aa75"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <image height="244" dam-content-type="Image" alt="رمضان أفضل وقت لشراء سيارة في الإمارات" width="434" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68766/thumbnail" dam-id="kjOLv00URl-mT2pb3sr9FA" src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68766-section3-img31?v=573e9708" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: لماذا يعتبر رمضان أفضل وقت لشراء سيارة في الإمارات
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260520T023228Z
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230628Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link text="Read More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.jetouruae.com/en/blog/why-ramadan-is-the-best-time-to-buy-a-car-in-the-uae/" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>Find out why Ramadan season offers some of the best deals and promotions for car buyers in the UAE.</p>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "269cc3bc-f544-44f9-871f-f9ea95d7c44e"
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68766-section3-img31?v=573e9708" dam-id="kjOLv00URl-mT2pb3sr9FA" width="434" height="244" alt="Ramadan Best Time Buy Car UAE" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68766/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Why Ramadan Is the Best Time to Buy a Car in the UAE
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260519T230847Z

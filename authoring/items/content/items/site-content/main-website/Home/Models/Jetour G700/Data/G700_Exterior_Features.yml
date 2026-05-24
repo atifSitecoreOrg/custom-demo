@@ -1,0 +1,34 @@
+﻿---
+ID: "7fcfe334-ff0c-462f-8060-58f25603f1fb"
+Parent: "33a59177-f0d5-4450-8e73-2ae2e8ab719b"
+Template: "e94d3c21-7de5-4270-b691-8e29673a1e2c"
+Path: "/sitecore/content/main/main-website/Home/Models/Jetour G700/Data/G700_Exterior_Features"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T065719Z
+    - ID: "3775c623-2a5c-4d86-a41f-9717038d7d73"
+      Hint: Title
+      Value: G700_Exterior_Features
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "fd1b06ca-3b68-4ad3-8612-ce0afc490cb7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T065719Z

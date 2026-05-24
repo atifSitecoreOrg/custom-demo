@@ -1,0 +1,98 @@
+﻿---
+ID: "c77d3f27-db7b-4674-943c-7549b5c65dec"
+Parent: "39e3fd75-cd03-4812-b579-1a6596746caa"
+Template: "4828b260-dc19-4c4f-bf0e-1dd5ae47edcc"
+Path: "/sitecore/content/main/main-website/Data/HeroBannerCarousels/Jetour - Hero Carousel/Slide - All Models"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1474d8b8-e0ec-4846-9710-6a81df7a519f"
+      Hint: SlideTitle
+      Value: قد المستقبل مع Jetour
+    - ID: "2441786d-3461-4129-870d-448832993247"
+      Hint: PrimaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="استكشف جميع الطرازات" url="https://www.jetouruae.com/en/new-models/" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230523Z
+    - ID: "25d25511-69d5-489b-8df0-ab9ae8f48964"
+      Hint: SlideImage
+      Value: |
+        <image height="1080" dam-content-type="Image" alt="طرازات سيارات Jetour الرياضية متعددة الاستخدامات" width="1920" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68466/thumbnail" dam-id="93j7rJaURqiGDLOTXLhgcg" src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68466-section3-img5?v=5677ffca" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "256ee832-b210-4a19-8e28-3af11fb87ec4"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260520T023233Z
+    - ID: "d9d24d4d-659e-4155-9137-9a3f25cf1937"
+      Hint: SecondaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="استفسر الآن" url="https://www.jetouruae.com/en/enquire-today/" />
+    - ID: "f3094864-2fa0-4bb4-b4a6-a773bf06b96f"
+      Hint: SlideSubtitle
+      Value: <p>سيارات SUV صينية فاخرة مصممة للمغامرة والراحة والأناقة. استكشف مجموعة الطرازات الكاملة لدينا.</p>
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "1474d8b8-e0ec-4846-9710-6a81df7a519f"
+      Hint: SlideTitle
+      Value: JEtour
+    - ID: "2441786d-3461-4129-870d-448832993247"
+      Hint: PrimaryLink
+      Value: |
+        <link linktype="internal" id="40621f7e-b339-4c7f-98a9-1f227d98d48a" anchor="" querystring="" target="" class="" text="Explore All Models" title=""/>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230523Z
+    - ID: "25d25511-69d5-489b-8df0-ab9ae8f48964"
+      Hint: SlideImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68521-HomePageHero-2000x800?v=79dc0208" dam-id="bhsG-z7IRKmzrCS06X1-Ig" width="2000" height="800" alt="section3-img12.jpg" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68521/thumbnail" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2b22efa6-dcf0-461b-817e-94f895eb415b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260522T073228Z
+    - ID: "d9d24d4d-659e-4155-9137-9a3f25cf1937"
+      Hint: SecondaryLink
+      Value: |
+        <link linktype="internal" id="0f5715799b0a45c28d194859fc1212dc" anchor="" querystring="" target="" class="" text="Enquire now" title=""/>
+    - ID: "f3094864-2fa0-4bb4-b4a6-a773bf06b96f"
+      Hint: SlideSubtitle
+      Value: <p>Premium Chinese SUVs built for adventure, comfort and style. Explore our complete model range.</p>

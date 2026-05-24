@@ -1,0 +1,39 @@
+﻿---
+ID: "a8f1f2f8-11bd-4472-9050-2dcb0c36f41a"
+Parent: "5f0ee990-1de2-4169-9834-fc3650227b89"
+Template: "91715b4f-d2ef-4748-ab3a-3653739f4c19"
+Path: "/sitecore/content/main/main-website/Home/Models/New page/Data/Hero"
+BranchID: "7bc891a2-3d5e-4f2b-8c1d-6a9e0b3f5d7c"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{3E6F0A2C-7B4D-4C9E-1F5A-8B2D0E7C3F6A}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260522T112021Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "aa0b4a67-174b-42ac-bd38-c10e07bd8ac4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c278227b-e06a-4f97-a1d8-1c0505ac4781"
+      Hint: Title
+      Value: New page Hero Carousel
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260522T112021Z

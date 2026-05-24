@@ -1,4 +1,4 @@
----
+﻿---
 ID: "a1b2c4d5-f009-4009-b009-000000000432"
 Parent: "a1b2c4d5-f009-4009-b009-000000000431"
 Template: "a1b2c4d5-f004-4004-b004-000000000060"
@@ -14,15 +14,12 @@ Languages:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "3c94e4f9-e85f-4138-ac9a-5cb1db5cea58"
-    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
-      Hint: __Updated
-      Value: 20260521T000000Z
-    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
-      Hint: Title
-      Value: Fully Transparent Chassis View
     - ID: "a1b2c4d5-f004-4004-b004-000000000062"
       Hint: SpecTitle
       Value: Fully Transparent Chassis View
     - ID: "a1b2c4d5-f004-4004-b004-000000000063"
       Hint: SpecDescription
-      Value: <p>Smart chassis vision system displays terrain beneath the vehicle, enhanced by 360 cameras for maximum off-road safety.</p>
+      Value: "<p>Smart chassis vision system displays terrain beneath the vehicle, enhanced by 360 cameras for maximum off-road safety.</p>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T000000Z

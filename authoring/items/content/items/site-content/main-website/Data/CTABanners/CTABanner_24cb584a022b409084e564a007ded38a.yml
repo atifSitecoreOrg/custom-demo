@@ -1,0 +1,49 @@
+﻿---
+ID: "23363cc8-3c06-47bf-af43-675eeea1f0d9"
+Parent: "f86be13d-2f5e-4d7e-b2e5-ef4c9637fc4c"
+Template: "980cb544-bd26-4866-83bb-6dbeb9156558"
+Path: "/sitecore/content/main/main-website/Data/CTABanners/CTABanner_24cb584a022b409084e564a007ded38a"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260521T065627Z
+    - ID: "492f28cd-0465-42ee-b7fe-df452729e9bd"
+      Hint: PrimaryLink
+      Value: |
+        <link text="Download Brochure" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.jetouruae.com/en/new-models/jetour-g700/" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5a17dd1d-78a3-4c4e-b3f4-74cd24cd1793"
+      Hint: Description
+      Value: <p>Get the complete Jetour G700 specifications, features, colour options and pricing guide delivered to your inbox. Discover everything the flagship hybrid SUV has to offer.</p>
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5df404ee-3194-414a-844d-689d3b47355c"
+      Hint: Title
+      Value: Download the Jetour G700 Brochure
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "71d724f4-d7da-4bc5-a1f9-6ff0cd142af6"
+    - ID: "8deb4b1a-46de-44af-8bbf-487ca0cba907"
+      Hint: SecondaryLink
+      Value: |
+        <link text="Book a Test Drive" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.jetouruae.com/en/enquire-today/" />
+    - ID: "ba6a94ea-4b1f-4160-a0db-35b15779afe7"
+      Hint: BackgroundImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68471-section3-img6?v=cdd09bb7" dam-id="IuIYj2bNRhyb1nYBBCsspg" width="1920" height="1080" alt="Jetour G700" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68471/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T065627Z

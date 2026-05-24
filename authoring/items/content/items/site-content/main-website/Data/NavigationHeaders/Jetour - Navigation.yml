@@ -1,0 +1,80 @@
+﻿---
+ID: "231f9ae1-c58b-4911-9673-a812faa8b4b3"
+Parent: "a1055559-2113-4baf-b3c3-05c38404ded2"
+Template: "9b720c4e-e7e7-4c12-bca1-e92270b476cc"
+Path: "/sitecore/content/main/main-website/Data/NavigationHeaders/Jetour - Navigation"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "02645f3b-a7da-4f88-a980-6c3f8fdee9a9"
+      Hint: CtaLabel
+      Value: اتصل بنا
+    - ID: "0c40aa29-7c5e-405d-a252-371ca36bd422"
+      Hint: CtaLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="اتصل بنا" url="https://www.jetouruae.com/en/contact-us/" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230402Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "67d652a1-80b3-44a5-8b18-b6570ad09a09"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260520T023209Z
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "02645f3b-a7da-4f88-a980-6c3f8fdee9a9"
+      Hint: CtaLabel
+      Value: Contact Us
+    - ID: "0c40aa29-7c5e-405d-a252-371ca36bd422"
+      Hint: CtaLink
+      Value: |
+        <link text="Contact Us" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.jetouruae.com/en/contact-us/" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230402Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "124513fd-64b6-4702-b553-baad430025fd"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "be108bcc-b20f-49b5-8dd2-ee56f2a26023"
+      Hint: BrandLogo
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/7c67d0b69b4741518126c8b8d714feb7?v=aba23f9c" dam-id="w8HZRoYbSeqxbdBR3LuoUQ" width="413" height="82" alt="logo-jetour.png" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68828/thumbnail" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T115115Z

@@ -1,4 +1,4 @@
----
+﻿---
 ID: "a1b2c4d5-f009-4009-b009-000000000401"
 Parent: "a1b2c4d5-f009-4009-b009-000000000400"
 Template: "a1b2c4d5-f002-4002-b002-000000000020"
@@ -14,12 +14,6 @@ Languages:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "a65b6319-dc0e-49e6-9483-83231dd7116a"
-    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
-      Hint: __Updated
-      Value: 20260521T000000Z
-    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
-      Hint: Title
-      Value: Jetour G700 Hero
     - ID: "a1b2c4d5-f002-4002-b002-000000000022"
       Hint: ModelName
       Value: Jetour G700
@@ -28,7 +22,10 @@ Languages:
       Value: Beyond The Horizon
     - ID: "a1b2c4d5-f002-4002-b002-000000000024"
       Hint: Description
-      Value: <p>The Jetour G700 is crafted to embody strength, luxury, and advanced technology in a premium plug-in hybrid SUV designed for the modern era.</p>
+      Value: "<p>The Jetour G700 is crafted to embody strength, luxury, and advanced technology in a premium plug-in hybrid SUV designed for the modern era.</p>"
     - ID: "a1b2c4d5-f002-4002-b002-000000000025"
       Hint: EMIText
       Value: EMI starting from AED 2,499
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T000000Z

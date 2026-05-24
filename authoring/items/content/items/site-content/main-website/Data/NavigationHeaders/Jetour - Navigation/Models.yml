@@ -1,0 +1,73 @@
+﻿---
+ID: "13896394-3324-46fa-9e63-c31364e09877"
+Parent: "231f9ae1-c58b-4911-9673-a812faa8b4b3"
+Template: "626c308f-5897-48f3-bf83-aefb503cb1e4"
+Path: "/sitecore/content/main/main-website/Data/NavigationHeaders/Jetour - Navigation/Models"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230509Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e1bac7a7-f83b-466e-948d-ad705bdbec50"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "cc6b4b36-fd8b-482b-a733-6c22b926890a"
+      Hint: LinkUrl
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="نماذج" url="https://www.jetouruae.com/en/new-models/" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260520T023236Z
+    - ID: "e9a144f9-e4d5-44c2-b90b-eae536749d5d"
+      Hint: LinkText
+      Value: نماذج
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230509Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "71ade090-7a09-4003-99b8-2f090d146174"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "cc6b4b36-fd8b-482b-a733-6c22b926890a"
+      Hint: LinkUrl
+      Value: |
+        <link text="Models" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.jetouruae.com/en/new-models/" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260519T230509Z
+    - ID: "e9a144f9-e4d5-44c2-b90b-eae536749d5d"
+      Hint: LinkText
+      Value: Models

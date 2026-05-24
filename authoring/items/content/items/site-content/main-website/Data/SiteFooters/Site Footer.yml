@@ -16,15 +16,15 @@ Languages:
       Value: 20260505T173216Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "78915400-87e5-477a-9b0a-1a6d26ac7e23"
+      Value: "597f43eb-b8f4-4344-91f5-00aefaa8b990"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\federico.mujica@sitecore.com
+        sitecore\atif.unar@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260505T173456Z
+      Value: 20260524T083243Z
     - ID: "e65848de-74a2-4211-b246-a022b7da6f6e"
       Hint: BrandLogo
       Value: |
-        <image mediaid="7d81fc77-a388-4561-b577-ff94a7c27ef2" />
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/7c67d0b69b4741518126c8b8d714feb7?v=aba23f9c" dam-id="w8HZRoYbSeqxbdBR3LuoUQ" width="413" height="82" alt="logo-jetour.png" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68828/thumbnail" />

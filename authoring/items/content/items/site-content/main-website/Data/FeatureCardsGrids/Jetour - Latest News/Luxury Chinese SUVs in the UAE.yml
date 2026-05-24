@@ -1,0 +1,87 @@
+﻿---
+ID: "445edbf4-888f-4c75-8ce4-54cdf33c64a8"
+Parent: "a4ab6f44-4886-409d-80df-cefd174b142c"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Jetour - Latest News/Luxury Chinese SUVs in the UAE"
+Languages:
+- Language: "ar-AE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230623Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="اقرأ المزيد" url="https://www.jetouruae.com/en/blog/jetour-luxury-suvs-uae-features/" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>استكشف الميزات الفاخرة التي تجعل سيارات جيتور الرياضية متعددة الاستخدامات الخيار الذكي للسائقين المميزين في الإمارات العربية المتحدة.</p>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "38003a86-0b95-4b61-86f1-3fb6b4150481"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <image height="244" dam-content-type="Image" alt="سيارات الدفع الرباعي الصينية الفاخرة في الإمارات" width="434" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68726/thumbnail" dam-id="PbsMxz7WQh2BtxnH3I9j-A" src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68726-section3-img29?v=58945ee5" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: "سيارات الدفع الرباعي الصينية الفاخرة في الإمارات: الميزات التي تهم فعلاً"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260520T023228Z
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T230623Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link text="Read More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.jetouruae.com/en/blog/jetour-luxury-suvs-uae-features/" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: <p>Explore the premium features that make Jetour SUVs the smart choice for discerning UAE drivers.</p>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0bb96748-00cc-4fe0-92b1-45fdce598547"
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68726-section3-img29?v=58945ee5" dam-id="PbsMxz7WQh2BtxnH3I9j-A" width="434" height="244" alt="Luxury Chinese SUVs UAE" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68726/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\atif.unar@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: "Luxury Chinese SUVs in the UAE: Features that Actually Matter"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260519T230831Z

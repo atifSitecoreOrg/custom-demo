@@ -1,4 +1,4 @@
----
+﻿---
 ID: "a1b2c4d5-f009-4009-b009-000000000423"
 Parent: "a1b2c4d5-f009-4009-b009-000000000420"
 Template: "a1b2c4d5-f003-4003-b003-000000000040"
@@ -14,15 +14,12 @@ Languages:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "9c9995dc-821e-43bd-8cc9-29039d302f65"
-    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
-      Hint: __Updated
-      Value: 20260521T000000Z
-    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
-      Hint: Title
-      Value: Flexible Seating Layouts
     - ID: "a1b2c4d5-f003-4003-b003-000000000042"
       Hint: FeatureTitle
       Value: Flexible Seating Layouts
     - ID: "a1b2c4d5-f003-4003-b003-000000000043"
       Hint: FeatureDescription
       Value: <p>Available in 2+3 and 2+2+2 configurations with electric front seats, heating, lumbar support, and massage functions.</p>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260521T000000Z
