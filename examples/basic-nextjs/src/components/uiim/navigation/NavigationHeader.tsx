@@ -333,6 +333,89 @@ export const Transparent = ({ fields, params, page }: NavigationHeaderProps): JS
   );
 };
 
+/* BloomingdalesHeader — centered wordmark, search left, utilities right, uppercase mega-menu */
+export const BloomingdalesHeader = ({
+  fields,
+  params,
+  page,
+  rendering,
+}: NavigationHeaderProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const [menuOpen, setMenuOpen] = useState(false);
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <NavigationHeaderDefaultComponent />;
+
+  const links = datasource.children?.results || [];
+  const brandLogo = datasource.brandLogo?.jsonValue;
+
+  return (
+    <div className={cn('component navigation-header', styles)} id={RenderingIdentifier}>
+      <header
+        className="w-full"
+        style={{ backgroundColor: 'var(--brand-header-bg, #ffffff)', color: 'var(--brand-header-fg, #000000)' }}
+      >
+        <div className="mx-auto grid max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-4 py-5 sm:px-8">
+          <div className="flex items-center gap-2 justify-self-start">
+            <MenuButton open={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
+            <HeaderSearch datasource={datasource} page={page} rendering={rendering} />
+            {!datasource.searchIndex?.jsonValue?.value && (
+              <label className="relative hidden w-48 md:block lg:w-64">
+                <span className="sr-only">Search</span>
+                <svg
+                  className="pointer-events-none absolute left-0 top-1/2 h-4 w-4 -translate-y-1/2"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  aria-hidden
+                >
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="M20 20l-3-3" />
+                </svg>
+                <input
+                  type="search"
+                  placeholder="Search"
+                  className="w-full border-0 border-b bg-transparent py-1 pl-6 text-sm outline-none font-[var(--brand-body-font,inherit)]"
+                  style={{ borderColor: 'var(--brand-border, #e8e8e8)' }}
+                />
+              </label>
+            )}
+          </div>
+          <Logo brandLogo={brandLogo} className="justify-self-center text-2xl font-normal tracking-tight" />
+          <div className="flex items-center justify-end gap-4 text-sm font-[var(--brand-body-font,inherit)]">
+            <span className="hidden sm:inline">Account</span>
+            <span className="hidden sm:inline">Wishlist</span>
+            <span>Bag</span>
+          </div>
+        </div>
+        <nav
+          className="hidden border-t md:block"
+          style={{ borderColor: 'var(--brand-border, #e8e8e8)' }}
+        >
+          <ul className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-x-6 px-4 py-3">
+            {links.map((item) => {
+              const label = item.linkText?.jsonValue?.value || '';
+              const isSale = label.toLowerCase() === 'sale';
+              return (
+                <li key={item.id}>
+                  <ContentSdkLink
+                    field={item.linkUrl?.jsonValue}
+                    className="text-[13px] uppercase tracking-[0.08em] font-[var(--brand-body-font,inherit)]"
+                    style={{ color: isSale ? 'var(--brand-sale, var(--brand-accent))' : 'var(--brand-header-fg, #000000)' }}
+                  >
+                    {item.linkText?.jsonValue?.value && <Text field={item.linkText?.jsonValue} />}
+                  </ContentSdkLink>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        <MobileMenu items={links} open={menuOpen} onClose={() => setMenuOpen(false)} />
+      </header>
+    </div>
+  );
+};
+
 export const Minimal = ({ fields, params }: NavigationHeaderProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
 

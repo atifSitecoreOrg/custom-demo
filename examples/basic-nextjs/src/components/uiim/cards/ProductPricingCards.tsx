@@ -367,3 +367,86 @@ export const Highlighted = ({ fields, params, page }: ProductPricingCardsProps):
     </div>
   );
 };
+
+/* BloomingdalesProductRail — horizontal product cards, uppercase brand, AED price */
+export const BloomingdalesProductRail = ({
+  fields,
+  params,
+  page,
+}: ProductPricingCardsProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <ProductPricingCardsDefaultComponent />;
+  const cards = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component product-pricing-cards', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-10 md:px-8" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1440px]">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="mb-8 text-center text-3xl font-normal font-[var(--brand-heading-font,inherit)]"
+              style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+            />
+          )}
+          {(datasource.description?.jsonValue?.value || isEditing) && (
+            <ContentSdkRichText
+              field={datasource.description?.jsonValue}
+              className="mx-auto mb-8 max-w-xl text-center text-sm font-[var(--brand-body-font,inherit)]"
+              style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+            />
+          )}
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
+            {cards.map((card) => (
+              <article key={card.id} className="flex flex-col">
+                {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
+                  <ContentSdkImage
+                    field={card.cardImage?.jsonValue}
+                    className="aspect-[3/4] w-full object-contain"
+                    style={{ backgroundColor: 'var(--brand-muted, #f5f5f5)' }}
+                  />
+                )}
+                <div className="mt-3 text-left">
+                  {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                    <Text
+                      field={card.cardTitle?.jsonValue}
+                      tag="h3"
+                      className="text-xs font-semibold uppercase tracking-[0.12em] font-[var(--brand-body-font,inherit)]"
+                      style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+                    />
+                  )}
+                  {(card.badgeText?.jsonValue?.value || isEditing) && (
+                    <Text
+                      field={card.badgeText?.jsonValue}
+                      tag="p"
+                      className="mt-1 text-[11px] uppercase tracking-wider font-[var(--brand-body-font,inherit)]"
+                      style={{ color: 'var(--brand-muted-foreground, #6b6b6b)' }}
+                    />
+                  )}
+                  {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                    <ContentSdkRichText
+                      field={card.cardDescription?.jsonValue}
+                      className="mt-1 text-sm font-[var(--brand-body-font,inherit)]"
+                      style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+                    />
+                  )}
+                  <Price field={card.priceText?.jsonValue} isEditing={isEditing} />
+                  {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                    <ContentSdkLink
+                      field={card.cardLink?.jsonValue}
+                      className="mt-2 inline-flex text-xs underline underline-offset-4 font-[var(--brand-body-font,inherit)]"
+                      style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+                    />
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

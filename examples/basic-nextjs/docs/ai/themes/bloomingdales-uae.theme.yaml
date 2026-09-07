@@ -1,0 +1,128 @@
+# Client Brand Theme — Bloomingdale's UAE
+# Screenshot is the source of truth. Playwright was intercepted by Google Sign-in.
+
+client:
+  name: "Bloomingdale's UAE"
+  sourceUrl: "https://bloomingdales.ae/"
+  extractedAt: "2026-09-08T00:35:00+04:00"
+  extractedBy: "cursor-agent"
+
+colors:
+  primary: "#000000"
+  primaryForeground: "#ffffff"
+  secondary: "#1a1a1a"
+  secondaryForeground: "#ffffff"
+  accent: "#c8102e"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#1a1a1a"
+  muted: "#f5f5f5"
+  mutedForeground: "#6b6b6b"
+  headerBackground: "#ffffff"
+  headerForeground: "#000000"
+  footerBackground: "#ffffff"
+  footerForeground: "#1a1a1a"
+  border: "#e8e8e8"
+  ring: "#000000"
+  extra:
+    - { name: "announcement", value: "#000000" }
+    - { name: "announcementForeground", value: "#ffffff" }
+    - { name: "sale", value: "#c8102e" }
+    - { name: "productTag", value: "#8a8a8a" }
+    - { name: "giftCardBand", value: "#ececec" }
+
+typography:
+  headingFamily: "'Bodoni Moda', 'Times New Roman', serif"
+  headingWeight: "400"
+  bodyFamily: "'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Source Code Pro', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+  scale:
+    hero: "2.75rem"
+    h1: "2.25rem"
+    h2: "1.75rem"
+    h3: "1.125rem"
+    body: "0.875rem"
+    small: "0.75rem"
+  headingTransform: "none"
+  letterSpacing: "tight"
+  lineHeight: "snug"
+
+spacing:
+  density: "spacious"
+  sectionGap: "4rem"
+  containerMaxWidth: "1440px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0"
+  buttonRadius: "0"
+  cardRadius: "0"
+  imageRadius: "0"
+  shadowStyle: "none"
+  borderStyle: "none"
+
+tone:
+  overall: "luxury"
+  colorMode: "light"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "split-image-text"
+  cardStyle: "flat"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#000000"
+      secondary: "#1a1a1a"
+      accent: "#c8102e"
+  fontFamily:
+    heading: ["Bodoni Moda", "Times New Roman", "serif"]
+    body: ["Source Sans 3", "Helvetica Neue", "Arial", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0"
+    button: "0"
+    card: "0"
+
+cssVariables: |
+  :root {
+    --brand-primary: #000000;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #1a1a1a;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #c8102e;
+    --brand-accent-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #1a1a1a;
+    --brand-muted: #f5f5f5;
+    --brand-muted-fg: #6b6b6b;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #000000;
+    --brand-footer-bg: #ffffff;
+    --brand-footer-fg: #1a1a1a;
+    --brand-border: #e8e8e8;
+    --brand-ring: #000000;
+    --brand-heading-font: 'Bodoni Moda', 'Times New Roman', serif;
+    --brand-body-font: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+    --brand-radius: 0;
+    --brand-button-radius: 0;
+    --brand-card-radius: 0;
+  }
+
+extraction:
+  confidence: "medium"
+  method: "screenshot-analysis"
+  notes:
+    - "Playwright loaded Google Sign-in instead of bloomingdales.ae. Computed CSS tokens were discarded."
+    - "Theme extracted from the user-provided homepage screenshot (primary) plus public site copy."
+    - "Black/white luxury retail system: white page, black wordmark, black rectangular CTAs, SALE in red."
+    - "Announcement bar is a thin black strip with white text ('2 hours in Dubai')."
+    - "Logo and editorial headlines are high-contrast serif. Nav, product meta, and prices are clean sans-serif."
+    - "Bodoni Moda substitutes the proprietary Bloomingdale's wordmark/display serif. Source Sans 3 substitutes Helvetica Neue–style UI type."
+    - "Corners are sharp on buttons, cards, and banners. Category quick-links are circular product crops — exception to 0 radius."
+    - "Hero is a two-up editorial pair (The Dress Shop / Dior Sauvage), not a single full-bleed overlay."
+    - "Product cards are flat: white ground, no shadow, uppercase brand, small gray NEW SEASON tag, AED price."
+    - "Nav is a white solid bar with centered logo, left search, right account/wishlist/bag, mega-menu categories."
+    - "Sale red (#c8102e) is an approximation from the SALE nav item — confirm if you want a different red."

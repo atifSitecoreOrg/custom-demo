@@ -345,3 +345,101 @@ export const MegaFooter = (props: SiteFooterProps): JSX.Element => {
     </div>
   );
 };
+
+const BLOOMINGDALES_COLUMNS = [
+  {
+    title: 'Customer Service',
+    links: ['Contact Us', 'Order Status', 'Shipping & Delivery', 'Returns'],
+  },
+  {
+    title: 'About Us',
+    links: ['Our Stores', 'Careers', 'Press', 'Sustainability'],
+  },
+  {
+    title: 'Services',
+    links: ['Personal Shopping', 'Gift Cards', 'Wedding Registry', 'Beauty Appointments'],
+  },
+  {
+    title: 'Legal',
+    links: ['Privacy Policy', 'Terms of Use', 'Cookie Settings', 'Accessibility'],
+  },
+];
+
+/* BloomingdalesFooter — white footer, logo not inverted, department-store columns */
+export const BloomingdalesFooter = (props: SiteFooterProps): JSX.Element => {
+  const { params } = props;
+  const { styles, RenderingIdentifier } = params;
+  const brandLogo = getBrandLogo(props);
+
+  if (!params) return <SiteFooterDefaultComponent />;
+
+  return (
+    <div className={cn('component site-footer', styles)} id={RenderingIdentifier}>
+      <footer
+        className="w-full border-t"
+        style={{
+          backgroundColor: 'var(--brand-footer-bg, #ffffff)',
+          color: 'var(--brand-footer-fg, #1a1a1a)',
+          borderColor: 'var(--brand-border, #e8e8e8)',
+        }}
+      >
+        <div className="mx-auto max-w-[1440px] px-4 py-12 sm:px-8">
+          <div className="grid gap-10 md:grid-cols-5">
+            <div className="space-y-4">
+              <Link href="/" className="inline-flex">
+                {brandLogo?.value?.src ? (
+                  <ContentSdkImage
+                    field={brandLogo}
+                    className="h-8 w-auto object-contain sm:h-10"
+                  />
+                ) : (
+                  <span
+                    className="text-xl font-normal font-[var(--brand-heading-font,inherit)]"
+                    style={{ color: 'var(--brand-footer-fg, #1a1a1a)' }}
+                  >
+                    bloomingdales
+                  </span>
+                )}
+              </Link>
+              <p
+                className="max-w-xs text-sm font-[var(--brand-body-font,inherit)]"
+                style={{ color: 'var(--brand-footer-fg, #1a1a1a)', opacity: 0.7 }}
+              >
+                Luxury fashion, beauty, and home — delivered across the UAE.
+              </p>
+            </div>
+            {BLOOMINGDALES_COLUMNS.map((col) => (
+              <div key={col.title}>
+                <h3
+                  className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] font-[var(--brand-body-font,inherit)]"
+                  style={{ color: 'var(--brand-footer-fg, #1a1a1a)' }}
+                >
+                  {col.title}
+                </h3>
+                <ul className="space-y-2">
+                  {col.links.map((link) => (
+                    <li key={link}>
+                      <a
+                        href="#"
+                        className="text-sm transition-opacity hover:opacity-70 font-[var(--brand-body-font,inherit)]"
+                        style={{ color: 'var(--brand-footer-fg, #1a1a1a)', opacity: 0.7 }}
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div
+            className="mt-10 border-t pt-6 text-center text-xs font-[var(--brand-body-font,inherit)]"
+            style={{ borderColor: 'var(--brand-border, #e8e8e8)', color: 'var(--brand-footer-fg, #1a1a1a)', opacity: 0.55 }}
+          >
+            &copy; {new Date().getFullYear()} Bloomingdale&apos;s UAE. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};

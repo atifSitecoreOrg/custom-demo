@@ -1,6 +1,6 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-08-18T00:00:00Z"
-lastUpdatedBy: "claude-agent"
+lastUpdatedAt: "2026-09-08T01:20:00+04:00"
+lastUpdatedBy: "cursor-agent"
 
 project:
   siteCollection: "main"
@@ -15,9 +15,9 @@ project:
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}|{06D05BB6-2DD6-457A-BC64-22A07F7D4359}"
-  lastUpdatedAt: "2026-08-18T00:00:00Z"
-  renderingCount: 37
+  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}|{06D05BB6-2DD6-457A-BC64-22A07F7D4359}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{158772E0-46FD-4626-9144-527C24854F97}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}|{F611E3EB-E720-40FA-9C01-EEF3556B80B3}"
+  lastUpdatedAt: "2026-09-08T01:20:00+04:00"
+  renderingCount: 38
   note: "2026-08-18: appended {158772E0-46FD-4626-9144-527C24854F97} (SearchCollection), then {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F} (SearchTypeahead), each with a pre-write staleness check against live get_allowed_comps_by_ph and post-write verification. lastKnownValue below is the 2026-08-07 pre-SearchResults value; current = that + {D33F0079-E54F-48C3-A33A-6A3A83146DA8} + {158772E0-46FD-4626-9144-527C24854F97} + {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}."
   warning: "MCP cannot read this field — value may be stale if modified outside this session. Also: MCP write returned empty updatedFields — silent-write. Verify in Content Editor."
 
@@ -141,6 +141,7 @@ components:
         - "Default"
         - "Transparent"
         - "Minimal"
+        - "BloomingdalesHeader"
 
     templates:
       parent:
@@ -219,6 +220,7 @@ components:
         - { name: "Default", itemId: "{150B9AFE-2B9F-48AD-8F01-036666057814}" }
         - { name: "Transparent", itemId: "{A46EFC9D-7CF0-4C92-9577-1D94FD1D9782}" }
         - { name: "Minimal", itemId: "{608E0EC7-E2C6-4093-A1A1-3962FF17885A}" }
+        - { name: "BloomingdalesHeader", itemId: "{23763B46-C964-4944-BF59-78BBFA822787}" }
 
     verification:
       checkedAt: "2026-05-05T16:00:00Z"
@@ -488,6 +490,7 @@ components:
         - "Horizontal"
         - "Compact"
         - "Highlighted"
+        - "BloomingdalesProductRail"
 
     templates:
       datasource:
@@ -571,6 +574,7 @@ components:
         - { name: "Horizontal", itemId: "{C9B441F5-71A8-46E6-AE86-478930CA907F}" }
         - { name: "Compact", itemId: "{CBAF513B-7C47-498C-83C6-43B3EE92F68C}" }
         - { name: "Highlighted", itemId: "{4DE413CD-B593-48C7-AB27-C60D88549C5B}" }
+        - { name: "BloomingdalesProductRail", itemId: "{97B6BC3A-C1E7-428F-9312-6020564D894B}" }
 
     verification:
       checkedAt: "2026-03-25T15:30:00Z"
@@ -1077,6 +1081,7 @@ components:
         - "WithImage"
         - "Split"
         - "Minimal"
+        - "BloomingdalesCampaign"
 
     templates:
       datasource:
@@ -1139,6 +1144,7 @@ components:
         - { name: "WithImage", itemId: "{2DC4E1E9-79A0-48C7-A6D9-AC7DD8AFAAA0}" }
         - { name: "Split", itemId: "{9DBA839A-E0F8-47D2-AA8E-29EDA7CC68E6}" }
         - { name: "Minimal", itemId: "{E63EE25F-C889-4FE1-81B7-4611CF5969BE}" }
+        - { name: "BloomingdalesCampaign", itemId: "{D71B99E7-E1CF-497F-8FE9-8D4C69B7D2A5}" }
 
     verification:
       checkedAt: "2026-03-25T18:00:00Z"
@@ -1177,6 +1183,9 @@ components:
         - "TwoColumn"
         - "WithImages"
         - "Carousel"
+        - "BloomingdalesDualHero"
+        - "BloomingdalesEditorialThree"
+        - "BloomingdalesPartnerSplit"
 
     templates:
       datasource:
@@ -1258,6 +1267,9 @@ components:
         - { name: "TwoColumn", itemId: "{0BCA5162-9643-49F3-BEE2-6B5243287D5E}" }
         - { name: "WithImages", itemId: "{0378DF47-C562-4BE1-8BA7-DFE429A2015A}" }
         - { name: "Carousel", itemId: "" }  # TODO: create in Sitecore
+        - { name: "BloomingdalesDualHero", itemId: "{155F7507-FCB4-4F78-A2D7-87EAAE8ECCF0}" }
+        - { name: "BloomingdalesEditorialThree", itemId: "{D6C72805-C830-4520-BB41-A39BE66E6910}" }
+        - { name: "BloomingdalesPartnerSplit", itemId: "{AD2F42F6-F172-4857-A920-0CB8327137F3}" }
 
     verification:
       checkedAt: "2026-03-25T18:30:00Z"
@@ -1280,6 +1292,80 @@ components:
         - "Silent-write fields (Datasource Template, Location, __Masters, __Standard values)"
 
     notes: []
+
+  - name: "CategoryQuickLinks"
+    kind: "list"
+    category: "Navigation"
+    status: "complete"
+    createdAt: "2026-09-08T00:55:00+04:00"
+    updatedAt: "2026-09-08T01:20:00+04:00"
+
+    react:
+      filePath: "src/components/uiim/navigation/CategoryQuickLinks.tsx"
+      componentMapKey: "CategoryQuickLinks"
+      variants:
+        - "Default"
+
+    templates:
+      datasource:
+        name: "CategoryQuickLinks"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/CategoryQuickLinks"
+        itemId: "{9DD6B3F0-6267-4D21-8A66-B69C5078BA17}"
+        sectionName: "Data"
+        fields:
+          - { name: "Title", type: "Single-Line Text" }
+        horizonDatasourceGrouping: false
+      child:
+        name: "CategoryQuickLinkItem"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/CategoryQuickLinkItem"
+        itemId: "{36119B86-5163-4DB5-B4CB-6FD64FC7FE66}"
+        fields:
+          - { name: "Label", type: "Single-Line Text" }
+          - { name: "Image", type: "Image" }
+          - { name: "Link", type: "General Link" }
+      folder:
+        name: "CategoryQuickLinks Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Folders/CategoryQuickLinks Folder"
+        itemId: "{D7B16D82-8E5D-47FA-8211-71CD9B10BD7E}"
+      renderingParams:
+        name: "CategoryQuickLinks"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Navigation/CategoryQuickLinks"
+        itemId: "{1A006E5A-F63A-4C8E-A6DA-6462A9D66890}"
+
+    datasourceFolder:
+      name: "CategoryQuickLinks"
+      path: "/sitecore/content/main/main-website/Data/CategoryQuickLinks"
+      itemId: "{86AAF785-A37E-40DD-8C58-75616A14E3BF}"
+      exampleItem:
+        name: "Bloomingdales UAE - Category Quick Links"
+        itemId: "{CC725881-9B61-4907-BD1A-3EAE72E7949E}"
+
+    rendering:
+      name: "CategoryQuickLinks"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Navigation/CategoryQuickLinks"
+      itemId: "{F611E3EB-E720-40FA-9C01-EEF3556B80B3}"
+      componentName: "CategoryQuickLinks"
+      parametersTemplateId: "{1A006E5A-F63A-4C8E-A6DA-6462A9D66890}"
+      registeredInAvailableRenderings: true
+
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/CategoryQuickLinks"
+      containerId: "{CF2C1E37-586D-40AF-8663-A31588FBDF1F}"
+      variants:
+        - { name: "Default", itemId: "{68DA4DCA-1B26-48EC-A1D3-9EBB1381A402}" }
+
+    verification:
+      checkedAt: "2026-09-08T01:20:00+04:00"
+      passed:
+        - "Parent and child templates created"
+        - "Rendering registered in Available Renderings"
+        - "Default variant created"
+        - "Client datasource with 6 children populated"
+      pendingManual:
+        - "HorizonDatasourceGrouping on parent template if insert options fail"
+
+    notes:
+      - "2026-09-08: Built for Bloomingdale's UAE circular category tiles."
 
   - name: "ImageGallery"
     kind: "simple"
@@ -1506,6 +1592,7 @@ components:
         - "Default"
         - "Minimal"
         - "MegaFooter"
+        - "BloomingdalesFooter"
 
     templates:
       datasource:
@@ -1563,6 +1650,7 @@ components:
         - { name: "Default", itemId: "{143CFE84-1E77-4961-975C-38564DC43DB9}" }
         - { name: "Minimal", itemId: "{AF87D61B-F6A8-4036-9BF8-FDB586268D24}" }
         - { name: "MegaFooter", itemId: "{DA131066-F9A2-47F0-A099-F614E61817AA}" }
+        - { name: "BloomingdalesFooter", itemId: "{003AC2A2-3CEE-4188-A1CD-5BB9059DAA21}" }
 
     verification:
       checkedAt: "2026-03-25T20:00:00Z"
@@ -2054,6 +2142,7 @@ components:
         - "Centered"
         - "WithVideo"
         - "IconLeft"
+        - "BloomingdalesEditorialBand"
 
     templates:
       datasource:
@@ -2116,6 +2205,7 @@ components:
         - { name: "Centered", itemId: "{3C33C16D-F0D3-4FBF-8D78-CE70CEA0868B}" }
         - { name: "WithVideo", itemId: "{E58A4CB1-BFB4-4FDF-B48D-6254708B05CA}" }
         - { name: "IconLeft", itemId: "{E39E52FE-885D-433B-A2D3-B20F66E8F767}" }
+        - { name: "BloomingdalesEditorialBand", itemId: "{3AFC3CEC-86F7-4363-A70D-4FF33EE614E9}" }
 
     verification:
       checkedAt: "2026-03-25T22:00:00Z"
@@ -3076,7 +3166,7 @@ pageTemplates:
 lookups:
   - path: "/sitecore/content/main/main-website/Data"
     itemId: "{E6C852B5-B70D-412C-B5C6-E6502842F74E}"
-    lastReadAt: "2026-03-25T12:00:00Z"
+    lastReadAt: "2026-09-08T00:30:00+04:00"
   - path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search"
     itemId: "{44092340-AF76-44F3-A6C3-AA7347CE9D8B}"
     lastReadAt: "2026-05-20T12:00:00Z"
@@ -3091,23 +3181,23 @@ lookups:
     lastReadAt: "2026-03-25T12:00:00Z"
   - path: "/sitecore/templates/Project/fmc-custom-demo/Components"
     itemId: "{EB0D4C3C-A85E-4F74-A989-9D3BABBDB3CA}"
-    lastReadAt: "2026-03-25T12:00:00Z"
+    lastReadAt: "2026-09-08T00:30:00+04:00"
   - path: "/sitecore/templates/Project/fmc-custom-demo/Folders"
     itemId: "{55F36BEC-24C5-428E-BB45-B2385B03D492}"
-    lastReadAt: "2026-03-25T12:00:00Z"
+    lastReadAt: "2026-09-08T00:30:00+04:00"
   - path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters"
     itemId: "{BEC41516-9F60-48E0-8E80-D515482B6BCC}"
-    lastReadAt: "2026-03-25T12:00:00Z"
+    lastReadAt: "2026-09-08T00:30:00+04:00"
   - path: "/sitecore/content/main/main-website/Presentation/Headless Variants"
     itemId: "{7BC665DC-D7DA-418E-AEC6-124D6291E93F}"
-    lastReadAt: "2026-03-25T12:00:00Z"
+    lastReadAt: "2026-09-08T00:30:00+04:00"
   - path: "/sitecore/content/main/main-website/Presentation/Available Renderings/Page Content"
     itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-    lastReadAt: "2026-03-25T12:00:00Z"
+    lastReadAt: "2026-09-08T00:30:00+04:00"
     note: "Available Renderings — NEVER replace, always concatenate"
   - path: "/sitecore/layout/Renderings/Project/fmc-custom-demo"
     itemId: "{4A1F0B51-F3F3-43D2-B184-C7A9F549154D}"
-    lastReadAt: "2026-03-25T12:00:00Z"
+    lastReadAt: "2026-09-08T00:30:00+04:00"
   - path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation"
     itemId: "{137B3477-F05E-417E-8720-80C78F734A16}"
     lastReadAt: "2026-03-25T12:00:00Z"

@@ -248,3 +248,51 @@ export const Minimal = ({ fields, params, page }: CTABannerProps): JSX.Element =
     </div>
   );
 };
+
+/* BloomingdalesCampaign — full-bleed photo, oversized serif, text-link CTA */
+export const BloomingdalesCampaign = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <CTABannerDefaultComponent />;
+
+  return (
+    <div className={cn('component cta-banner', styles)} id={RenderingIdentifier}>
+      <section className="relative w-full overflow-hidden">
+        {(fields.BackgroundImage?.value?.src || isEditing) && (
+          <div className="absolute inset-0">
+            <SmartMedia
+              field={fields.BackgroundImage}
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        )}
+        <div className="absolute inset-0 bg-black/25" />
+        <div className="relative z-10 flex min-h-[420px] items-center justify-center px-6 py-20 text-center md:min-h-[560px]">
+          <div className="max-w-3xl">
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-5xl font-normal leading-none tracking-tight text-white sm:text-6xl md:text-7xl font-[var(--brand-heading-font,inherit)]"
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-5 text-sm text-white font-[var(--brand-body-font,inherit)]"
+              />
+            )}
+            {(fields.PrimaryLink?.value?.href || isEditing) && (
+              <ContentSdkLink
+                field={fields.PrimaryLink}
+                className="mt-6 inline-flex text-sm text-white underline underline-offset-4 font-[var(--brand-body-font,inherit)]"
+              />
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

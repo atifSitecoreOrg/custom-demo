@@ -13,6 +13,7 @@ import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
 import * as SiteFooter from 'src/components/uiim/navigation/SiteFooter';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
+import * as CategoryQuickLinks from 'src/components/uiim/navigation/CategoryQuickLinks';
 import * as AnnouncementBar from 'src/components/uiim/navigation/AnnouncementBar';
 import * as SmartMedia from 'src/components/uiim/media/SmartMedia';
 import * as ImageGallery from 'src/components/uiim/media/ImageGallery';
@@ -93,6 +94,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['TabNavigationSection', { ...TabNavigationSection }],
   ['SiteFooter', { ...SiteFooter }],
   ['NavigationHeader', { ...NavigationHeader, componentType: 'client' }],
+  ['CategoryQuickLinks', { ...CategoryQuickLinks }],
   ['AnnouncementBar', { ...AnnouncementBar }],
   ['SmartMedia', { ...SmartMedia, componentType: 'client' }],
   ['ImageGallery', { ...ImageGallery }],

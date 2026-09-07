@@ -443,3 +443,129 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
     </div>
   );
 };
+
+const EditorialTile = ({
+  card,
+  isEditing,
+  imageClassName,
+}: {
+  card: FeatureCardItemFields;
+  isEditing?: boolean;
+  imageClassName: string;
+}) => (
+  <article className="flex flex-col">
+    {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
+      <ContentSdkImage field={card.cardImage?.jsonValue} className={imageClassName} />
+    )}
+    <div className="mt-5 text-center">
+      {(card.cardTitle?.jsonValue?.value || isEditing) && (
+        <Text
+          field={card.cardTitle?.jsonValue}
+          tag="h3"
+          className="text-[1.75rem] font-normal leading-tight font-[var(--brand-heading-font,inherit)]"
+          style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+        />
+      )}
+      {(card.cardDescription?.jsonValue?.value || isEditing) && (
+        <ContentSdkRichText
+          field={card.cardDescription?.jsonValue}
+          className="mx-auto mt-2 max-w-md text-sm font-[var(--brand-body-font,inherit)]"
+          style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+        />
+      )}
+      {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+        <ContentSdkLink
+          field={card.cardLink?.jsonValue}
+          className="mt-3 inline-flex text-sm underline underline-offset-4 font-[var(--brand-body-font,inherit)]"
+          style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+        />
+      )}
+    </div>
+  </article>
+);
+
+/* BloomingdalesDualHero — two equal campaign tiles */
+export const BloomingdalesDualHero = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-6 md:px-8" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto grid max-w-[1440px] gap-6 md:grid-cols-2">
+          {cards.map((card) => (
+            <EditorialTile
+              key={card.id}
+              card={card}
+              isEditing={isEditing}
+              imageClassName="aspect-[4/3] w-full object-cover"
+            />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* BloomingdalesEditorialThree — 3-up flat photo tiles */
+export const BloomingdalesEditorialThree = ({
+  fields,
+  params,
+  page,
+}: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-10 md:px-8" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto grid max-w-[1440px] gap-8 md:grid-cols-3">
+          {cards.map((card) => (
+            <EditorialTile
+              key={card.id}
+              card={card}
+              isEditing={isEditing}
+              imageClassName="aspect-[16/10] w-full object-cover"
+            />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* BloomingdalesPartnerSplit — Tabby / Tamara lifestyle tiles */
+export const BloomingdalesPartnerSplit = ({
+  fields,
+  params,
+  page,
+}: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-8 md:px-8" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto grid max-w-[1440px] gap-6 md:grid-cols-2">
+          {cards.map((card) => (
+            <EditorialTile
+              key={card.id}
+              card={card}
+              isEditing={isEditing}
+              imageClassName="aspect-[21/8] w-full object-cover"
+            />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};

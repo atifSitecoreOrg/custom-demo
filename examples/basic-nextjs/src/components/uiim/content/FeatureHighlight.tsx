@@ -276,3 +276,58 @@ export const IconLeft = ({ fields, params, page }: FeatureHighlightProps): JSX.E
     </div>
   );
 };
+
+/* BloomingdalesEditorialBand — wide fashion photo, centered serif title */
+export const BloomingdalesEditorialBand = ({
+  fields,
+  params,
+  page,
+}: FeatureHighlightProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+
+  return (
+    <div className={cn('component feature-highlight', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-10 md:px-8" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1440px]">
+          {(fields.FeatureImage?.value?.src || isEditing) && (
+            <div className="relative aspect-[21/9] w-full overflow-hidden">
+              <SmartMedia
+                field={fields.FeatureImage}
+                fill
+                sizes="(min-width: 1440px) 1440px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          )}
+          <div className="mx-auto mt-8 max-w-3xl text-center">
+            <Eyebrow field={fields.EyebrowText} isEditing={isEditing} />
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-4xl font-normal leading-tight tracking-tight sm:text-5xl font-[var(--brand-heading-font,inherit)]"
+                style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mx-auto mt-4 max-w-xl text-sm font-[var(--brand-body-font,inherit)]"
+                style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+              />
+            )}
+            {(fields.PrimaryLink?.value?.href || isEditing) && (
+              <ContentSdkLink
+                field={fields.PrimaryLink}
+                className="mt-4 inline-flex text-sm underline underline-offset-4 font-[var(--brand-body-font,inherit)]"
+                style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+              />
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
