@@ -69,8 +69,7 @@ Languages:
       Value: 20260519T230523Z
     - ID: "25d25511-69d5-489b-8df0-ab9ae8f48964"
       Hint: SlideImage
-      Value: |
-        <Image src="https://aun-clinic.sitecoresandbox.cloud/api/public/content/68521-HomePageHero-2000x800?v=79dc0208" dam-id="bhsG-z7IRKmzrCS06X1-Ig" width="2000" height="800" alt="section3-img12.jpg" dam-content-type="Image" thumbnailsrc="https://aun-clinic.sitecoresandbox.cloud/api/gateway/68521/thumbnail" />
+      Value: 
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -81,14 +80,14 @@ Languages:
         sitecore\atif.unar@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "2b22efa6-dcf0-461b-817e-94f895eb415b"
+      Value: "a214d958-78ad-4498-81f4-3452a25d6921"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\atif.unar@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260522T073228Z
+      Value: 20260602T163726Z
     - ID: "d9d24d4d-659e-4155-9137-9a3f25cf1937"
       Hint: SecondaryLink
       Value: |
