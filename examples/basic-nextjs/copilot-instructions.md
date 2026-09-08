@@ -10,7 +10,7 @@ This is a **Sitecore Content SDK** application built with **Next.js App Router**
 - **TypeScript** - Type-safe JavaScript development
 - **Sitecore XM Cloud** - Headless CMS platform
 - **React Server Components** - Server-side rendering for better performance
-- **next-intl** - Internationalization support
+- **next-intl** - Internationalisation support
 
 ## Coding Standards
 
