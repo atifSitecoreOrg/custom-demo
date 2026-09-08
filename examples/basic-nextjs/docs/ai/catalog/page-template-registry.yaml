@@ -347,3 +347,157 @@ pageTemplates:
       insertOptions: "Sale Campaign is registered on Home and /Home/Campaigns, and mapped in Page Designs TemplatesMapping."
       personalization: "Do not add AB tests or Personalize variants here — Phase C."
       rtl: "Touched components must use logical Tailwind (ps/pe/ms/me/start/end). Arabic: leading-relaxed, no letter-spacing."
+
+  - id: category
+    name: "Category"
+    inheritsFrom: "base-page-template"
+    description: "Department/category listing. Identity (name, description, hero image) lives on the page template and is rendered by a context component. Product tiles come from a list component with a safe field() ComponentQuery."
+    designIntent: "route identity + existing product list; no new datasource hero"
+
+    templateSection: "Category Data"
+    fields:
+      - { name: "CategoryName", type: "Single-Line Text", purpose: "display name in the category banner" }
+      - { name: "CategoryDescription", type: "Rich Text", purpose: "short editorial line under the name" }
+      - { name: "CategoryHeroImage", type: "Image", purpose: "full-bleed banner image" }
+
+    inheritedFieldsUsed:
+      - "Title"
+      - "NavigationTitle"
+
+    sharedDataTemplates: []
+
+    contextComponents:
+      - id: category-hero
+        name: "CategoryHero"
+        category: "category"
+        filePath: "src/components/uiim/category/CategoryHero.tsx"
+        routeFieldsUsed:
+          - "CategoryName"
+          - "CategoryDescription"
+          - "CategoryHeroImage"
+        variants:
+          - name: "Default"
+            description: "CTABanner / BloomingdalesCampaign look: full-bleed photo, oversized serif, centered copy"
+
+    listComponents:
+      - id: product-pricing-cards
+        name: "ProductPricingCards"
+        variant: "BloomingdalesProductRail"
+        componentQueryPattern: "field(name) + children.results — no ... on TemplateName"
+
+    chromePartials:
+      header:
+        partial: "Header"
+        component: "NavigationHeader"
+      footer:
+        partial: "Footer"
+        component: "SiteFooter"
+
+    partialDesign:
+      name: "Category Layout"
+      placeholder: "headless-main"
+      components: ["CategoryHero", "ProductPricingCards"]
+
+    pageDesign:
+      name: "Category"
+      partials: ["Footer", "Header", "Category Layout"]
+
+    contentTree:
+      parentPage:
+        name: "Categories"
+        path: "/Home/Categories"
+        template: "base-page-template"
+        insertOptions: ["Category"]
+      examplePages:
+        - "Acler"
+        - "Beauty"
+        - "Home Collection"
+        - "Kids"
+        - "Mens Sneakers"
+        - "Womens Bags"
+
+    agentNotes:
+      noDatasourceHero: "Do not put category identity on a CTABanner datasource. CategoryHero reads the route."
+      productGrid: "Reuse ProductPricingCards (existing list component, safe ComponentQuery). Do not add ... on TemplateName fragments."
+      quickLinks: "CategoryQuickLinks tile Link fields must point at the Category pages, not external shop URLs."
+      rtl: "Logical Tailwind only. Arabic leading-relaxed; no letter-spacing."
+
+  - id: product
+    name: "Product"
+    inheritsFrom: "base-page-template"
+    description: "Product detail page (PDP). Identity (name, SKU, price, description, images) lives on the page template and is rendered by a context component. Related products reuse the existing ProductPricingCards list component."
+    designIntent: "route identity + existing related-products list; no new datasource PDP block"
+
+    templateSection: "Product Data"
+    fields:
+      - { name: "ProductName", type: "Single-Line Text", purpose: "display name on the PDP" }
+      - { name: "ProductSku", type: "Single-Line Text", purpose: "merchant SKU; later SFCC mapping target" }
+      - { name: "ProductPrice", type: "Single-Line Text", purpose: "display price string (e.g. AED 6,000); later SFCC mapping target" }
+      - { name: "ProductDescription", type: "Rich Text", purpose: "editorial product copy" }
+      - { name: "ProductImage", type: "Image", purpose: "primary image — Beat 13 Content Hub rights-flagged asset target; do not change type" }
+      - { name: "ProductImageSecondary", type: "Image", purpose: "gallery image 2; same Image type as primary" }
+      - { name: "ProductImageTertiary", type: "Image", purpose: "gallery image 3; same Image type as primary" }
+
+    inheritedFieldsUsed:
+      - "Title"
+      - "NavigationTitle"
+
+    sharedDataTemplates: []
+
+    contextComponents:
+      - id: product-detail
+        name: "ProductDetail"
+        category: "product"
+        filePath: "src/components/uiim/product/ProductDetail.tsx"
+        routeFieldsUsed:
+          - "ProductName"
+          - "ProductSku"
+          - "ProductPrice"
+          - "ProductDescription"
+          - "ProductImage"
+          - "ProductImageSecondary"
+          - "ProductImageTertiary"
+        variants:
+          - name: "Default"
+            description: "gallery on the start side, identity copy on the end side; Bloomingdale's product-rail tokens"
+
+    listComponents:
+      - id: product-pricing-cards
+        name: "ProductPricingCards"
+        variant: "BloomingdalesProductRail"
+        componentQueryPattern: "field(name) + children.results — no ... on TemplateName"
+        role: "related products"
+
+    chromePartials:
+      header:
+        partial: "Header"
+        component: "NavigationHeader"
+      footer:
+        partial: "Footer"
+        component: "SiteFooter"
+
+    partialDesign:
+      name: "Product Layout"
+      placeholder: "headless-main"
+      components: ["ProductDetail", "ProductPricingCards"]
+
+    pageDesign:
+      name: "Product"
+      partials: ["Footer", "Header", "Product Layout"]
+
+    contentTree:
+      parentPage:
+        name: "Products"
+        path: "/Home/Products"
+        template: "base-page-template"
+        insertOptions: ["Product"]
+      examplePages:
+        - "Mahon Maxi Dress"
+        - "Babylone Slides"
+
+    agentNotes:
+      contextNotSimple: "A PDP is one product per route. Do not put identity on a reusable datasource. ProductDetail reads the route."
+      imageFields: "Keep ProductImage / Secondary / Tertiary as Sitecore Image fields. Beat 13 can point ProductImage at a Content Hub asset with usage-rights metadata without restructuring."
+      sfcc: "Beat 15 maps the SFCC mock feed onto these same route fields. Do not add a parallel product-entity template for that work."
+      relatedRail: "Reuse ProductPricingCards (existing list component, safe ComponentQuery). Do not add ... on TemplateName fragments."
+      rtl: "Logical Tailwind only. Arabic leading-relaxed; no letter-spacing."

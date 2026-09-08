@@ -409,12 +409,12 @@ export const BloomingdalesProductRail = ({
                     style={{ backgroundColor: 'var(--brand-muted, #f5f5f5)' }}
                   />
                 )}
-                <div className="mt-3 text-left">
+                <div className="mt-3 text-start">
                   {(card.cardTitle?.jsonValue?.value || isEditing) && (
                     <Text
                       field={card.cardTitle?.jsonValue}
                       tag="h3"
-                      className="text-xs font-semibold uppercase tracking-[0.12em] font-[var(--brand-body-font,inherit)]"
+                      className="text-xs font-semibold uppercase ltr:tracking-[0.12em] rtl:tracking-normal font-[var(--brand-body-font,inherit)]"
                       style={{ color: 'var(--brand-fg, #1a1a1a)' }}
                     />
                   )}
@@ -422,7 +422,7 @@ export const BloomingdalesProductRail = ({
                     <Text
                       field={card.badgeText?.jsonValue}
                       tag="p"
-                      className="mt-1 text-[11px] uppercase tracking-wider font-[var(--brand-body-font,inherit)]"
+                      className="mt-1 text-[11px] uppercase ltr:tracking-wider rtl:tracking-normal font-[var(--brand-body-font,inherit)]"
                       style={{ color: 'var(--brand-muted-foreground, #6b6b6b)' }}
                     />
                   )}

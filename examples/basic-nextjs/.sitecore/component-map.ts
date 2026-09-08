@@ -10,6 +10,7 @@ import * as SearchTypeahead from 'src/components/uiim/search/SearchTypeahead';
 import * as SearchResults from 'src/components/uiim/search/SearchResults';
 import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
 import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
+import * as ProductDetail from 'src/components/uiim/product/ProductDetail';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
 import * as SiteFooter from 'src/components/uiim/navigation/SiteFooter';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
@@ -32,6 +33,7 @@ import * as RichTextBlock from 'src/components/uiim/content/RichTextBlock';
 import * as LegalComplianceBanner from 'src/components/uiim/content/LegalComplianceBanner';
 import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight';
 import * as FAQAccordion from 'src/components/uiim/content/FAQAccordion';
+import * as CategoryHero from 'src/components/uiim/category/CategoryHero';
 import * as ProductPricingCards from 'src/components/uiim/cards/ProductPricingCards';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
@@ -91,6 +93,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchResults', { ...SearchResults, componentType: 'client' }],
   ['SearchExperienceV2', { ...SearchExperienceV2, componentType: 'client' }],
   ['SearchCollection', { ...SearchCollection, componentType: 'client' }],
+  ['ProductDetail', { ...ProductDetail }],
   ['TabNavigationSection', { ...TabNavigationSection }],
   ['SiteFooter', { ...SiteFooter }],
   ['NavigationHeader', { ...NavigationHeader, componentType: 'client' }],
@@ -113,6 +116,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LegalComplianceBanner', { ...LegalComplianceBanner }],
   ['FeatureHighlight', { ...FeatureHighlight }],
   ['FAQAccordion', { ...FAQAccordion }],
+  ['CategoryHero', { ...CategoryHero }],
   ['ProductPricingCards', { ...ProductPricingCards }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid, componentType: 'client' }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel, componentType: 'client' }],

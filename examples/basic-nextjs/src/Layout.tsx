@@ -108,6 +108,18 @@ export interface RouteFields {
   finalCtaHeadline?: Field<string>;
   finalCtaSubhead?: RichTextField;
   finalCtaButton?: LinkField;
+  // Category Page
+  CategoryName?: Field<string>;
+  CategoryDescription?: RichTextField;
+  CategoryHeroImage?: ImageField;
+  // Product Page
+  ProductName?: Field<string>;
+  ProductSku?: Field<string>;
+  ProductPrice?: Field<string>;
+  ProductDescription?: RichTextField;
+  ProductImage?: ImageField;
+  ProductImageSecondary?: ImageField;
+  ProductImageTertiary?: ImageField;
 }
 
 const Layout = ({ page }: LayoutProps): JSX.Element => {

@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-09-08T18:50:00+04:00"
+lastUpdatedAt: "2026-09-08T20:25:00+04:00"
 lastUpdatedBy: "cursor-agent"
 
 project:
@@ -15,9 +15,9 @@ project:
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}|{06D05BB6-2DD6-457A-BC64-22A07F7D4359}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{158772E0-46FD-4626-9144-527C24854F97}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}|{F611E3EB-E720-40FA-9C01-EEF3556B80B3}"
-  lastUpdatedAt: "2026-09-08T01:20:00+04:00"
-  renderingCount: 38
+  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}|{06D05BB6-2DD6-457A-BC64-22A07F7D4359}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{158772E0-46FD-4626-9144-527C24854F97}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}|{F611E3EB-E720-40FA-9C01-EEF3556B80B3}|{4F9CDAC4-0CF0-4256-8C9D-D4D5B729E828}|{124348CB-F51C-4842-811E-F3BA03F993D4}"
+  lastUpdatedAt: "2026-09-08T20:25:00+04:00"
+  renderingCount: 40
   note: "2026-08-18: appended {158772E0-46FD-4626-9144-527C24854F97} (SearchCollection), then {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F} (SearchTypeahead), each with a pre-write staleness check against live get_allowed_comps_by_ph and post-write verification. lastKnownValue below is the 2026-08-07 pre-SearchResults value; current = that + {D33F0079-E54F-48C3-A33A-6A3A83146DA8} + {158772E0-46FD-4626-9144-527C24854F97} + {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}."
   warning: "MCP cannot read this field — value may be stale if modified outside this session. Also: MCP write returned empty updatedFields — silent-write. Verify in Content Editor."
 
@@ -604,7 +604,9 @@ components:
         - "__Masters on datasource folder instance (silent-write)"
         - "__Standard values link on all templates (silent-write)"
 
-    notes: []
+    notes:
+      - "2026-09-08: Reused as the Category page product grid (BloomingdalesProductRail). ComponentQuery already uses field(name) + children.results — no ... on TemplateName."
+      - "2026-09-08: Reused as the Product page related-products rail (BloomingdalesProductRail) with a dedicated Related Products datasource. Same field() ComponentQuery — no new list component."
 
   - name: "LegalComplianceBanner"
     kind: "simple"
@@ -1298,7 +1300,7 @@ components:
     category: "Navigation"
     status: "complete"
     createdAt: "2026-09-08T00:55:00+04:00"
-    updatedAt: "2026-09-08T01:20:00+04:00"
+    updatedAt: "2026-09-08T20:00:00+04:00"
 
     react:
       filePath: "src/components/uiim/navigation/CategoryQuickLinks.tsx"
@@ -1339,6 +1341,13 @@ components:
       exampleItem:
         name: "Bloomingdales UAE - Category Quick Links"
         itemId: "{CC725881-9B61-4907-BD1A-3EAE72E7949E}"
+        children:
+          - { name: "Acler", itemId: "{9820B8A4-6CA4-4049-95F0-10F7FCEB78CD}", linksTo: "{319E4E32-65C4-4CB1-A992-0CA299A65A80}" }
+          - { name: "Beauty", itemId: "{C589C6AA-2688-47C5-8714-A95E997E5820}", linksTo: "{1DF2BF85-72DF-40DF-8098-3761A97EF3B8}" }
+          - { name: "Home", itemId: "{4B50B535-127F-44E0-A27E-CDDAB40307DE}", linksTo: "{B6789BE3-9F8A-4454-9C3E-7CB779A2CDCA}" }
+          - { name: "Kids", itemId: "{A5815AFC-EF27-41EB-A9FC-77CA40FD8EB4}", linksTo: "{90B5D2B7-401F-4149-A162-80A607FB65BE}" }
+          - { name: "Mens Sneakers", itemId: "{296B6DA9-B38B-4B1F-997D-380D74417CA3}", linksTo: "{8C69EBF9-C8F9-4C55-9B89-F8140F3A9C04}" }
+          - { name: "Womens Bags", itemId: "{595A35D7-1F87-4054-86EE-1F15024750C8}", linksTo: "{0EB052C8-BEE6-454B-B2B2-0F78E81CCE42}" }
 
     rendering:
       name: "CategoryQuickLinks"
@@ -1366,6 +1375,121 @@ components:
 
     notes:
       - "2026-09-08: Built for Bloomingdale's UAE circular category tiles."
+      - "2026-09-08: Six tile Link fields retargeted from bloomingdales.ae externals to internal Category pages under /Home/Categories."
+
+  - name: "CategoryHero"
+    kind: "context-only"
+    category: "Category"
+    status: "complete"
+    createdAt: "2026-09-08T19:40:00+04:00"
+    updatedAt: "2026-09-08T20:00:00+04:00"
+    designIntent: "Context-only category banner. Reuses CTABanner / BloomingdalesCampaign visual language. Reads CategoryName, CategoryDescription, CategoryHeroImage from the route."
+
+    react:
+      filePath: "src/components/uiim/category/CategoryHero.tsx"
+      componentMapKey: "CategoryHero"
+      variants:
+        - "Default"
+
+    templates:
+      renderingParams:
+        name: "CategoryHero"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Category/CategoryHero"
+        itemId: "{CF359E08-20DF-49E0-985C-8C1CF0484E2D}"
+        standardValues:
+          itemId: "{DF3B034C-DE91-41A9-A5AC-CCFFE77D3FCD}"
+          linked: true
+        baseTemplatesSet: true
+
+    rendering:
+      name: "CategoryHero"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Category/CategoryHero"
+      itemId: "{4F9CDAC4-0CF0-4256-8C9D-D4D5B729E828}"
+      componentName: "CategoryHero"
+      parametersTemplateId: "{CF359E08-20DF-49E0-985C-8C1CF0484E2D}"
+      datasourceTemplate: ""
+      datasourceLocation: ""
+      componentQuery: ""
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/CategoryHero"
+      containerId: "{3974882D-4B90-4B4D-921D-75F63CF65EA5}"
+      variants:
+        - { name: "Default", itemId: "{102A3DC3-ABD0-4D40-AD1F-5B7A93566175}" }
+
+    verification:
+      checkedAt: "2026-09-08T20:00:00+04:00"
+      passed:
+        - "Context-only: no datasource template, folder, or ComponentQuery"
+        - "Rendering Datasource Template, Location, ComponentQuery, Data source all empty"
+        - "Parameters Template is a GUID"
+        - "Component Name is PascalCase CategoryHero"
+        - "Registered in Available Renderings (get_allowed_comps_by_ph)"
+        - "Default variant created"
+      pendingManual:
+        - "__Standard values link on RP template (silent-write)"
+
+    notes:
+      - "2026-09-08: Created as the Category page banner. Did not add a new datasource hero — CTABanner is datasource-shaped; Category identity lives on the route."
+
+  - name: "ProductDetail"
+    kind: "context-only"
+    category: "Product"
+    status: "complete"
+    createdAt: "2026-09-08T20:10:00+04:00"
+    updatedAt: "2026-09-08T20:25:00+04:00"
+    designIntent: "Context-only PDP identity. Name, SKU, price, description, and three Image fields live on the Product page template. ProductImage stays a standard Image so Beat 13 can point it at a Content Hub asset with usage-rights metadata without restructuring."
+
+    react:
+      filePath: "src/components/uiim/product/ProductDetail.tsx"
+      componentMapKey: "ProductDetail"
+      variants:
+        - "Default"
+
+    templates:
+      renderingParams:
+        name: "ProductDetail"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Product/ProductDetail"
+        itemId: "{CFBDC7CC-C916-4E16-9EE7-B0EA36EC2FC3}"
+        standardValues:
+          itemId: "{9B13F4E5-2D3A-4E33-AAE1-CA2827064767}"
+          linked: true
+        baseTemplatesSet: true
+
+    rendering:
+      name: "ProductDetail"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Product/ProductDetail"
+      itemId: "{124348CB-F51C-4842-811E-F3BA03F993D4}"
+      componentName: "ProductDetail"
+      parametersTemplateId: "{CFBDC7CC-C916-4E16-9EE7-B0EA36EC2FC3}"
+      datasourceTemplate: ""
+      datasourceLocation: ""
+      componentQuery: ""
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/ProductDetail"
+      containerId: "{3FC817CF-F77C-48E1-A1D0-E7ACBABECCC1}"
+      variants:
+        - { name: "Default", itemId: "{2D9C3960-2605-424E-9551-0A82EA9D3D4A}" }
+
+    verification:
+      checkedAt: "2026-09-08T20:25:00+04:00"
+      passed:
+        - "Context-only: no datasource template, folder, or ComponentQuery"
+        - "Rendering Datasource Template, Location, ComponentQuery, Data source all empty"
+        - "Parameters Template is a GUID"
+        - "Component Name is PascalCase ProductDetail"
+        - "Registered in Available Renderings (get_allowed_comps_by_ph)"
+        - "Default variant created"
+      pendingManual:
+        - "__Standard values link on RP template (silent-write)"
+
+    notes:
+      - "2026-09-08: PDP is a route (one product per URL). Context-only matches CategoryHero. Beat 15 SFCC feed and Beat 13 rights-flagged asset map onto these route Image/text fields later — do not change field types."
 
   - name: "ImageGallery"
     kind: "simple"
@@ -3065,6 +3189,191 @@ pageTemplates:
       - "2026-09-08: Offer grid uses BloomingdalesDualHero (allowed). Three offer cards are authored; DualHero is a 2-col wrap. Switch FieldNames to BloomingdalesEditorialThree ({D6C72805-C830-4520-BB41-A39BE66E6910}) in Pages for a 3-up grid."
       - "2026-09-08: Registry entry id=sale-campaign in docs/ai/catalog/page-template-registry.yaml."
 
+  - name: "Category"
+    kind: "page-template"
+    category: "Page Types"
+    status: "complete"
+    createdAt: "2026-09-08T19:40:00+04:00"
+    updatedAt: "2026-09-08T20:00:00+04:00"
+    designIntent: "Category listing route. Identity on the page (context CategoryHero). Product grid is existing ProductPricingCards with field() ComponentQuery — no ... on TemplateName."
+
+    baseTemplate:
+      name: "Page"
+      itemId: "{CEBD0936-6B37-42B5-B169-369BB1C3C06A}"
+
+    templates:
+      pageTemplate:
+        name: "Category"
+        path: "/sitecore/templates/Project/main/Page Types/Category"
+        itemId: "{A991D4F2-C870-4262-85C2-4BAC3F338CDF}"
+        sectionName: "Category Data"
+        sectionId: "{15480A89-2256-4526-AD3D-B377FA7916D9}"
+        fields:
+          - { name: "CategoryName", type: "Single-Line Text", itemId: "{A3EB4AEE-724D-4AC4-A261-62496B23FBB4}" }
+          - { name: "CategoryDescription", type: "Rich Text", itemId: "{D69FD022-09D7-447C-A335-F92E3F45162C}" }
+          - { name: "CategoryHeroImage", type: "Image", itemId: "{125C7D0C-CDFD-4D5C-A15B-5F360720F7D1}" }
+        inheritsFrom: "Page"
+        standardValues:
+          itemId: "{96518F8E-664C-4312-B99F-1CECB83CFCF2}"
+          linked: true
+          pageDesign: "{9D768F42-C8BE-4323-B845-B1E5B75CA14A}"
+
+    contentTree:
+      categoriesParent:
+        name: "Categories"
+        path: "/sitecore/content/main/main-website/Home/Categories"
+        itemId: "{48B25C71-727B-446D-8309-CE33AA7172B0}"
+        insertOptionsSet: true
+      pages:
+        - { name: "Acler", itemId: "{319E4E32-65C4-4CB1-A992-0CA299A65A80}", path: "/sitecore/content/main/main-website/Home/Categories/Acler" }
+        - { name: "Beauty", itemId: "{1DF2BF85-72DF-40DF-8098-3761A97EF3B8}", path: "/sitecore/content/main/main-website/Home/Categories/Beauty" }
+        - { name: "Home Collection", itemId: "{B6789BE3-9F8A-4454-9C3E-7CB779A2CDCA}", path: "/sitecore/content/main/main-website/Home/Categories/Home Collection" }
+        - { name: "Kids", itemId: "{90B5D2B7-401F-4149-A162-80A607FB65BE}", path: "/sitecore/content/main/main-website/Home/Categories/Kids" }
+        - { name: "Mens Sneakers", itemId: "{8C69EBF9-C8F9-4C55-9B89-F8140F3A9C04}", path: "/sitecore/content/main/main-website/Home/Categories/Mens Sneakers" }
+        - { name: "Womens Bags", itemId: "{0EB052C8-BEE6-454B-B2B2-0F78E81CCE42}", path: "/sitecore/content/main/main-website/Home/Categories/Womens Bags" }
+
+    composedFrom:
+      - { component: "CategoryHero", variant: "Default", variantId: "{102A3DC3-ABD0-4D40-AD1F-5B7A93566175}", role: "context hero" }
+      - { component: "ProductPricingCards", variant: "BloomingdalesProductRail", variantId: "{97B6BC3A-C1E7-428F-9312-6020564D894B}", role: "product grid", datasourceId: "{C91EB7BA-284A-4790-9BF9-9465E3626DD4}" }
+
+    codeChanges:
+      - "src/components/uiim/category/CategoryHero.tsx — context-only Campaign-style banner"
+      - "src/Layout.tsx — CategoryName, CategoryDescription, CategoryHeroImage on RouteFields"
+      - "ProductPricingCards BloomingdalesProductRail: text-start + ltr/rtl tracking"
+
+    verification:
+      checkedAt: "2026-09-08T20:00:00+04:00"
+      passed:
+        - "Category template inherits Blank Page / Page"
+        - "Category Data fields exist with correct Type"
+        - "Page Design PartialDesigns = Footer | Header | Category Layout"
+        - "TemplatesMapping includes Category → Category page design"
+        - "Home and /Home/Categories insert options include Category"
+        - "Six category pages created with route identity fields"
+        - "CategoryQuickLinks tiles link internally to those pages"
+        - "Product grid uses ProductPricingCards field() ComponentQuery (no template-name fragments)"
+      pendingManual:
+        - "Publish new pages to Edge before the live host can render /Categories/*"
+        - "__Standard values link on the Category template (silent-write)"
+
+    partialDesign:
+      name: "Category Layout"
+      path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Category Layout"
+      itemId: "{AA1511FE-9787-42CA-B618-B894781F8822}"
+      signature: "category-layout"
+      components: ["CategoryHero", "ProductPricingCards"]
+      placeholder: "headless-main"
+      renderingsPlaced: true
+
+    pageDesign:
+      name: "Category"
+      path: "/sitecore/content/main/main-website/Presentation/Page Designs/Category"
+      itemId: "{9D768F42-C8BE-4323-B845-B1E5B75CA14A}"
+      partialDesigns: "{C08D4FB5-8667-459E-93E0-471C9EFC10DC}|{42D352B9-D9E4-4F5A-BF6D-67E924741AEA}|{AA1511FE-9787-42CA-B618-B894781F8822}"
+      templatesMappingSet: true
+
+    notes:
+      - "2026-09-08: Category page type. Hero is context-only (route fields). Product grid reuses ProductPricingCards + BloomingdalesProductRail and the existing Shop New In datasource so we did not duplicate list templates. ComponentQuery already uses field(name) / children.results."
+      - "2026-09-08: Shared product datasource on the Category Layout partial — every category page shows Shop New In until an editor assigns a page-local ProductPricingCards datasource."
+
+  - name: "Product"
+    kind: "page-template"
+    category: "Page Types"
+    status: "complete"
+    createdAt: "2026-09-08T20:10:00+04:00"
+    updatedAt: "2026-09-08T20:25:00+04:00"
+    designIntent: "PDP route. Identity on the page (context ProductDetail). Related rail is existing ProductPricingCards with field() ComponentQuery — no ... on TemplateName."
+
+    baseTemplate:
+      name: "Page"
+      itemId: "{CEBD0936-6B37-42B5-B169-369BB1C3C06A}"
+
+    templates:
+      pageTemplate:
+        name: "Product"
+        path: "/sitecore/templates/Project/main/Page Types/Product"
+        itemId: "{FBDED836-8065-4DE7-A26B-4C4EB0BE979E}"
+        sectionName: "Product Data"
+        sectionId: "{B445CF8A-7BFE-4592-B501-E6FD16EAF8D3}"
+        fields:
+          - { name: "ProductName", type: "Single-Line Text", itemId: "{F8FC7A31-2849-44F5-BCD6-2DD991774869}" }
+          - { name: "ProductSku", type: "Single-Line Text", itemId: "{CF4361C2-1BE0-49CA-A10E-EE35FF87A5B1}" }
+          - { name: "ProductPrice", type: "Single-Line Text", itemId: "{57CED879-F237-4D60-8C09-992493AA06F0}" }
+          - { name: "ProductDescription", type: "Rich Text", itemId: "{A0520A47-9C6F-4648-8440-6C3C5B953D2D}" }
+          - { name: "ProductImage", type: "Image", itemId: "{97FAAF0D-E82E-4BDA-A1BD-856139A989D8}", note: "primary; Beat 13 Content Hub rights target" }
+          - { name: "ProductImageSecondary", type: "Image", itemId: "{E75883CA-59C3-4AB3-95E2-8060BE070657}" }
+          - { name: "ProductImageTertiary", type: "Image", itemId: "{CBDBB9DD-5D6C-4C23-B50D-96DE88693A84}" }
+        inheritsFrom: "Page"
+        standardValues:
+          itemId: "{7C3CD8E4-DE85-4B15-8E97-5813439FF95C}"
+          linked: true
+          pageDesign: "{4763DE13-6534-4E16-A4D4-AAE07C4177B7}"
+
+    contentTree:
+      productsParent:
+        name: "Products"
+        path: "/sitecore/content/main/main-website/Home/Products"
+        itemId: "{594B70BA-BE60-485F-AA75-C59F262FE76D}"
+        insertOptionsSet: true
+      pages:
+        - { name: "Mahon Maxi Dress", itemId: "{68234C24-8861-468C-A6B3-A5ABCEB10C15}", path: "/sitecore/content/main/main-website/Home/Products/Mahon Maxi Dress" }
+        - { name: "Babylone Slides", itemId: "{AA4D9CB8-1ED0-4A98-A5D5-5B2FB41A7100}", path: "/sitecore/content/main/main-website/Home/Products/Babylone Slides" }
+
+    composedFrom:
+      - { component: "ProductDetail", variant: "Default", variantId: "{2D9C3960-2605-424E-9551-0A82EA9D3D4A}", role: "context PDP identity" }
+      - { component: "ProductPricingCards", variant: "BloomingdalesProductRail", variantId: "{97B6BC3A-C1E7-428F-9312-6020564D894B}", role: "related products", datasourceId: "{1C392ADC-3AF8-4B0D-BB32-4A5CD5A63D38}" }
+
+    relatedProductsDatasource:
+      name: "Related Products"
+      path: "/sitecore/content/main/main-website/Data/ProductPricingCards/Related Products"
+      itemId: "{1C392ADC-3AF8-4B0D-BB32-4A5CD5A63D38}"
+      children:
+        - { name: "Mahon Maxi Dress", itemId: "{4B52BB85-9C15-43B6-B23D-AFFAAAA61577}", linksTo: "{68234C24-8861-468C-A6B3-A5ABCEB10C15}" }
+        - { name: "Babylone Slides", itemId: "{E8ED0C3A-929E-4FDA-80F8-381FF945BB2A}", linksTo: "{AA4D9CB8-1ED0-4A98-A5D5-5B2FB41A7100}" }
+        - { name: "Donna 110 Pumps", itemId: "{7C8E0FC0-8A87-43FB-8184-7E2A8E0837B6}" }
+        - { name: "Fish Sticks Shirtdress", itemId: "{3AD77A60-470E-4C1D-8D45-D3DF37504696}" }
+
+    codeChanges:
+      - "src/components/uiim/product/ProductDetail.tsx — context-only PDP gallery + identity"
+      - "src/Layout.tsx — ProductName, ProductSku, ProductPrice, ProductDescription, ProductImage, ProductImageSecondary, ProductImageTertiary on RouteFields"
+
+    verification:
+      checkedAt: "2026-09-08T20:25:00+04:00"
+      passed:
+        - "Product template inherits Blank Page / Page"
+        - "Product Data fields exist with correct Type (3x Image, SLT, Rich Text)"
+        - "Page Design PartialDesigns = Footer | Header | Product Layout"
+        - "TemplatesMapping includes Product → Product page design"
+        - "Home and /Home/Products insert options include Product"
+        - "Two product pages created with route identity fields and DAM Image XML"
+        - "Related rail uses ProductPricingCards field() ComponentQuery (no template-name fragments)"
+        - "Related Products datasource wired on the Product Layout partial"
+      pendingManual:
+        - "Publish new pages to Edge before the live host can render /Products/*"
+        - "__Standard values link on the Product template (silent-write)"
+        - "Beat 15 SFCC mock feed — later prompt maps onto these route fields"
+        - "Beat 13 rights-flagged asset — later UI task; keep ProductImage as Image"
+
+    partialDesign:
+      name: "Product Layout"
+      path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Product Layout"
+      itemId: "{5843F028-BCBF-4DC4-A27E-74D678261757}"
+      signature: "product-layout"
+      components: ["ProductDetail", "ProductPricingCards"]
+      placeholder: "headless-main"
+      renderingsPlaced: true
+
+    pageDesign:
+      name: "Product"
+      path: "/sitecore/content/main/main-website/Presentation/Page Designs/Product"
+      itemId: "{4763DE13-6534-4E16-A4D4-AAE07C4177B7}"
+      partialDesigns: "{C08D4FB5-8667-459E-93E0-471C9EFC10DC}|{42D352B9-D9E4-4F5A-BF6D-67E924741AEA}|{5843F028-BCBF-4DC4-A27E-74D678261757}"
+      templatesMappingSet: true
+
+    notes:
+      - "2026-09-08: Product page type. Identity is context-only (route fields). Related rail reuses ProductPricingCards + BloomingdalesProductRail. No new list templates. ComponentQuery already uses field(name) / children.results."
+      - "2026-09-08: Three discrete Image fields (not a gallery list) so Beat 13 can retarget ProductImage at a Content Hub asset with usage-rights metadata without changing the template."
+
   - name: "SearchExperience"
     kind: "simple"
     category: "Search"
@@ -3451,6 +3760,46 @@ lookups:
   - path: "/sitecore/content/main/main-website/Home/Campaigns"
     itemId: "{98715648-F76B-4E57-ABFD-887B5BE947CF}"
     lastReadAt: "2026-09-08T18:50:00+04:00"
+
+  # Category lookups (added 2026-09-08)
+  - path: "/sitecore/templates/Project/main/Page Types/Category"
+    itemId: "{A991D4F2-C870-4262-85C2-4BAC3F338CDF}"
+    lastReadAt: "2026-09-08T20:00:00+04:00"
+  - path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Category Layout"
+    itemId: "{AA1511FE-9787-42CA-B618-B894781F8822}"
+    lastReadAt: "2026-09-08T20:00:00+04:00"
+  - path: "/sitecore/content/main/main-website/Presentation/Page Designs/Category"
+    itemId: "{9D768F42-C8BE-4323-B845-B1E5B75CA14A}"
+    lastReadAt: "2026-09-08T20:00:00+04:00"
+  - path: "/sitecore/content/main/main-website/Home/Categories"
+    itemId: "{48B25C71-727B-446D-8309-CE33AA7172B0}"
+    lastReadAt: "2026-09-08T20:00:00+04:00"
+  - path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Category/CategoryHero"
+    itemId: "{4F9CDAC4-0CF0-4256-8C9D-D4D5B729E828}"
+    lastReadAt: "2026-09-08T20:00:00+04:00"
+
+  # Product lookups (added 2026-09-08)
+  - path: "/sitecore/templates/Project/main/Page Types/Product"
+    itemId: "{FBDED836-8065-4DE7-A26B-4C4EB0BE979E}"
+    lastReadAt: "2026-09-08T20:25:00+04:00"
+  - path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Product Layout"
+    itemId: "{5843F028-BCBF-4DC4-A27E-74D678261757}"
+    lastReadAt: "2026-09-08T20:25:00+04:00"
+  - path: "/sitecore/content/main/main-website/Presentation/Page Designs/Product"
+    itemId: "{4763DE13-6534-4E16-A4D4-AAE07C4177B7}"
+    lastReadAt: "2026-09-08T20:25:00+04:00"
+  - path: "/sitecore/content/main/main-website/Home/Products"
+    itemId: "{594B70BA-BE60-485F-AA75-C59F262FE76D}"
+    lastReadAt: "2026-09-08T20:25:00+04:00"
+  - path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Product/ProductDetail"
+    itemId: "{124348CB-F51C-4842-811E-F3BA03F993D4}"
+    lastReadAt: "2026-09-08T20:25:00+04:00"
+  - path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Product"
+    itemId: "{E6E0B29C-7483-45E9-883E-571BF2F327E8}"
+    lastReadAt: "2026-09-08T20:25:00+04:00"
+  - path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Product"
+    itemId: "{07E63A10-C11F-460F-BA7D-FE8C097F92C3}"
+    lastReadAt: "2026-09-08T20:25:00+04:00"
 
 components-searchv3:
   # Ticket #46 (FMC-ORG/custom-demo). Spec #45. Built 2026-08-07.
