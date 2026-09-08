@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-09-08T01:20:00+04:00"
+lastUpdatedAt: "2026-09-08T18:50:00+04:00"
 lastUpdatedBy: "cursor-agent"
 
 project:
@@ -2943,6 +2943,128 @@ pageTemplates:
       - "2026-06-09: Partial Design and Page Design items created but rendering placement and standard-values linkage are silent-write — finalize via Pages Builder / Content Editor."
       - "2026-06-09: Registry entry in docs/ai/catalog/page-template-registry.yaml under id=landing is the canonical schema source of truth. Orchestrator skill at docs/ai/skills/sitecore-create-landing-page.md. Router updated at docs/ai/rules/01-sitecore-router.md."
 
+  - name: "Sale Campaign"
+    kind: "page-template"
+    category: "Page Types"
+    status: "complete"
+    createdAt: "2026-09-08T18:45:00+04:00"
+    updatedAt: "2026-09-08T18:50:00+04:00"
+    designIntent: "Bloomingdale's UAE sale/campaign page composed from existing datasource components. No new React components. No personalization (Phase C)."
+
+    baseTemplate:
+      name: "Page"
+      itemId: "{CEBD0936-6B37-42B5-B169-369BB1C3C06A}"
+
+    templates:
+      pageTemplate:
+        name: "Sale Campaign"
+        path: "/sitecore/templates/Project/main/Page Types/Sale Campaign"
+        itemId: "{CD8B38BF-639B-4A2E-B573-5D78F47C2E2C}"
+        inheritsFrom: "Page"
+        standardValues:
+          itemId: "{55E291C5-5FAB-440F-ADE7-B54EBBDE69A3}"
+          linked: true
+          pageDesign: "{EE412620-D73D-4155-A571-5188E0DC195C}"
+
+    contentTree:
+      campaignsParent:
+        name: "Campaigns"
+        path: "/sitecore/content/main/main-website/Home/Campaigns"
+        itemId: "{98715648-F76B-4E57-ABFD-887B5BE947CF}"
+        insertOptionsSet: true
+      examplePage:
+        name: "End of Season Sale"
+        path: "/sitecore/content/main/main-website/Home/Campaigns/End of Season Sale"
+        itemId: "{51E77B04-75D3-43D9-B2DC-2F1F04EF032A}"
+        pageDesignSet: true
+
+    composedFrom:
+      - { component: "CTABanner", variant: "BloomingdalesCampaign", variantId: "{D71B99E7-E1CF-497F-8FE9-8D4C69B7D2A5}", role: "hero" }
+      - { component: "FeatureCardsGrid", variant: "BloomingdalesDualHero", variantId: "{155F7507-FCB4-4F78-A2D7-87EAAE8ECCF0}", role: "offer grid" }
+      - { component: "FeatureHighlight", variant: "BloomingdalesEditorialBand", variantId: "{3AFC3CEC-86F7-4363-A70D-4FF33EE614E9}", role: "editorial band" }
+      - { component: "NavigationHeader", variant: "BloomingdalesHeader", variantId: "{23763B46-C964-4944-BF59-78BBFA822787}", role: "header via Header partial" }
+      - { component: "SiteFooter", variant: "BloomingdalesFooter", variantId: "{003AC2A2-3CEE-4188-A1CD-5BB9059DAA21}", role: "footer via Footer partial" }
+
+    exampleDatasources:
+      hero:
+        name: "Sale Campaign - Hero"
+        path: "/sitecore/content/main/main-website/Data/CTABanners/Sale Campaign - Hero"
+        itemId: "{66026ECA-75AB-47C8-A1B4-B2E7BD554C04}"
+      offers:
+        name: "Sale Campaign - Offers"
+        path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids/Sale Campaign - Offers"
+        itemId: "{47F76FDD-B14D-4F8A-A0A4-14155589A300}"
+        children:
+          - { name: "Sale Campaign - Womens Sale", itemId: "{457A2BE8-7B42-4198-91AB-EA8D97D04586}" }
+          - { name: "Sale Campaign - Mens Sale", itemId: "{BD43F8B8-7639-4D00-99E4-FB7456C39372}" }
+          - { name: "Sale Campaign - Bags To Love", itemId: "{17973CA2-C47D-4C0A-BF2A-9DE0CF937D46}" }
+      editorialBand:
+        name: "Sale Campaign - Editorial Band"
+        path: "/sitecore/content/main/main-website/Data/FeatureHighlights/Sale Campaign - Editorial Band"
+        itemId: "{40F98A8B-0E50-41E9-AD88-5DA06950E22F}"
+
+    layoutInstances:
+      hero:
+        instanceId: "{E5618404-A737-4E2A-8EB5-DC2B83AD9562}"
+        datasourceId: "{66026ECA-75AB-47C8-A1B4-B2E7BD554C04}"
+        fieldNames: "{D71B99E7-E1CF-497F-8FE9-8D4C69B7D2A5}"
+      offers:
+        instanceId: "{5413A453-C882-4595-9375-36DB129D4D94}"
+        localDatasourceId: "{ED106661-D6F7-45A9-9ED5-E27F80926E1D}"
+        sharedDatasourceId: "{47F76FDD-B14D-4F8A-A0A4-14155589A300}"
+        fieldNames: "{155F7507-FCB4-4F78-A2D7-87EAAE8ECCF0}"
+      editorialBand:
+        instanceId: "{E77A05F4-D60A-4A1D-99B6-4E589851CA75}"
+        datasourceId: "{40F98A8B-0E50-41E9-AD88-5DA06950E22F}"
+        fieldNames: "{3AFC3CEC-86F7-4363-A70D-4FF33EE614E9}"
+
+    codeChanges:
+      - "FeatureCardsGrid.tsx: physical left/right inset and carousel arrows → start/end logical properties; carousel tracking scoped ltr/rtl"
+      - "NavigationHeader.tsx: Default bar and BloomingdalesHeader search affordance use start/end/ps; Latin tracking scoped so Arabic stays tracking-normal"
+
+    verification:
+      checkedAt: "2026-09-08T18:50:00+04:00"
+      passed:
+        - "Sale Campaign template exists and inherits Blank Page / Page"
+        - "__Standard Values created; Page Design field readable"
+        - "Partial Design Sale Campaign Layout created with Signature sale-campaign-layout"
+        - "Page Design PartialDesigns = Footer | Header | Sale Campaign Layout"
+        - "TemplatesMapping includes Sale Campaign → Sale Campaign page design"
+        - "Home insert options include Sale Campaign"
+        - "Campaigns parent insert options include Sale Campaign"
+        - "Example page End of Season Sale created from Sale Campaign"
+        - "CTABanner FieldNames = BloomingdalesCampaign"
+        - "FeatureCardsGrid FieldNames = BloomingdalesDualHero"
+        - "FeatureHighlight FieldNames = BloomingdalesEditorialBand"
+      pendingManual:
+        - "Header partial FieldNames still Default ({150B9AFE-2B9F-48AD-8F01-036666057814}); set BloomingdalesHeader ({23763B46-C964-4944-BF59-78BBFA822787}) in Pages — MCP set_component_datasource variantId is personalization-only"
+        - "Footer partial FieldNames still Default ({143CFE84-1E77-4961-975C-38564DC43DB9}); set BloomingdalesFooter ({003AC2A2-3CEE-4188-A1CD-5BB9059DAA21}) in Pages"
+        - "Publish new items to Edge before the live/editing host can render /Campaigns/End-of-Season-Sale (preview HTML 404 until published)"
+        - "__Standard values link on the template item (silent-write)"
+
+    partialDesign:
+      name: "Sale Campaign Layout"
+      path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Sale Campaign Layout"
+      itemId: "{1199A364-D93E-49ED-A4BE-72E80CCF3FA6}"
+      signature: "sale-campaign-layout"
+      components: ["CTABanner", "FeatureCardsGrid", "FeatureHighlight"]
+      placeholder: "headless-main"
+      renderingsPlaced: true
+
+    pageDesign:
+      name: "Sale Campaign"
+      path: "/sitecore/content/main/main-website/Presentation/Page Designs/Sale Campaign"
+      itemId: "{EE412620-D73D-4155-A571-5188E0DC195C}"
+      partialDesigns: "{C08D4FB5-8667-459E-93E0-471C9EFC10DC}|{42D352B9-D9E4-4F5A-BF6D-67E924741AEA}|{1199A364-D93E-49ED-A4BE-72E80CCF3FA6}"
+      partialDesignsLinked: true
+      linkedToStandardValues: true
+      templatesMappingSet: true
+
+    notes:
+      - "2026-09-08: Sale Campaign page template composed from existing Bloomingdale's variants. No new React/Sitecore datasource components. Header + Footer come from the shared Header/Footer partials so every page from this template gets them. Personalization deferred to Phase C."
+      - "2026-09-08: Offer grid uses BloomingdalesDualHero (allowed). Three offer cards are authored; DualHero is a 2-col wrap. Switch FieldNames to BloomingdalesEditorialThree ({D6C72805-C830-4520-BB41-A39BE66E6910}) in Pages for a 3-up grid."
+      - "2026-09-08: Registry entry id=sale-campaign in docs/ai/catalog/page-template-registry.yaml."
+
   - name: "SearchExperience"
     kind: "simple"
     category: "Search"
@@ -3315,6 +3437,20 @@ lookups:
   - path: "/sitecore/content/main/main-website/Presentation/Page Designs/Landing Page"
     itemId: "{E38ABC20-C7EA-43C8-AAAF-22CA71342814}"
     lastReadAt: "2026-06-09T00:00:00Z"
+
+  # Sale Campaign lookups (added 2026-09-08)
+  - path: "/sitecore/templates/Project/main/Page Types/Sale Campaign"
+    itemId: "{CD8B38BF-639B-4A2E-B573-5D78F47C2E2C}"
+    lastReadAt: "2026-09-08T18:50:00+04:00"
+  - path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Sale Campaign Layout"
+    itemId: "{1199A364-D93E-49ED-A4BE-72E80CCF3FA6}"
+    lastReadAt: "2026-09-08T18:50:00+04:00"
+  - path: "/sitecore/content/main/main-website/Presentation/Page Designs/Sale Campaign"
+    itemId: "{EE412620-D73D-4155-A571-5188E0DC195C}"
+    lastReadAt: "2026-09-08T18:50:00+04:00"
+  - path: "/sitecore/content/main/main-website/Home/Campaigns"
+    itemId: "{98715648-F76B-4E57-ABFD-887B5BE947CF}"
+    lastReadAt: "2026-09-08T18:50:00+04:00"
 
 components-searchv3:
   # Ticket #46 (FMC-ORG/custom-demo). Spec #45. Built 2026-08-07.

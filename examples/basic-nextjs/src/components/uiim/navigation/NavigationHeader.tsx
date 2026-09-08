@@ -291,7 +291,7 @@ export const Transparent = ({ fields, params, page }: NavigationHeaderProps): JS
     <div className={cn('component navigation-header', styles)} id={RenderingIdentifier}>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300',
+          'fixed top-0 start-0 end-0 z-50 w-full transition-all duration-300',
           scrolled ? 'border-b shadow-sm' : ''
         )}
         style={{
@@ -362,7 +362,7 @@ export const BloomingdalesHeader = ({
               <label className="relative hidden w-48 md:block lg:w-64">
                 <span className="sr-only">Search</span>
                 <svg
-                  className="pointer-events-none absolute left-0 top-1/2 h-4 w-4 -translate-y-1/2"
+                  className="pointer-events-none absolute start-0 top-1/2 h-4 w-4 -translate-y-1/2"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -375,13 +375,13 @@ export const BloomingdalesHeader = ({
                 <input
                   type="search"
                   placeholder="Search"
-                  className="w-full border-0 border-b bg-transparent py-1 pl-6 text-sm outline-none font-[var(--brand-body-font,inherit)]"
+                  className="w-full border-0 border-b bg-transparent py-1 ps-6 text-sm outline-none font-[var(--brand-body-font,inherit)]"
                   style={{ borderColor: 'var(--brand-border, #e8e8e8)' }}
                 />
               </label>
             )}
           </div>
-          <Logo brandLogo={brandLogo} className="justify-self-center text-2xl font-normal tracking-tight" />
+          <Logo brandLogo={brandLogo} className="justify-self-center text-2xl font-normal ltr:tracking-tight rtl:tracking-normal" />
           <div className="flex items-center justify-end gap-4 text-sm font-[var(--brand-body-font,inherit)]">
             <span className="hidden sm:inline">Account</span>
             <span className="hidden sm:inline">Wishlist</span>
@@ -400,7 +400,7 @@ export const BloomingdalesHeader = ({
                 <li key={item.id}>
                   <ContentSdkLink
                     field={item.linkUrl?.jsonValue}
-                    className="text-[13px] uppercase tracking-[0.08em] font-[var(--brand-body-font,inherit)]"
+                    className="text-[13px] uppercase ltr:tracking-[0.08em] rtl:tracking-normal font-[var(--brand-body-font,inherit)]"
                     style={{ color: isSale ? 'var(--brand-sale, var(--brand-accent))' : 'var(--brand-header-fg, #000000)' }}
                   >
                     {item.linkText?.jsonValue?.value && <Text field={item.linkText?.jsonValue} />}

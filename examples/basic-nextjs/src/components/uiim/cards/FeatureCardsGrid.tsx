@@ -342,18 +342,18 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
                           {/* Bottom gradient for text readability */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                           {/* Overlay content */}
-                          <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                          <div className="absolute bottom-0 start-0 end-0 p-5 text-white">
                             {(card.cardTitle?.jsonValue?.value || isEditing) && (
                               <Text
                                 field={card.cardTitle?.jsonValue}
                                 tag="h3"
-                                className="text-lg font-bold tracking-tight font-[var(--brand-heading-font,inherit)] uppercase"
+                                className="text-lg font-bold ltr:tracking-tight rtl:tracking-normal font-[var(--brand-heading-font,inherit)] uppercase"
                               />
                             )}
                             {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
                               <ContentSdkLink
                                 field={card.cardLink?.jsonValue}
-                                className="mt-3 inline-flex items-center justify-center rounded-[var(--brand-button-radius,0.375rem)] border border-white px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-black"
+                                className="mt-3 inline-flex items-center justify-center rounded-[var(--brand-button-radius,0.375rem)] border border-white px-5 py-2 text-xs font-semibold uppercase ltr:tracking-wider rtl:tracking-normal text-white transition-colors hover:bg-white hover:text-black"
                               />
                             )}
                           </div>
@@ -391,7 +391,7 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
                 <button
                   type="button"
                   onClick={() => goTo(clampedPage - 1)}
-                  className="absolute -left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition hover:bg-white"
+                  className="absolute -start-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition hover:bg-white"
                   style={{ color: 'var(--brand-fg, #111)' }}
                   aria-label="Previous cards"
                 >
@@ -402,7 +402,7 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
                 <button
                   type="button"
                   onClick={() => goTo(clampedPage + 1)}
-                  className="absolute -right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition hover:bg-white"
+                  className="absolute -end-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition hover:bg-white"
                   style={{ color: 'var(--brand-fg, #111)' }}
                   aria-label="Next cards"
                 >

@@ -288,3 +288,62 @@ pageTemplates:
       noControlBooleans: "Visibility derives from emptiness. No showSecondaryCta or hideTestimonial flags."
       variantSelection: "Layout choice is a Variant Definition picker, not a template field."
       personalizationReady: "Every field individually personalizable via Sitecore Personalize. ABM = same template, different field values per audience."
+
+  - id: sale-campaign
+    name: "Sale Campaign"
+    inheritsFrom: "base-page-template"
+    description: "Bloomingdale's UAE sale/campaign page. Composed from existing datasource components — no new route fields, no new React components. Header and footer come from shared partial designs. Personalization is out of scope (Phase C)."
+    designIntent: "brand-consistent, RTL-safe, editor-instantiable; reuse CTABanner / FeatureCardsGrid / FeatureHighlight Bloomingdale's variants"
+
+    templateSections: []
+    sharedDataTemplates: []
+
+    composedFrom:
+      - id: cta-banner-campaign
+        name: "CTABanner"
+        variant: "BloomingdalesCampaign"
+        role: "hero"
+      - id: feature-cards-offers
+        name: "FeatureCardsGrid"
+        variant: "BloomingdalesDualHero"
+        alternateVariant: "BloomingdalesEditorialThree"
+        role: "offer grid"
+      - id: feature-highlight-editorial
+        name: "FeatureHighlight"
+        variant: "BloomingdalesEditorialBand"
+        role: "editorial band"
+
+    chromePartials:
+      header:
+        partial: "Header"
+        component: "NavigationHeader"
+        variant: "BloomingdalesHeader"
+      footer:
+        partial: "Footer"
+        component: "SiteFooter"
+        variant: "BloomingdalesFooter"
+
+    partialDesign:
+      name: "Sale Campaign Layout"
+      placeholder: "headless-main"
+      components: ["CTABanner", "FeatureCardsGrid", "FeatureHighlight"]
+
+    pageDesign:
+      name: "Sale Campaign"
+      partials: ["Footer", "Header", "Sale Campaign Layout"]
+
+    contentTree:
+      parentPage:
+        name: "Campaigns"
+        path: "/Home/Campaigns"
+        template: "base-page-template"
+        insertOptions: ["Sale Campaign"]
+      examplePage:
+        name: "End of Season Sale"
+        path: "/Home/Campaigns/End of Season Sale"
+
+    agentNotes:
+      noNewComponents: "Reuse existing simple/list components. Do not create new datasource templates or React files for this page type."
+      insertOptions: "Sale Campaign is registered on Home and /Home/Campaigns, and mapped in Page Designs TemplatesMapping."
+      personalization: "Do not add AB tests or Personalize variants here — Phase C."
+      rtl: "Touched components must use logical Tailwind (ps/pe/ms/me/start/end). Arabic: leading-relaxed, no letter-spacing."
