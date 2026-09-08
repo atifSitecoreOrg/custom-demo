@@ -22,6 +22,34 @@ type PageProps = {
   }>;
 };
 
+async function getPageForLocale(
+  path: string[] | undefined,
+  site: string,
+  locale: string,
+) {
+  try {
+    const page = await client.getPage(path ?? [], { site, locale });
+    if (page) {
+      return page;
+    }
+  } catch {
+    // Locale may not exist in Sitecore yet (e.g. ar-AE).
+  }
+
+  if (locale !== routing.defaultLocale) {
+    try {
+      return await client.getPage(path ?? [], {
+        site,
+        locale: routing.defaultLocale,
+      });
+    } catch {
+      return null;
+    }
+  }
+
+  return null;
+}
+
 export default async function Page({ params }: PageProps) {
   const { site, locale, path } = await params;
   const draft = await draftMode();
@@ -40,7 +68,7 @@ export default async function Page({ params }: PageProps) {
       page = await client.getPreview(previewData);
     }
   } else {
-    page = await client.getPage(path ?? [], { site, locale });
+    page = await getPageForLocale(path, site, locale);
   }
 
   // If the page is not found, return a 404
@@ -67,21 +95,58 @@ export default async function Page({ params }: PageProps) {
 // This function gets called at build and export time to determine
 // pages for SSG ("paths", as tokenized array).
 export const generateStaticParams = async () => {
-  if (process.env.NODE_ENV !== "development" && scConfig.generateStaticPaths) {
-    // Filter sites to only include the sites this starter is designed to serve.
-    // This prevents cross-site build errors when multiple starters share the same XM Cloud instance.
-    const defaultSite = scConfig.defaultSite;
-    const allowedSites = defaultSite
-      ? sites
-          .filter((site: SiteInfo) => site.name === defaultSite)
-          .map((site: SiteInfo) => site.name)
-      : sites.map((site: SiteInfo) => site.name);
-    return await client.getAppRouterStaticParams(
+  const defaultSite = scConfig.defaultSite;
+  const allowedSites = defaultSite
+    ? sites
+        .filter((site: SiteInfo) => site.name === defaultSite)
+        .map((site: SiteInfo) => site.name)
+    : sites.map((site: SiteInfo) => site.name);
+
+  const seedLocaleParams = allowedSites.flatMap((site) =>
+    routing.locales.map((locale) => ({ site, locale, path: [] as string[] })),
+  );
+
+  if (process.env.NODE_ENV === "development" || !scConfig.generateStaticPaths) {
+    return seedLocaleParams;
+  }
+
+  try {
+    const params = await client.getAppRouterStaticParams(
       allowedSites,
       routing.locales.slice(),
     );
+    const seen = new Set(
+      params.map(
+        (entry: { site: string; locale: string; path?: string[] }) =>
+          `${entry.site}:${entry.locale}:${(entry.path ?? []).join("/")}`,
+      ),
+    );
+    for (const seed of seedLocaleParams) {
+      const key = `${seed.site}:${seed.locale}:`;
+      if (!seen.has(key)) {
+        params.push(seed);
+      }
+    }
+    return params;
+  } catch {
+    try {
+      const params = await client.getAppRouterStaticParams(allowedSites, [
+        routing.defaultLocale,
+      ]);
+      const seen = new Set(
+        params.map((entry: { site: string; locale: string }) => `${entry.site}:${entry.locale}:`),
+      );
+      for (const seed of seedLocaleParams) {
+        const key = `${seed.site}:${seed.locale}:`;
+        if (!seen.has(key)) {
+          params.push(seed);
+        }
+      }
+      return params;
+    } catch {
+      return seedLocaleParams;
+    }
   }
-  return [];
 };
 
 // Metadata fields for the page.
@@ -95,7 +160,7 @@ export const generateMetadata = async ({ params }: PageProps) => {
   const canonicalUrl = baseUrl ? `${baseUrl}${pathSegment}` : undefined;
 
   // The same call as for rendering the page. Should be cached by default react behavior
-  const page = await client.getPage(path ?? [], { site, locale });
+  const page = await getPageForLocale(path, site, locale);
   const fields = page?.layout.sitecore.route?.fields as RouteFields;
 
   // Parse keywords from comma-separated string to array

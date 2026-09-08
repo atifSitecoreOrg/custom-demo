@@ -53,11 +53,13 @@ Use **globals-inlined** unless you've verified the import works in DevTools afte
 |----------|---------|---------|---------|
 | `--brand-heading-font` | Font family for h1-h6, section titles | `inherit` | 15+ components |
 | `--brand-body-font` | Font family for body text, descriptions | `"Open Sans", Arial, sans-serif` | 15+ components |
+| `--brand-arabic-font` | Font family for `ar-AE` / `html[dir="rtl"]` | `'Noto Sans Arabic', Tajawal, sans-serif` | Root `html` when locale is `ar-AE` |
 
 ### Shape
 
 | Variable | Purpose | Default | Used by |
 |----------|---------|---------|---------|
+| `--brand-radius` | Base radius token | `0` | Shared shape fallback |
 | `--brand-button-radius` | Border radius for buttons and CTAs | `var(--radius)` (0.5rem) | HeroBanner, CTABanner, NewsletterSignup |
 | `--brand-card-radius` | Border radius for cards and panels | `calc(var(--radius) * 1.5)` (0.75rem) | ProductPricingCards, TestimonialBlock, FeatureCardsGrid |
 

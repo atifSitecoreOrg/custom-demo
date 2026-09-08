@@ -6,6 +6,7 @@ import {
   Page,
   SitecoreProvider,
 } from "@sitecore-content-sdk/nextjs";
+import { LazyMotion, domAnimation } from "motion/react";
 import scConfig from "sitecore.config";
 import components from ".sitecore/component-map.client";
 
@@ -26,7 +27,9 @@ export default function Providers({
       loadImportMap={() => import(".sitecore/import-map.client")}
     >
       <ComponentPropsContext value={componentProps}>
-        {children}
+        <LazyMotion features={domAnimation} strict>
+          {children}
+        </LazyMotion>
       </ComponentPropsContext>
     </SitecoreProvider>
   );

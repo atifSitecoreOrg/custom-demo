@@ -108,6 +108,7 @@
   --brand-footer-fg: #1a1a1a;
   --brand-heading-font: 'Bodoni Moda', 'Times New Roman', serif;
   --brand-body-font: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  --brand-arabic-font: 'Noto Sans Arabic', Tajawal, sans-serif;
   --brand-radius: 0;
   --brand-button-radius: 0;
   --brand-card-radius: 0;
@@ -175,6 +176,7 @@
     /* Typography */
     --brand-heading-font: inherit;
     --brand-body-font: var(--font-open-sans);
+    --brand-arabic-font: 'Noto Sans Arabic', Tajawal, sans-serif;
 
     /* Shape */
     --brand-button-radius: var(--radius);
@@ -190,6 +192,34 @@
     @apply bg-background text-foreground;
     font-family: var(--brand-body-font);
   }
+  html[dir='rtl'],
+  html[dir='rtl'] body {
+    font-family: var(--brand-arabic-font);
+  }
+  html[dir='rtl'] :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--brand-arabic-font);
+  }
+}
+
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-marquee-track {
+  animation: brand-marquee var(--marquee-duration, 28s) linear infinite;
+}
+
+.brand-marquee-track.animate-none {
+  animation: none;
+}
+
+html[dir='rtl'] .brand-marquee-track {
+  animation-direction: reverse;
 }
 
 /* FALLBACK delivery: @import globals-brand.css.

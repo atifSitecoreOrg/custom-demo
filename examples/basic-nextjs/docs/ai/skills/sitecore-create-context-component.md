@@ -24,9 +24,12 @@ Use instead:
 ## Load first
 - `docs/ai/reference/sitecore-rules.md`
 - `docs/ai/skills/shared/react-uiim-guidelines.md`
+- `docs/ai/rules/06-rtl-logical-properties.md`
 - `docs/ai/templates/sitecore-component-spec.template.yaml`
 - `docs/ai/reference/sitecore-marketer-mcp-reference.md`
 - `docs/ai/skills/sitecore-maintain-manifest.md`
+
+RTL: every new or touched component must use logical Tailwind (`ps-`/`pe-`/`ms-`/`me-`/`start-`/`end-`), never `pl-`/`pr-`/`ml-`/`mr-`/`left-`/`right-`. Arabic text gets `leading-relaxed` or looser (~1.4), never letter-spaced. See `docs/ai/rules/06-rtl-logical-properties.md`.
 
 ## Examples
 - `docs/ai/examples/sitecore-create-context-component/page-hero.request.md`

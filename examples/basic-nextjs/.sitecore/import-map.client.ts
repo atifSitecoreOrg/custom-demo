@@ -11,7 +11,7 @@ import {
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { cn } from '@/lib/utils';
 import { TypeaheadSearchBox } from '@/lib/search-ui/TypeaheadSearchBox';
-import { useEffect, useMemo, useRef, useState, Suspense, useCallback } from 'react';
+import { useEffect, useMemo, useRef, useState, Suspense, useCallback, createElement } from 'react';
 import React from 'react';
 import Image from 'next/image';
 import { ImageOff, Search, X, ChevronDown, Menu, User } from 'lucide-react';
@@ -60,6 +60,8 @@ import { SearchItemLink } from 'src/components/search-experience/search-componen
 import { SearchItemCategory } from 'src/components/search-experience/search-components/SearchItem/SearchItemCategory';
 import { SearchItemTags } from 'src/components/search-experience/search-components/SearchItem/SearchItemTags';
 import { SearchItemImage } from 'src/components/search-experience/search-components/SearchItem/SearchItemImage';
+import { m } from 'motion/react';
+import { motionDuration, motionEase, useMotionSafe } from '@/lib/motion';
 import client from 'src/lib/sitecore-client';
 import config from 'sitecore.config';
 
@@ -93,6 +95,7 @@ const importMap = [
       { name: 'useState', value: useState },
       { name: 'Suspense', value: Suspense },
       { name: 'useCallback', value: useCallback },
+      { name: 'createElement', value: createElement },
       { name: 'default', value: React },
     ]
   },
@@ -404,6 +407,20 @@ const importMap = [
     module: 'src/components/search-experience/search-components/SearchItem/SearchItemImage',
     exports: [
       { name: 'SearchItemImage', value: SearchItemImage },
+    ]
+  },
+  {
+    module: 'motion/react',
+    exports: [
+      { name: 'm', value: m },
+    ]
+  },
+  {
+    module: '@/lib/motion',
+    exports: [
+      { name: 'motionDuration', value: motionDuration },
+      { name: 'motionEase', value: motionEase },
+      { name: 'useMotionSafe', value: useMotionSafe },
     ]
   },
   {

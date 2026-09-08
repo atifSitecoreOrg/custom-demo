@@ -16,6 +16,7 @@ Use this skill when:
 - `docs/ai/catalog/component-registry.yaml`
 - `docs/ai/catalog/theme-component-mapping.md`
 - `docs/ai/manifests/sitecore-manifest.yaml`
+- `docs/ai/rules/06-rtl-logical-properties.md`
 
 ## Resume a demo build
 
@@ -581,6 +582,8 @@ For each section in the build plan with `matchType: "custom"`:
 
 Custom components must be fully built before page assembly so they can be placed alongside template components in a single pass.
 
+RTL: every new or touched component must use logical Tailwind (`ps-`/`pe-`/`ms-`/`me-`/`start-`/`end-`), never `pl-`/`pr-`/`ml-`/`mr-`/`left-`/`right-`. Arabic text gets `leading-relaxed` or looser (~1.4), never letter-spaced. See `docs/ai/rules/06-rtl-logical-properties.md`.
+
 If there are no custom components (`customComponents: []` in build plan), skip to Phase 5.5.
 
 ### Phase 5.5 — Create demo variants (pixel-perfect matching)
@@ -590,6 +593,8 @@ For each component on the page, create a custom named export that replicates the
 **Use the `sitecore-create-demo-variants` skill** (`docs/ai/skills/sitecore-create-demo-variants.md`).
 
 This phase bridges the gap between "same colors" (Phase 4 CSS variables) and "looks like their actual site" (custom layout per section).
+
+RTL: every new or touched variant must use logical Tailwind (`ps-`/`pe-`/`ms-`/`me-`/`start-`/`end-`), never `pl-`/`pr-`/`ml-`/`mr-`/`left-`/`right-`. Arabic text gets `leading-relaxed` or looser (~1.4), never letter-spaced. See `docs/ai/rules/06-rtl-logical-properties.md`.
 
 **What it produces:**
 1. A `variant-specs.yaml` file with per-section visual analysis

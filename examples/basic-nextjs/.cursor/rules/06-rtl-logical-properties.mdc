@@ -1,0 +1,11 @@
+---
+description: Require logical Tailwind properties and Arabic typography so RTL never needs mirrored markup.
+globs:
+  - "src/components/**/*.tsx"
+  - "src/components/**/*.ts"
+alwaysApply: false
+---
+
+Read and follow `docs/ai/rules/06-rtl-logical-properties.md` in full.
+
+Every new or touched component must use logical Tailwind (`ps-`/`pe-`/`ms-`/`me-`/`start-`/`end-`). Never `pl-`/`pr-`/`ml-`/`mr-`/`left-`/`right-`. Arabic text gets `leading-relaxed` or looser (~1.4), never letter-spaced.

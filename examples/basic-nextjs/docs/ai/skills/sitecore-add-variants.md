@@ -23,10 +23,13 @@ The name of the TSX export **must exactly match** the name of the Variant Defini
 
 Every component must have at least a `Default` variant. `Default` is always required — it is the fallback when no variant is selected by the author.
 
+RTL: every new or touched variant must use logical Tailwind (`ps-`/`pe-`/`ms-`/`me-`/`start-`/`end-`), never `pl-`/`pr-`/`ml-`/`mr-`/`left-`/`right-`. Arabic text gets `leading-relaxed` or looser (~1.4), never letter-spaced. See `docs/ai/rules/06-rtl-logical-properties.md`.
+
 ---
 
 ## Load first
 - `docs/ai/skills/shared/react-uiim-guidelines.md`
+- `docs/ai/rules/06-rtl-logical-properties.md`
 - `docs/ai/reference/sitecore-marketer-mcp-reference.md`
 - `docs/ai/skills/sitecore-maintain-manifest.md`
 

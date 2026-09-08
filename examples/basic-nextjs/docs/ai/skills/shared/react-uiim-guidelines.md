@@ -31,7 +31,12 @@ Avoid:
 - CSS modules unless the repo already uses them for that component area  
 - styled-components  
 - large custom stylesheet files for simple layout work  
-- inline styles unless required for dynamic behavior  
+- inline styles unless required for dynamic behavior
+
+RTL (mandatory — see `docs/ai/rules/06-rtl-logical-properties.md`):
+- Use logical Tailwind only: `ps-` / `pe-` / `ms-` / `me-` / `start-` / `end-`
+- Never `pl-` / `pr-` / `ml-` / `mr-` / `left-` / `right-`
+- Arabic text: `leading-relaxed` or looser (~1.4), never letter-spaced  
   
 ## Sitecore field rendering — editability is mandatory
 

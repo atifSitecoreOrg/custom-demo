@@ -34,6 +34,7 @@ Use these rules for React components in `src/components/uiim`.
 - Prefer utility classes over custom CSS files.
 - Avoid CSS modules, SCSS, or inline styles unless the repo already uses them for a clear reason.
 - Avoid hardcoded pixel-heavy styling when Tailwind scale values are available.
+- Follow `docs/ai/rules/06-rtl-logical-properties.md`: use logical Tailwind (`ps-`/`pe-`/`ms-`/`me-`/`start-`/`end-`), never `pl-`/`pr-`/`ml-`/`mr-`/`left-`/`right-`. Arabic text gets `leading-relaxed` or looser (~1.4), never letter-spaced.
 
 ## Preferred UI primitives
 Use shadcn/ui primitives when they fit the design, for example:

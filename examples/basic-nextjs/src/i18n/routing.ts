@@ -1,15 +1,8 @@
 import { defineRouting } from 'next-intl/routing';
-import sitecoreConfig from 'sitecore.config';
+import { DEFAULT_LOCALE, LOCALES } from 'src/lib/i18n/locale';
 
 export const routing = defineRouting({
-  // A list of all locales that are supported
-  locales: [sitecoreConfig.defaultLanguage],
-
-  // Used when no locale matches
-  defaultLocale: sitecoreConfig.defaultLanguage,
-
-  // No prefix is added for the default locale ("as-needed").
-  // For other configuration options, refer to the next-intl documentation:
-  // https://next-intl.dev/docs/routing/configuration
+  locales: [...LOCALES],
+  defaultLocale: DEFAULT_LOCALE,
   localePrefix: 'as-needed',
 });

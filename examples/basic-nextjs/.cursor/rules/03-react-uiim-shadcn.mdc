@@ -8,3 +8,4 @@ alwaysApply: false
 ---
 
 Read and follow `docs/ai/rules/03-react-uiim-shadcn.md` in full.
+Also follow `docs/ai/rules/06-rtl-logical-properties.md`: every new or touched component must use logical Tailwind (`ps-`/`pe-`/`ms-`/`me-`/`start-`/`end-`). Never `pl-`/`pr-`/`ml-`/`mr-`/`left-`/`right-`. Arabic text gets `leading-relaxed` or looser (~1.4), never letter-spaced.

@@ -29,12 +29,15 @@ CSS variables (`--brand-*`) handle colors, fonts, and border-radius — but NOT:
 
 A custom variant for each section bridges the gap between "same colors" and "looks like their actual site."
 
+RTL: every new or touched variant must use logical Tailwind (`ps-`/`pe-`/`ms-`/`me-`/`start-`/`end-`), never `pl-`/`pr-`/`ml-`/`mr-`/`left-`/`right-`. Arabic text gets `leading-relaxed` or looser (~1.4), never letter-spaced. See `docs/ai/rules/06-rtl-logical-properties.md`.
+
 ---
 
 ## Load first
 
 - `docs/ai/reference/sitecore-rules.md`
 - `docs/ai/skills/shared/react-uiim-guidelines.md`
+- `docs/ai/rules/06-rtl-logical-properties.md`
 - `docs/ai/reference/brand-variables.md`
 - `docs/ai/skills/sitecore-add-variants.md`
 
