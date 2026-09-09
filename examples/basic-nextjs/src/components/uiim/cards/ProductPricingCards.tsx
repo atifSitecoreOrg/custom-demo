@@ -368,6 +368,86 @@ export const Highlighted = ({ fields, params, page }: ProductPricingCardsProps):
   );
 };
 
+/* BloomingdalesCategoryGrid — 4-col PLP: brand, name, badge, AED price includes taxes */
+export const BloomingdalesCategoryGrid = ({
+  fields,
+  params,
+  page,
+}: ProductPricingCardsProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <ProductPricingCardsDefaultComponent />;
+  const cards = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component product-pricing-cards', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 pb-16 md:px-8" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1440px]">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="sr-only"
+            />
+          )}
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-8">
+            {cards.map((card) => (
+              <article key={card.id} className="flex flex-col text-start">
+                <ContentSdkLink
+                  field={card.cardLink?.jsonValue}
+                  className="flex flex-col"
+                >
+                  {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
+                    <ContentSdkImage
+                      field={card.cardImage?.jsonValue}
+                      className="aspect-[3/4] w-full object-contain"
+                      style={{ backgroundColor: 'var(--brand-muted, #f5f5f5)' }}
+                    />
+                  )}
+                  <div className="mt-3">
+                    {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                      <Text
+                        field={card.cardTitle?.jsonValue}
+                        tag="p"
+                        className="text-xs font-semibold uppercase leading-relaxed ltr:tracking-[0.12em] rtl:tracking-normal font-[var(--brand-body-font,inherit)]"
+                        style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+                      />
+                    )}
+                    {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                      <ContentSdkRichText
+                        field={card.cardDescription?.jsonValue}
+                        className="mt-1 text-sm leading-relaxed font-[var(--brand-body-font,inherit)]"
+                        style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+                      />
+                    )}
+                    {(card.badgeText?.jsonValue?.value || isEditing) && (
+                      <Text
+                        field={card.badgeText?.jsonValue}
+                        tag="p"
+                        className="mt-2 text-[11px] uppercase leading-relaxed ltr:tracking-[0.12em] rtl:tracking-normal font-[var(--brand-body-font,inherit)]"
+                        style={{ color: 'var(--brand-muted-foreground, #6b6b6b)' }}
+                      />
+                    )}
+                    {(card.priceText?.jsonValue?.value || isEditing) && (
+                      <Text
+                        field={card.priceText?.jsonValue}
+                        tag="p"
+                        className="mt-2 text-sm leading-relaxed font-[var(--brand-body-font,inherit)]"
+                        style={{ color: 'var(--brand-fg, #1a1a1a)' }}
+                      />
+                    )}
+                  </div>
+                </ContentSdkLink>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 /* BloomingdalesProductRail — horizontal product cards, uppercase brand, AED price */
 export const BloomingdalesProductRail = ({
   fields,

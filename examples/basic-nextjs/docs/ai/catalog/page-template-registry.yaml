@@ -351,14 +351,16 @@ pageTemplates:
   - id: category
     name: "Category"
     inheritsFrom: "base-page-template"
-    description: "Department/category listing. Identity (name, description, hero image) lives on the page template and is rendered by a context component. Product tiles come from a list component with a safe field() ComponentQuery."
+    description: "Department listing matching bloomingdales.ae/women. Identity (name, description, results, chips) lives on the page template and is rendered by a context component. Product tiles come from ProductPricingCards BloomingdalesCategoryGrid with a safe field() ComponentQuery."
     designIntent: "route identity + existing product list; no new datasource hero"
 
     templateSection: "Category Data"
     fields:
-      - { name: "CategoryName", type: "Single-Line Text", purpose: "display name in the category banner" }
-      - { name: "CategoryDescription", type: "Rich Text", purpose: "short editorial line under the name" }
-      - { name: "CategoryHeroImage", type: "Image", purpose: "full-bleed banner image" }
+      - { name: "CategoryName", type: "Single-Line Text", purpose: "H1, e.g. Designer Fashion for Women" }
+      - { name: "CategoryDescription", type: "Rich Text", purpose: "intro paragraph with Read More" }
+      - { name: "CategoryHeroImage", type: "Image", purpose: "optional; listing header no longer uses a full-bleed banner" }
+      - { name: "CategoryResultsCount", type: "Single-Line Text", purpose: "e.g. 14,848 Results" }
+      - { name: "CategoryQuickNav", type: "Single-Line Text", purpose: "pipe-separated chips, e.g. Women's Clothing|Women's Shoes" }
 
     inheritedFieldsUsed:
       - "Title"
@@ -374,15 +376,16 @@ pageTemplates:
         routeFieldsUsed:
           - "CategoryName"
           - "CategoryDescription"
-          - "CategoryHeroImage"
+          - "CategoryResultsCount"
+          - "CategoryQuickNav"
         variants:
           - name: "Default"
-            description: "CTABanner / BloomingdalesCampaign look: full-bleed photo, oversized serif, centered copy"
+            description: "Bloomingdale's UAE listing header: H1, intro + Read More, chips, results + filter chrome"
 
     listComponents:
       - id: product-pricing-cards
         name: "ProductPricingCards"
-        variant: "BloomingdalesProductRail"
+        variant: "BloomingdalesCategoryGrid"
         componentQueryPattern: "field(name) + children.results — no ... on TemplateName"
 
     chromePartials:
@@ -409,10 +412,12 @@ pageTemplates:
         template: "base-page-template"
         insertOptions: ["Category"]
       examplePages:
+        - "Women"
+        - "Men"
+        - "Kids"
         - "Acler"
         - "Beauty"
         - "Home Collection"
-        - "Kids"
         - "Mens Sneakers"
         - "Womens Bags"
 
@@ -425,15 +430,23 @@ pageTemplates:
   - id: product
     name: "Product"
     inheritsFrom: "base-page-template"
-    description: "Product detail page (PDP). Identity (name, SKU, price, description, images) lives on the page template and is rendered by a context component. Related products reuse the existing ProductPricingCards list component."
+    description: "Product detail page matching bloomingdales.ae Koda Midi Dress. Identity lives on the page template and is rendered by a context component. Related products reuse ProductPricingCards."
     designIntent: "route identity + existing related-products list; no new datasource PDP block"
 
     templateSection: "Product Data"
     fields:
       - { name: "ProductName", type: "Single-Line Text", purpose: "display name on the PDP" }
+      - { name: "ProductBrand", type: "Single-Line Text", purpose: "designer name, e.g. Acler" }
+      - { name: "ProductBadge", type: "Single-Line Text", purpose: "e.g. NEW SEASON" }
       - { name: "ProductSku", type: "Single-Line Text", purpose: "merchant SKU; later SFCC mapping target" }
-      - { name: "ProductPrice", type: "Single-Line Text", purpose: "display price string (e.g. AED 6,000); later SFCC mapping target" }
+      - { name: "ProductId", type: "Single-Line Text", purpose: "style ID, e.g. CLO219643422xBLK" }
+      - { name: "ProductPrice", type: "Single-Line Text", purpose: "display price string (e.g. AED 1,800 includes all taxes)" }
+      - { name: "ProductColor", type: "Single-Line Text", purpose: "color code, e.g. BLK" }
+      - { name: "ProductSizes", type: "Single-Line Text", purpose: "pipe-separated sizes, e.g. AU 6|AU 8" }
       - { name: "ProductDescription", type: "Rich Text", purpose: "editorial product copy" }
+      - { name: "ProductDetailsCare", type: "Rich Text", purpose: "material and care" }
+      - { name: "ProductAboutBrand", type: "Rich Text", purpose: "about the designer" }
+      - { name: "ProductSizeFit", type: "Rich Text", purpose: "fit notes" }
       - { name: "ProductImage", type: "Image", purpose: "primary image — Beat 13 Content Hub rights-flagged asset target; do not change type" }
       - { name: "ProductImageSecondary", type: "Image", purpose: "gallery image 2; same Image type as primary" }
       - { name: "ProductImageTertiary", type: "Image", purpose: "gallery image 3; same Image type as primary" }
@@ -451,15 +464,23 @@ pageTemplates:
         filePath: "src/components/uiim/product/ProductDetail.tsx"
         routeFieldsUsed:
           - "ProductName"
+          - "ProductBrand"
+          - "ProductBadge"
           - "ProductSku"
+          - "ProductId"
           - "ProductPrice"
+          - "ProductColor"
+          - "ProductSizes"
           - "ProductDescription"
+          - "ProductDetailsCare"
+          - "ProductAboutBrand"
+          - "ProductSizeFit"
           - "ProductImage"
           - "ProductImageSecondary"
           - "ProductImageTertiary"
         variants:
           - name: "Default"
-            description: "gallery on the start side, identity copy on the end side; Bloomingdale's product-rail tokens"
+            description: "Koda-style PDP: gallery, brand, title, badge, price, color, sizes, add-to-bag, details"
 
     listComponents:
       - id: product-pricing-cards
@@ -492,6 +513,7 @@ pageTemplates:
         template: "base-page-template"
         insertOptions: ["Product"]
       examplePages:
+        - "Koda Midi Dress"
         - "Mahon Maxi Dress"
         - "Babylone Slides"
 

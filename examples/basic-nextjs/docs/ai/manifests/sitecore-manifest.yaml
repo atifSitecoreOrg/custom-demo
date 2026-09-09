@@ -491,6 +491,7 @@ components:
         - "Compact"
         - "Highlighted"
         - "BloomingdalesProductRail"
+        - "BloomingdalesCategoryGrid"
 
     templates:
       datasource:
@@ -575,6 +576,7 @@ components:
         - { name: "Compact", itemId: "{CBAF513B-7C47-498C-83C6-43B3EE92F68C}" }
         - { name: "Highlighted", itemId: "{4DE413CD-B593-48C7-AB27-C60D88549C5B}" }
         - { name: "BloomingdalesProductRail", itemId: "{97B6BC3A-C1E7-428F-9312-6020564D894B}" }
+        - { name: "BloomingdalesCategoryGrid", itemId: "{66708D9A-3554-4A9A-A6C1-16E99A5747DA}" }
 
     verification:
       checkedAt: "2026-03-25T15:30:00Z"
@@ -607,6 +609,7 @@ components:
     notes:
       - "2026-09-08: Reused as the Category page product grid (BloomingdalesProductRail). ComponentQuery already uses field(name) + children.results — no ... on TemplateName."
       - "2026-09-08: Reused as the Product page related-products rail (BloomingdalesProductRail) with a dedicated Related Products datasource. Same field() ComponentQuery — no new list component."
+      - "2026-09-09: Added BloomingdalesCategoryGrid (4-col PLP: brand, name, badge, AED price). Women/Men/Kids pages use page-local ProductPricingCards in container-3 with FieldNames={66708D9A-3554-4A9A-A6C1-16E99A5747DA}. Shared Category Layout grid DS set to empty Category Grid Slot so pages do not also show Shop New In."
 
   - name: "LegalComplianceBanner"
     kind: "simple"
@@ -1383,7 +1386,7 @@ components:
     status: "complete"
     createdAt: "2026-09-08T19:40:00+04:00"
     updatedAt: "2026-09-08T20:00:00+04:00"
-    designIntent: "Context-only category banner. Reuses CTABanner / BloomingdalesCampaign visual language. Reads CategoryName, CategoryDescription, CategoryHeroImage from the route."
+    designIntent: "Context-only category listing header matching bloomingdales.ae/women: H1, intro + Read More, department chips, results + filter chrome. Reads CategoryName, CategoryDescription, CategoryResultsCount, CategoryQuickNav from the route."
 
     react:
       filePath: "src/components/uiim/category/CategoryHero.tsx"
@@ -1433,6 +1436,8 @@ components:
 
     notes:
       - "2026-09-08: Created as the Category page banner. Did not add a new datasource hero — CTABanner is datasource-shaped; Category identity lives on the route."
+      - "2026-09-09: Can select Page as a data source=1, Additional compatible templates=Category, FieldEditorFields=CategoryName|CategoryDescription|CategoryHeroImage. Empty Container added to Category Layout so pages expose container-3 (Pages had editablePlaceholders=[])."
+      - "2026-09-09: Restyled from full-bleed campaign banner to Bloomingdale's UAE listing header. FieldEditorFields now include CategoryResultsCount|{E708C063-ED68-4C04-9AEC-E1A113950748} and CategoryQuickNav|{2F56F695-51FB-4D1B-B6A0-0B8D981FBA7B}."
 
   - name: "ProductDetail"
     kind: "context-only"
@@ -1440,7 +1445,7 @@ components:
     status: "complete"
     createdAt: "2026-09-08T20:10:00+04:00"
     updatedAt: "2026-09-08T20:25:00+04:00"
-    designIntent: "Context-only PDP identity. Name, SKU, price, description, and three Image fields live on the Product page template. ProductImage stays a standard Image so Beat 13 can point it at a Content Hub asset with usage-rights metadata without restructuring."
+    designIntent: "Context-only PDP matching bloomingdales.ae Koda Midi Dress: gallery, brand, title, badge, price, color, sizes, qty, add-to-bag, description, details & care, product ID, about brand, size & fit. ProductImage stays a standard Image so Beat 13 can point it at a Content Hub asset without restructuring."
 
     react:
       filePath: "src/components/uiim/product/ProductDetail.tsx"
@@ -1490,6 +1495,8 @@ components:
 
     notes:
       - "2026-09-08: PDP is a route (one product per URL). Context-only matches CategoryHero. Beat 15 SFCC feed and Beat 13 rights-flagged asset map onto these route Image/text fields later — do not change field types."
+      - "2026-09-09: Can select Page as a data source=1, Additional compatible templates=Product, FieldEditorFields=identity + image fields. Empty Container added to Product Layout so pages expose container-3."
+      - "2026-09-09: Expanded FieldEditorFields with ProductBrand, ProductBadge, ProductColor, ProductSizes, ProductDetailsCare, ProductAboutBrand, ProductSizeFit, ProductId. Restyled to Koda-style PDP chrome."
 
   - name: "ImageGallery"
     kind: "simple"
@@ -3212,6 +3219,8 @@ pageTemplates:
           - { name: "CategoryName", type: "Single-Line Text", itemId: "{A3EB4AEE-724D-4AC4-A261-62496B23FBB4}" }
           - { name: "CategoryDescription", type: "Rich Text", itemId: "{D69FD022-09D7-447C-A335-F92E3F45162C}" }
           - { name: "CategoryHeroImage", type: "Image", itemId: "{125C7D0C-CDFD-4D5C-A15B-5F360720F7D1}" }
+          - { name: "CategoryResultsCount", type: "Single-Line Text", itemId: "{E708C063-ED68-4C04-9AEC-E1A113950748}" }
+          - { name: "CategoryQuickNav", type: "Single-Line Text", itemId: "{2F56F695-51FB-4D1B-B6A0-0B8D981FBA7B}" }
         inheritsFrom: "Page"
         standardValues:
           itemId: "{96518F8E-664C-4312-B99F-1CECB83CFCF2}"
@@ -3231,15 +3240,17 @@ pageTemplates:
         - { name: "Kids", itemId: "{90B5D2B7-401F-4149-A162-80A607FB65BE}", path: "/sitecore/content/main/main-website/Home/Categories/Kids" }
         - { name: "Mens Sneakers", itemId: "{8C69EBF9-C8F9-4C55-9B89-F8140F3A9C04}", path: "/sitecore/content/main/main-website/Home/Categories/Mens Sneakers" }
         - { name: "Womens Bags", itemId: "{0EB052C8-BEE6-454B-B2B2-0F78E81CCE42}", path: "/sitecore/content/main/main-website/Home/Categories/Womens Bags" }
+        - { name: "Women", itemId: "{83E1DAFB-26AF-47FF-9F40-BF2272C0A88D}", path: "/sitecore/content/main/main-website/Home/Categories/Women" }
+        - { name: "Men", itemId: "{7A8C45CD-6C5B-4330-8CEF-A990057E30DC}", path: "/sitecore/content/main/main-website/Home/Categories/Men" }
 
     composedFrom:
       - { component: "CategoryHero", variant: "Default", variantId: "{102A3DC3-ABD0-4D40-AD1F-5B7A93566175}", role: "context hero" }
-      - { component: "ProductPricingCards", variant: "BloomingdalesProductRail", variantId: "{97B6BC3A-C1E7-428F-9312-6020564D894B}", role: "product grid", datasourceId: "{C91EB7BA-284A-4790-9BF9-9465E3626DD4}" }
+      - { component: "ProductPricingCards", variant: "BloomingdalesCategoryGrid", variantId: "{66708D9A-3554-4A9A-A6C1-16E99A5747DA}", role: "product grid", datasourceId: "page-local Women/Men/Kids Products" }
 
     codeChanges:
-      - "src/components/uiim/category/CategoryHero.tsx — context-only Campaign-style banner"
-      - "src/Layout.tsx — CategoryName, CategoryDescription, CategoryHeroImage on RouteFields"
-      - "ProductPricingCards BloomingdalesProductRail: text-start + ltr/rtl tracking"
+      - "src/components/uiim/category/CategoryHero.tsx — listing header (H1, Read More, chips, results)"
+      - "src/Layout.tsx — CategoryName, CategoryDescription, CategoryResultsCount, CategoryQuickNav on RouteFields"
+      - "ProductPricingCards BloomingdalesCategoryGrid: 4-col PLP brand/name/badge/price"
 
     verification:
       checkedAt: "2026-09-08T20:00:00+04:00"
@@ -3275,6 +3286,7 @@ pageTemplates:
     notes:
       - "2026-09-08: Category page type. Hero is context-only (route fields). Product grid reuses ProductPricingCards + BloomingdalesProductRail and the existing Shop New In datasource so we did not duplicate list templates. ComponentQuery already uses field(name) / children.results."
       - "2026-09-08: Shared product datasource on the Category Layout partial — every category page shows Shop New In until an editor assigns a page-local ProductPricingCards datasource."
+      - "2026-09-09: Reshaped to bloomingdales.ae/women listing. Women {83E1DAFB-26AF-47FF-9F40-BF2272C0A88D}, Men {7A8C45CD-6C5B-4330-8CEF-A990057E30DC}, Kids updated. Page-local BloomingdalesCategoryGrid datasources: Women Products {A766E5A7-E53B-42AD-83F0-B57967A7DEA8}, Men Products {9DD0346F-4F70-49C2-88F0-01D960E4A36C}, Kids Products {626C2512-2544-4E08-BABE-1BAC94DAF210}."
 
   - name: "Product"
     kind: "page-template"
@@ -3303,6 +3315,14 @@ pageTemplates:
           - { name: "ProductImage", type: "Image", itemId: "{97FAAF0D-E82E-4BDA-A1BD-856139A989D8}", note: "primary; Beat 13 Content Hub rights target" }
           - { name: "ProductImageSecondary", type: "Image", itemId: "{E75883CA-59C3-4AB3-95E2-8060BE070657}" }
           - { name: "ProductImageTertiary", type: "Image", itemId: "{CBDBB9DD-5D6C-4C23-B50D-96DE88693A84}" }
+          - { name: "ProductBrand", type: "Single-Line Text", itemId: "{B2E8D7E0-38AA-4012-BBE4-DFE9476D1176}" }
+          - { name: "ProductBadge", type: "Single-Line Text", itemId: "{8E0834A1-7913-4506-9D57-D3F1C09A49F6}" }
+          - { name: "ProductColor", type: "Single-Line Text", itemId: "{D003BE7C-A8A2-4154-B2FC-4E0BA8DDA0D5}" }
+          - { name: "ProductSizes", type: "Single-Line Text", itemId: "{C1A6F8E8-71B2-4769-B8B0-E2E780867CE8}" }
+          - { name: "ProductDetailsCare", type: "Rich Text", itemId: "{59777717-2665-46B7-8EBB-847D429295B2}" }
+          - { name: "ProductAboutBrand", type: "Rich Text", itemId: "{D07A0D5B-FF51-4DE6-B3FD-809F8EE9F555}" }
+          - { name: "ProductSizeFit", type: "Rich Text", itemId: "{3AA56F3E-B1F1-420B-ADAE-D73BC509C83D}" }
+          - { name: "ProductId", type: "Single-Line Text", itemId: "{2D24CDAB-9671-4732-A979-204B427F82D5}" }
         inheritsFrom: "Page"
         standardValues:
           itemId: "{7C3CD8E4-DE85-4B15-8E97-5813439FF95C}"
@@ -3318,6 +3338,19 @@ pageTemplates:
       pages:
         - { name: "Mahon Maxi Dress", itemId: "{68234C24-8861-468C-A6B3-A5ABCEB10C15}", path: "/sitecore/content/main/main-website/Home/Products/Mahon Maxi Dress" }
         - { name: "Babylone Slides", itemId: "{AA4D9CB8-1ED0-4A98-A5D5-5B2FB41A7100}", path: "/sitecore/content/main/main-website/Home/Products/Babylone Slides" }
+        - { name: "Koda Midi Dress", itemId: "{3AEE95E9-539D-4A7C-9B46-A85B9F433C85}", path: "/sitecore/content/main/main-website/Home/Products/Koda Midi Dress" }
+        - { name: "Valiant Fringed Mini Dress", itemId: "{92F187E5-D9E1-481E-9614-93FD93118C82}" }
+        - { name: "Fish Sticks Shirtdress", itemId: "{FAE2B2F9-2F58-4E37-9D67-C111BF77B274}" }
+        - { name: "Donna 110 Pumps", itemId: "{86BDC5A1-0F3E-4057-82CD-9E9ED139F511}" }
+        - { name: "Celeste Envelope Bag", itemId: "{A12DA540-77E4-4F52-B277-ADDE752B9D2B}" }
+        - { name: "Cotton Denim Pants with Horsebit", itemId: "{660913B0-869A-4E87-BD84-CC0C055A79C5}" }
+        - { name: "Cloudpulse Pro Sneakers", itemId: "{E22FAC51-67E9-4259-9E03-F4337433F724}" }
+        - { name: "Short-Sleeve T-Shirt", itemId: "{DB45754E-5774-47AF-8D0E-46CBAEB0D74B}" }
+        - { name: "Pallas Cotton Polo Shirt", itemId: "{AF7A8979-B3C6-47E0-BC3A-F7120F5A84B8}" }
+        - { name: "Ami Kids De Coeur Sweater", itemId: "{04755DE6-291C-4889-9EE0-E6C694BA7918}" }
+        - { name: "Adidas Kids Handball Spezial Shoes", itemId: "{723DD13B-F772-4784-8313-DF28D983DCC6}" }
+        - { name: "Gucci Kids Cotton Piquet Dress", itemId: "{9588BCB9-635B-4478-B69D-87A32485EF18}" }
+        - { name: "Burberry Kids Logo Polo Shirt", itemId: "{2D8E966E-4893-43DC-8D83-BF48E6F7A7CF}" }
 
     composedFrom:
       - { component: "ProductDetail", variant: "Default", variantId: "{2D9C3960-2605-424E-9551-0A82EA9D3D4A}", role: "context PDP identity" }
@@ -3334,8 +3367,8 @@ pageTemplates:
         - { name: "Fish Sticks Shirtdress", itemId: "{3AD77A60-470E-4C1D-8D45-D3DF37504696}" }
 
     codeChanges:
-      - "src/components/uiim/product/ProductDetail.tsx — context-only PDP gallery + identity"
-      - "src/Layout.tsx — ProductName, ProductSku, ProductPrice, ProductDescription, ProductImage, ProductImageSecondary, ProductImageTertiary on RouteFields"
+      - "src/components/uiim/product/ProductDetail.tsx — Koda-style PDP gallery, brand, sizes, add-to-bag, details"
+      - "src/Layout.tsx — Product identity + brand/badge/color/sizes/details/about/fit/id on RouteFields"
 
     verification:
       checkedAt: "2026-09-08T20:25:00+04:00"

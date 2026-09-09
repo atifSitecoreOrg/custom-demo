@@ -112,11 +112,21 @@ export interface RouteFields {
   CategoryName?: Field<string>;
   CategoryDescription?: RichTextField;
   CategoryHeroImage?: ImageField;
+  CategoryResultsCount?: Field<string>;
+  CategoryQuickNav?: Field<string>;
   // Product Page
   ProductName?: Field<string>;
+  ProductBrand?: Field<string>;
+  ProductBadge?: Field<string>;
   ProductSku?: Field<string>;
+  ProductId?: Field<string>;
   ProductPrice?: Field<string>;
+  ProductColor?: Field<string>;
+  ProductSizes?: Field<string>;
   ProductDescription?: RichTextField;
+  ProductDetailsCare?: RichTextField;
+  ProductAboutBrand?: RichTextField;
+  ProductSizeFit?: RichTextField;
   ProductImage?: ImageField;
   ProductImageSecondary?: ImageField;
   ProductImageTertiary?: ImageField;
