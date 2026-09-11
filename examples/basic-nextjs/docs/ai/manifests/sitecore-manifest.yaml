@@ -1303,7 +1303,7 @@ components:
     category: "Navigation"
     status: "complete"
     createdAt: "2026-09-08T00:55:00+04:00"
-    updatedAt: "2026-09-08T20:00:00+04:00"
+    updatedAt: "2026-09-11T12:20:00+04:00"
 
     react:
       filePath: "src/components/uiim/navigation/CategoryQuickLinks.tsx"
@@ -1319,6 +1319,7 @@ components:
         sectionName: "Data"
         fields:
           - { name: "Title", type: "Single-Line Text" }
+          - { name: "Items", type: "Multilist", itemId: "{717C13AB-06D1-499B-9530-034DDF8217F3}", source: "query:/sitecore/content/main/main-website/Data/CategoryQuickLinks//*[@@templatename='CategoryQuickLinkItem']" }
         horizonDatasourceGrouping: false
       child:
         name: "CategoryQuickLinkItem"
@@ -1367,18 +1368,22 @@ components:
         - { name: "Default", itemId: "{68DA4DCA-1B26-48EC-A1D3-9EBB1381A402}" }
 
     verification:
-      checkedAt: "2026-09-08T01:20:00+04:00"
+      checkedAt: "2026-09-11T12:25:00+04:00"
       passed:
         - "Parent and child templates created"
         - "Rendering registered in Available Renderings"
         - "Default variant created"
-        - "Client datasource with 6 children populated"
+        - "Items Multilist added on Data section"
+        - "ComponentQuery reads selected Items.targetItems"
+        - "Main and regional datasources have Items pre-selected"
       pendingManual:
-        - "HorizonDatasourceGrouping on parent template if insert options fail"
+        - "Publish rendering + template + datasources so Edge picks up ComponentQuery"
+        - "Confirm Items multilist in Pages content editor"
 
     notes:
       - "2026-09-08: Built for Bloomingdale's UAE circular category tiles."
       - "2026-09-08: Six tile Link fields retargeted from bloomingdales.ae externals to internal Category pages under /Home/Categories."
+      - "2026-09-11: Authors now pick tiles via Data/Items Multilist instead of rendering all children. ComponentQuery uses MultilistField.targetItems (field type fragment, not a Sitecore template). Existing Bloomingdales UAE datasource Items pre-selected to the six current tiles."
 
   - name: "CategoryHero"
     kind: "context-only"

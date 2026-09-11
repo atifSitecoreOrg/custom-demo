@@ -19,8 +19,8 @@ interface CategoryQuickLinkItemFields {
 
 interface CategoryQuickLinksDatasource {
   title: { jsonValue: Field<string> };
-  children: {
-    results: CategoryQuickLinkItemFields[];
+  items?: {
+    targetItems?: CategoryQuickLinkItemFields[];
   };
 }
 
@@ -50,7 +50,7 @@ export const Default = ({ fields, params, page }: CategoryQuickLinksProps): JSX.
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
   if (!datasource) return <CategoryQuickLinksDefaultComponent />;
-  const items = datasource.children?.results || [];
+  const items = datasource.items?.targetItems || [];
 
   return (
     <div className={cn('component category-quick-links', styles)} id={RenderingIdentifier}>
